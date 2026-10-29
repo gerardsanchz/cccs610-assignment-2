@@ -1,0 +1,6133 @@
+{
+ "access_date_utc": "2026-10-28T19:26:42Z",
+ "endpoint": "https://query.wikidata.org/sparql",
+ "query_main": "SELECT ?item ?label ?pop ?coord (GROUP_CONCAT(DISTINCT ?tl; separator=\" | \") AS ?types) WHERE {\n  SERVICE wikibase:box {\n    ?item wdt:P625 ?coord .\n    bd:serviceParam wikibase:cornerSouthWest \"Point(-80.0 44.9)\"^^geo:wktLiteral .\n    bd:serviceParam wikibase:cornerNorthEast \"Point(-57.0 52.0)\"^^geo:wktLiteral .\n  }\n  ?item p:P1082 ?st .\n  ?st ps:P1082 ?pop ; pq:P585 ?pit .\n  FILTER(YEAR(?pit) = 2021 && xsd:integer(?pop) > 25000)\n  ?item wdt:P17 wd:Q16 .\n  ?item rdfs:label ?label . FILTER(LANG(?label) = \"fr\")\n  OPTIONAL { ?item wdt:P31 ?t . ?t rdfs:label ?tl . FILTER(LANG(?tl) = \"fr\") }\n}\nGROUP BY ?item ?label ?pop ?coord\nORDER BY DESC(xsd:integer(?pop))\nLIMIT 400\n",
+ "http_status_main": 200,
+ "main": {
+  "head": {
+   "vars": [
+    "item",
+    "label",
+    "pop",
+    "coord",
+    "types"
+   ]
+  },
+  "results": {
+   "bindings": [
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q176"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "8501833"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.0 52.0)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "province du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1474984"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montréal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "2004265"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.683333333 45.5)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2826806"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "agglomération de Montréal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "2004265"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.65 45.516666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "agglomération du Québec | territoire équivalent"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q340"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montréal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1762949"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5868411 45.5033426)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "métropole | ville universitaire | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q931679"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montérégie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1591620"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1 45.383333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q668850"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Région de la capitale nationale"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1488307"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.69 45.4208)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "subdivision de recensement du Canada | aire urbaine | entité territoriale statistique"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q931679"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montérégie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1460933"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1 45.383333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1930"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ottawa"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1017449"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.695 45.424722222)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | subdivision de recensement du Canada | division de recensement du Canada | capitale fédérale | municipalité à palier unique"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1952"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Nouvelle-Écosse"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "969383"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-63.0 45.0)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "province du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1965"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Nouveau-Brunswick"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "775610"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.0 46.6)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "province du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q680780"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Capitale-Nationale"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "757950"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.5 47.3333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2304022"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laurentides"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "636083"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.983333333 46.433333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2826812"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "agglomération de Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "588777"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.207777777 46.813611111)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "agglomération du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q11832939"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "agglomération de Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "588777"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.224169444 46.816111111)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "territoire équivalent"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2145"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "549459"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.224167 46.816111)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q692825"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lanaudière"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "528598"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.833333333 46.766666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1122368"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Estrie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "499197"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.667916666 45.481555555)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141810"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laval"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "438366"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.75 45.5833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec | territoire hors MRC au Québec | région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6502283"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Agglomération de Laval"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "438366"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.75 45.5833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "agglomération du Québec | territoire équivalent"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2826810"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "agglomération de Longueuil"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "436785"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5167 45.5333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "agglomération du Québec | territoire équivalent"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1068386"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Chaudière-Appalaches"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "433312"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.6167 46.4833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q222948"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Outaouais"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "405158"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.083333333 45.783333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1122368"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Estrie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "337701"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.667916666 45.481555555)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141844"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gatineau"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "291041"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.65 45.483333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q615914"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saguenay–Lac-Saint-Jean"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "275552"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.748888888 49.866944444)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "entité territoriale administrative | région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q615914"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saguenay–Lac-Saint-Jean"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "275552"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.75 49.86666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "entité territoriale administrative | région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q510572"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mauricie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "273055"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.0 47.0)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139398"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Longueuil"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "254483"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.438027777 45.514083333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q764294"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Centre-du-Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "250445"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.066666666 46.283333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q809729"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Bas-Saint-Laurent"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "199039"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.666666666 48.333333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1810607"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Roussillon"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "185568"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5667 45.3667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139473"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sherbrooke"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "172950"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.9 45.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1811004"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Moulins"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "171127"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.6 45.75)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "division de recensement du Canada | municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517947"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Thérèse-De Blainville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "163632"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.883333333 45.666666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517624"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Vaudreuil-Soulanges"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "162600"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.216666666 45.35)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1978"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Île-du-Prince-Édouard"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "154331"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-63.2 46.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "province du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139208"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lévis"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "149683"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.1833 46.8)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q321529"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Abitibi-Témiscamingue"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "147082"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-79.016666666 48.233333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139229"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saguenay"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "144723"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.0667 48.4167)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517943"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Rivière-du-Nord"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "140394"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.016666666 45.816666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3357764"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Orléans"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "139309"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.5 45.466666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q44012"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Trois-Rivières"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "139163"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.55 46.35)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | territoire équivalent | ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3338266"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Nepean"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "132769"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.758 45.275)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517930"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Vallée-du-Richelieu"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "131803"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.2 45.5667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2939078"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Carleton"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "131375"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.637 45.169)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Ontario | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q136488030"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pontiac"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "129781"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-76.833333333 46.333333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3555066"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Vaudreuil—Soulanges"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "129612"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.19 45.37)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q748828"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "L'Assomption"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "128087"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.4333 45.8)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3357743"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ottawa-Centre"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "126360"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.7 45.416666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3357747"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ottawa-Sud"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "125090"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.664358333 45.35927)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3219613"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laurentides—Labelle"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "123796"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.5 46.219)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q428070"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rivière-du-Nord"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "122654"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.975 45.852)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517613"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Le Haut-Richelieu"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "121277"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.2333 45.2)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3272022"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Bellechasse—Les Etchemins—Lévis"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "120179"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.53 46.64)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139190"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Terrebonne"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119944"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.633333333 45.7)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "grande ville | ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q18534081"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Tétreaultville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119944"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.525277777 45.603055555)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité du Québec | quartier | secteur résidentiel"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16962445"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Dorval—Lachine—LaSalle"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119395"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.683333333 45.441666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3427232"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Repentigny"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119204"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.43333333 45.8)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3481910"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sherbrooke"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119038"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.9 45.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3357766"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ottawa—Vanier"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "118806"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.65 45.433333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3259970"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lévis—Lotbinière"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "118608"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.383333333 46.566666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16826254"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ahuntsic-Cartierville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "118170"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.67 45.545)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q28660563"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gatineau"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "117920"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.65 45.488888888)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "secteur municipal"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3219676"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laurier—Sainte-Marie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "116932"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.565 45.527)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3108745"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Glengarry—Prescott—Russell"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "116463"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.12 45.41)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Ontario | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3357746"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Ottawa-Ouest-Nepean"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "116409"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.783333333 45.35)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3462835"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Léonard—Saint-Michel"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "115553"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.589 45.589)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q21027519"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Longueuil—Saint-Hubert"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "115082"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.441666666 45.541666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3462577"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Jean"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "114617"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.24 45.24)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3539914"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Trois-Rivières"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "114064"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.608 46.359)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2926009"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Brome—Missisquoi"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "113913"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.75 45.166666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q136489296"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Joliette"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "112418"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.962 46.654)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16653356"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Longueuil—Charles-LeMoyne"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "112257"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.441666666 45.541666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3462967"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Maurice—Champlain"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111997"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.62 47.009)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3219763"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laval—Les Îles"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111784"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.837 45.544)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16976721"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lanark—Frontenac—Kingston"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111424"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-76.684 44.901)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3260598"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Louis-Hébert"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111322"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.297222222 46.775)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2990889"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Compton—Stanstead"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111088"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.633333333 45.3)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2893126"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauce"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "111034"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.741 46.22)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3143028"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Hull—Aylmer"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "110881"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.802 45.429)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3362910"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Papineau"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "110813"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.616666666 45.55)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3211775"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Pointe-de-l'Île"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "110486"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.509 45.651)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3214654"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lac-Saint-Louis"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "110093"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.883333333 45.433333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q429015"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Charlesbourg—Haute-Saint-Charles"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "109690"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.307 46.9)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q600123"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pierrefonds—Dollard"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "109497"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.8503 45.4941)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3321616"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mount Royal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "108494"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.641666666 45.516666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q136528880"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Hochelaga"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "108264"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.55 45.569)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1261297"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Drummond"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "107967"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.4833 45.8833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3040119"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Drummond"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "107967"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.45 45.9)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1612609"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rivière-des-Prairies–Pointe-aux-Trembles"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "107941"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5207 45.6589)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "arrondissement de Montréal"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3425442"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Renfrew—Nipissing—Pembroke"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "107420"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-77.41 45.63)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q693762"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gatineau"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "107286"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.677 45.5)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2922232"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Bourassa"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "105637"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.6163 45.6145)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q17044892"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Notre-Dame-de-Grâce—Westmount"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "105601"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.616666666 45.466666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3433602"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rivière-des-Mille-Îles"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "105589"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.878 45.602)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2899323"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Berthier—Maskinongé"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "105280"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1 46.33)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q136530031"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Hyacinthe—Bagot"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "105086"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.898411111 45.635888888)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3287683"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Marc-Aurèle-Fortin"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "104636"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.772 45.592)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3140203"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Honoré-Mercier"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "104578"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.57 45.63)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3366038"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Parry Sound—Muskoka"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "104494"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-79.772 45.529)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3499856"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Stormont—Dundas—South Glengarry"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "104493"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.95 45.17)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale de l'Ontario"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2821652"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Abitibi—Témiscamingue"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "103735"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-79.0 47.3)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3358662"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Outremont"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "103620"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.608333333 45.508333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16845155"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pierre-Boucher—Les Patriotes—Verchères"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "103020"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.233333333 45.691666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3462729"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Laurent"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "102104"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.708 45.506)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1206594"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Deux-Montagnes"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "102052"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.1 45.466666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2834924"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Alfred-Pellan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "102020"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.628 45.666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q134593673"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "98772"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.266666666 46.816666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141977"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Jean-sur-Richelieu"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "97873"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.253611111 45.305555555)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3322832"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montmagny—L'Islet—Kamouraska—Rivière-du-Loup"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "96724"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-69.6 47.47)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2886296"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Bécancour—Nicolet—Saurel"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "96439"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.433 46.219)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2893257"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauport—Limoilou"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "96064"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.221 46.842)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q528161"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauport-Côte-de-Beaupré-Île d'Orléans-Charlevoix"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "95736"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.91 47.62)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1497865"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Haute-Yamaska"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "92796"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.7333 45.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139104"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Brossard"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "91525"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.45 45.4667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517861"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Maskoutains"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "89432"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.95 45.616666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q728139"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gaspésie–Îles-de-la-Madeleine"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "89342"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-65.4 48.683333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3332796"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mégantic—L'Érable"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "88894"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.25 45.916666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2893293"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauséjour"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "88797"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-64.689 46.307)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale du Nouveau-Brunswick | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3285881"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Manicouagan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "88525"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.14 51.51)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1124109"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Côte-Nord"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "88525"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-65.816666666 50.866666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "région administrative du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3087204"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Fredericton"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "87436"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.463 45.955)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale du Nouveau-Brunswick | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139427"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Repentigny"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "86100"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.466666666 45.733333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3432128"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rimouski-Neigette—Témiscouata—Les Basques"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "85556"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.51 47.94)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale | circonscription électorale fédérale canadienne | liste des circonscriptions fédérales du Québec par région"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q267073"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Fundy Royal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "83721"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-65.27 45.789)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale du Nouveau-Brunswick | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16979314"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint John—Rothesay"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "81996"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.034 45.292)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale du Nouveau-Brunswick"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2963421"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Chicoutimi—Le Fjord"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "80593"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.6 48.14)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517923"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Marguerite-D'Youville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "80313"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.4333 45.6833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141724"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Jérôme"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "80213"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.0 45.783333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q457334"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Moncton"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "79470"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-64.775 46.093333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141940"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Drummondville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "79258"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.483333333 45.883333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2822240"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Acadie—Bathurst"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "77594"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-65.506 47.573)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale du Nouveau-Brunswick | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3098861"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gaspésie—Les Îles-de-la-Madeleine"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "75927"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-64.76 48.74)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "liste des circonscriptions fédérales du Québec par région | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q707993"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Arthabaska"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "74348"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.0833 45.9167)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1444781"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Joliette"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "71124"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.45 46.0167)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q614586"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Tobique—Mactaquac"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "69344"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-67.237 46.531)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale du Nouveau-Brunswick | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141881"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Granby"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "69025"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.733333333 45.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q813402"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauharnois-Salaberry"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "68322"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.933333333 45.316666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q926504"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Brome-Missisquoi"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "64786"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.8 45.1333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2138"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Fredericton"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "63116"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.666666666 45.95)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville | capitale d'une province ou d'un territoire canadien"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141921"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mirabel"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "61108"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.083333333 45.65)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3275454"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Madawaska—Restigouche"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "60184"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-67.413 47.655)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale canadienne | circonscription électorale fédérale du Nouveau-Brunswick"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139568"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Blainville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "59819"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.883333333 45.666666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q981122"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montcalm"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "58680"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.6667 45.9)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141873"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Hyacinthe"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "57239"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.95 45.616666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517260"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rimouski-Neigette"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "57191"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.666666666 48.333333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517350"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Portneuf"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "55523"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.9167 46.8833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1908110"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Matawinie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "55500"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.783333333 46.266666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "division de recensement du Canada | municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517596"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Memphrémagog"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "54797"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.083333333 45.266666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1451121"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Collines-de-l'Outaouais"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "54498"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.8667 45.55)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q813348"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Beauce-Sartigan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "53384"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.65 45.9667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517990"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lac-Saint-Jean-Est"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "52475"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.65 48.55)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517640"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pierre-De Saurel"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "51843"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.0 45.9667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141748"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mascouche"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "51183"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.6 45.75)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "établissement humain | ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141748"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mascouche"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "51183"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.59956 45.74965)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "établissement humain | ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141522"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Châteauguay"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "50815"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.75 45.383333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517938"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Laurentides"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "50777"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.6 46.116666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141980"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Shawinigan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "49620"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.75 46.5667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "territoire équivalent | ville du Québec | territoire hors MRC au Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1336"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rimouski"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "48935"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.533333333 48.45)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141998"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Dollard-des-Ormeaux"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "48403"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.816666666 45.483333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517325"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Jacques-Cartier"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "47813"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.5833 47.0333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141731"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Victoriaville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "47760"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.966666666 46.05)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q773444"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Pays-d'en-Haut"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "46906"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.133333333 45.95)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141505"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Eustache"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "45276"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.9 45.566666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q975170"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "D'Autray"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "44080"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1667 46.1667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517564"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Appalaches"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "43412"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.3 46.083333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q575254"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Vallée-de-l'Or"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "43347"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-77.2333 48.3833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141711"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Vaudreuil-Dorion"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "43268"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.033333333 45.4)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142039"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Salaberry-de-Valleyfield"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "42787"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.133333333 45.25)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141804"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rouyn-Noranda"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "42313"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-79.0167 48.2333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "territoire équivalent | ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141924"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Boucherville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "41743"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.45 45.6)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2938039"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Cardigan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "39866"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-62.507 46.344)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Île-du-Prince-Édouard | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q513772"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Malpeque"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "39731"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-63.383 46.345)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Île-du-Prince-Édouard | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2127"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Charlottetown"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "38809"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-63.126666666 46.235277777)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville | municipalité au Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2961057"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Charlottetown"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "38809"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-63.134 46.26)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Île-du-Prince-Édouard | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q815883"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Bellechasse"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "38000"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.7167 46.7333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q125495"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Nouvelle-Beauce"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "37988"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.92262 46.37756)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517997"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rouville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "37889"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.05 45.4333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1342831"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Maskinongé"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "37292"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.9333 46.3167)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec | division de recensement du Canada"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q585440"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Antoine-Labelle"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "36462"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.3333 46.8833)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3049209"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Egmont"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "35925"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-64.007 46.611)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "circonscription électorale fédérale de l'Île-du-Prince-Édouard | circonscription électorale fédérale canadienne"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517236"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rivière-du-Loup"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "35338"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-69.333333333 47.9)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142010"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sorel-Tracy"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "35165"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1167 46.0333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q645211"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Argenteuil"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "34752"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.416666666 45.683333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2773006"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lotbinière"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "34586"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.6 46.5167)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139588"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Côte Saint-Luc"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "34504"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.666666666 45.466666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q763526"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sept-Rivières"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "34358"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-66.616666666 50.133333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142271"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pointe-Claire"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "33488"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.816666666 45.45)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q143227"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Georges"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "32935"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.666666666 46.116666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141937"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Val-d'Or"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "32752"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-77.789166666 48.101944444)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517286"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Le Val-Saint-François"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "31551"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.0167 45.5667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142069"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Chambly"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "31444"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.2833 45.45)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1511248"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Le Domaine-du-Roy"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "31095"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.35 48.483333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q528670"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Les Jardins-de-Napierville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30339"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5167 45.1667)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141973"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Alma"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30331"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.65 48.55)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1517234"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Côte-de-Beaupré"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30240"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.9 47.05)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q972230"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Manicouagan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30158"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.15 49.216666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "municipalité régionale de comté du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142156"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sainte-Julie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30045"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.333333333 45.583333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142064"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Constant"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "29954"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.566666666 45.366666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142004"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Magog"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "28312"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.15 45.266666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139474"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Boisbriand"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "28308"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.833333333 45.616666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142087"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sainte-Thérèse"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26533"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.843055555 45.640277777)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142092"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Prairie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26406"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5 45.416666666)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142333"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Bruno-de-Montarville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26273"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.35 45.533333333)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec | territoire hors MRC au Québec"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141995"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Thetford Mines"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26072"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.3 46.1)"
+     },
+     "types": {
+      "type": "literal",
+      "value": "ville du Québec"
+     }
+    }
+   ]
+  }
+ },
+ "query_audit": "SELECT DISTINCT ?item ?label ?pop ?coord WHERE {\n  ?item wdt:P31/wdt:P279* wd:Q3327873 .\n  ?item p:P1082 ?st .\n  ?st ps:P1082 ?pop ; pq:P585 ?pit .\n  FILTER(YEAR(?pit) = 2021 && xsd:integer(?pop) > 25000)\n  ?item wdt:P625 ?coord .\n  ?item rdfs:label ?label . FILTER(LANG(?label) = \"fr\")\n}\nORDER BY DESC(xsd:integer(?pop))\nLIMIT 400\n",
+ "http_status_audit": 200,
+ "audit_class": {
+  "head": {
+   "vars": [
+    "item",
+    "label",
+    "pop",
+    "coord"
+   ]
+  },
+  "results": {
+   "bindings": [
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q340"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Montréal"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "1762949"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5868411 45.5033426)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2145"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Québec"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "549459"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.224167 46.816111)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141810"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Laval"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "438366"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.75 45.5833)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141844"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Gatineau"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "291041"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-75.65 45.483333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139398"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Longueuil"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "254483"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.438027777 45.514083333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139473"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sherbrooke"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "172950"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.9 45.4)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139208"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Lévis"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "149683"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.1833 46.8)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139229"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saguenay"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "144723"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.0667 48.4167)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q44012"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Trois-Rivières"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "139163"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.55 46.35)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139190"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Terrebonne"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119944"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.633333333 45.7)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q18534081"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Tétreaultville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "119944"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.525277777 45.603055555)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141977"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Jean-sur-Richelieu"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "97873"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.253611111 45.305555555)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139104"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Brossard"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "91525"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.45 45.4667)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139427"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Repentigny"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "86100"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.466666666 45.733333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141724"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Jérôme"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "80213"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.0 45.783333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141940"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Drummondville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "79258"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.483333333 45.883333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141881"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Granby"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "69025"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.733333333 45.4)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141921"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mirabel"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "61108"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.083333333 45.65)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139568"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Blainville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "59819"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.883333333 45.666666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141873"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Hyacinthe"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "57239"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.95 45.616666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141748"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mascouche"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "51183"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.59956 45.74965)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141748"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Mascouche"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "51183"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.6 45.75)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141522"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Châteauguay"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "50815"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.75 45.383333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141980"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Shawinigan"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "49620"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.75 46.5667)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1336"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rimouski"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "48935"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-68.533333333 48.45)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141998"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Dollard-des-Ormeaux"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "48403"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.816666666 45.483333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141731"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Victoriaville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "47760"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.966666666 46.05)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141505"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Eustache"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "45276"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.9 45.566666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141711"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Vaudreuil-Dorion"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "43268"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.033333333 45.4)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142039"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Salaberry-de-Valleyfield"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "42787"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-74.133333333 45.25)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141804"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Rouyn-Noranda"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "42313"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-79.0167 48.2333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141924"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Boucherville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "41743"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.45 45.6)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142010"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sorel-Tracy"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "35165"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.1167 46.0333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142271"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Pointe-Claire"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "33488"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.816666666 45.45)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q143227"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Georges"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "32935"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-70.666666666 46.116666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141937"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Val-d'Or"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "32752"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-77.789166666 48.101944444)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142069"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Chambly"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "31444"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.2833 45.45)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141973"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Alma"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30331"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.65 48.55)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142156"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sainte-Julie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "30045"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.333333333 45.583333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142064"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Constant"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "29954"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.566666666 45.366666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142004"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Magog"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "28312"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-72.15 45.266666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q139474"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Boisbriand"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "28308"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.833333333 45.616666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142087"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Sainte-Thérèse"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26533"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.843055555 45.640277777)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142092"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "La Prairie"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26406"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.5 45.416666666)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142333"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Saint-Bruno-de-Montarville"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26273"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-73.35 45.533333333)"
+     }
+    },
+    {
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q141995"
+     },
+     "label": {
+      "xml:lang": "fr",
+      "type": "literal",
+      "value": "Thetford Mines"
+     },
+     "pop": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "type": "literal",
+      "value": "26072"
+     },
+     "coord": {
+      "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "type": "literal",
+      "value": "Point(-71.3 46.1)"
+     }
+    }
+   ]
+  }
+ },
+ "licence": {
+  "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "retrieved_from": "https://www.wikidata.org/w/api.php?action=parse&page=Wikidata:Licensing&prop=wikitext&format=json&formatversion=2",
+  "text": "All data in Wikidata has a CC0 license. Wikidata avoids hosting data that lacks a CC0 license."
+ }
+}

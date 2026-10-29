@@ -1,0 +1,4237 @@
+{
+  "book": {
+    "gutenberg_id": 13525,
+    "title": "Maria Chapdelaine"
+  },
+  "cut": {
+    "start_marker": "first line equal to 'CHAPITRE I' (regex ^CHAPITRE I$)",
+    "end_marker": "last occurrence of 'bois pour les semailles.' (final sentence; the ebook ends there)",
+    "start_index": 264,
+    "end_index": 272525,
+    "stripped_text_chars": 272531,
+    "novel_chars": 272261,
+    "head_removed": [
+      "This text was adapted from that found at the Bibliothèque virtuelle.",
+      "http://www.fsj.ualberta.ca/biblio/default.htm",
+      ""
+    ],
+    "first_200": "CHAPITRE I\n\n\n«Ite missa est.»\n\nLa porte de l'église de Péribonka s'ouvrit et les\nhommes commencèrent à sortir.\n\nUn instant plus tôt elle avait paru désolée, cette église, juchée\nau bord du chemin sur ",
+    "last_200": "ieux l'attente.\n\nMaria lui répondit:\n\n--Oui... Si vous voulez je vous marierai comme vous m'avez demandé,\nle printemps d'après ce printemps-ci, quand les hommes reviendront du\nbois pour les semailles."
+  },
+  "class_pipeline": {
+    "steps_tokens": {
+      "book_whitespace_tokens": 46076,
+      "after_punctuation_to_space": 49440,
+      "after_printable_filter": 52384,
+      "after_whitespace_collapse": 52384,
+      "after_drop_allcaps": 52355,
+      "after_stopwords_digits_len3": 33783,
+      "after_plural_merge": 33783
+    },
+    "distinct_before_merge": 5886,
+    "distinct_after_merge": 5064,
+    "allcaps_dropped": 29,
+    "dropped_by_english_stopwords": 4075,
+    "dropped_as_digits": 0,
+    "dropped_as_two_chars_or_fewer": 14497,
+    "top100_fragments_of_accented_words": [
+      "tait",
+      "rent",
+      "tre",
+      "apr",
+      "fran",
+      "taient",
+      "gar",
+      "ois",
+      "res"
+    ],
+    "chars_removed_by_printable_filter": 7294,
+    "removed_chars_top": [
+      [
+        "é",
+        3511
+      ],
+      [
+        "à",
+        1084
+      ],
+      [
+        "è",
+        990
+      ],
+      [
+        "ê",
+        506
+      ],
+      [
+        "ç",
+        332
+      ],
+      [
+        "ô",
+        141
+      ],
+      [
+        "û",
+        131
+      ],
+      [
+        "â",
+        120
+      ],
+      [
+        "î",
+        103
+      ],
+      [
+        "ù",
+        94
+      ],
+      [
+        "«",
+        84
+      ],
+      [
+        "»",
+        70
+      ]
+    ],
+    "tokens_with_any_removed_char": 6724,
+    "tokens_with_removed_letter": 6595,
+    "tokens_split_in_two_or_more": 3713,
+    "tokens_left_as_one_truncated_piece": 1967,
+    "tokens_vanished_entirely": 915,
+    "top25": [
+      {
+        "word": "les",
+        "count": 1094,
+        "fragment_share": 0.008
+      },
+      {
+        "word": "des",
+        "count": 622,
+        "fragment_share": 0.008
+      },
+      {
+        "word": "que",
+        "count": 571,
+        "fragment_share": 0.011
+      },
+      {
+        "word": "une",
+        "count": 554,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "qui",
+        "count": 485,
+        "fragment_share": 0.004
+      },
+      {
+        "word": "elle",
+        "count": 427,
+        "fragment_share": 0.002
+      },
+      {
+        "word": "dans",
+        "count": 382,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "pas",
+        "count": 352,
+        "fragment_share": 0.08
+      },
+      {
+        "word": "est",
+        "count": 325,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "pour",
+        "count": 311,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "tait",
+        "count": 299,
+        "fragment_share": 1.0
+      },
+      {
+        "word": "son",
+        "count": 268,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "sur",
+        "count": 263,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "mai",
+        "count": 262,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "avec",
+        "count": 257,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "plu",
+        "count": 250,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "comme",
+        "count": 231,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "avait",
+        "count": 228,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "vous",
+        "count": 223,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "leur",
+        "count": 204,
+        "fragment_share": 0.005
+      },
+      {
+        "word": "Maria",
+        "count": 201,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "ils",
+        "count": 198,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "tout",
+        "count": 196,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "lui",
+        "count": 192,
+        "fragment_share": 0.0
+      },
+      {
+        "word": "autre",
+        "count": 180,
+        "fragment_share": 0.0
+      }
+    ],
+    "top25_fragments_of_accented_words": [
+      "tait"
+    ]
+  },
+  "improved_pipeline": {
+    "tokenization": {
+      "letter_tokens": 49316,
+      "allcaps_dropped": 29,
+      "digit_tokens_never_tokenized": 0
+    },
+    "elided_forms_dropped": {
+      "c": 244,
+      "d": 586,
+      "j": 91,
+      "jusqu": 21,
+      "l": 627,
+      "lorsqu": 16,
+      "m": 44,
+      "n": 284,
+      "puisqu": 2,
+      "qu": 411,
+      "quelqu": 6,
+      "s": 334,
+      "t": 45
+    },
+    "elided_tokens_dropped_total": 2711,
+    "len_lt3_non_elided_dropped": 12365,
+    "english_stopwords_removed_from_french": 15,
+    "english_stopwords_top": [
+      [
+        "ours",
+        10
+      ],
+      [
+        "don",
+        4
+      ],
+      [
+        "but",
+        1
+      ]
+    ],
+    "french_nltk_stopword_tokens_removed": 9039,
+    "added_function_words": {
+      "plus": 248,
+      "comme": 231,
+      "tout": 196,
+      "bien": 176,
+      "sans": 165,
+      "encore": 133,
+      "quand": 125,
+      "peu": 123,
+      "dit": 110,
+      "deux": 104,
+      "faire": 100,
+      "tous": 98,
+      "fois": 94,
+      "rien": 93,
+      "après": 92,
+      "autre": 90,
+      "autres": 90,
+      "quelques": 86,
+      "aussi": 84,
+      "leurs": 77,
+      "puis": 74,
+      "être": 74,
+      "vers": 73,
+      "peut": 72,
+      "dire": 71,
+      "fait": 71,
+      "toujours": 68,
+      "trois": 68,
+      "cela": 65,
+      "avant": 60,
+      "cette": 60,
+      "toutes": 60,
+      "presque": 59,
+      "près": 57,
+      "quelque": 54,
+      "toute": 48,
+      "déjà": 46,
+      "fit": 44,
+      "chaque": 39,
+      "alors": 38,
+      "avoir": 37,
+      "dont": 26,
+      "chacun": 25,
+      "vint": 24,
+      "faut": 22,
+      "ainsi": 19
+    },
+    "added_function_words_tokens_removed": 3869,
+    "residual_top_after_nltk": [
+      [
+        "plus",
+        248
+      ],
+      [
+        "comme",
+        231
+      ],
+      [
+        "maria",
+        201
+      ],
+      [
+        "tout",
+        196
+      ],
+      [
+        "bien",
+        176
+      ],
+      [
+        "sans",
+        165
+      ],
+      [
+        "chapdelaine",
+        161
+      ],
+      [
+        "bois",
+        157
+      ],
+      [
+        "encore",
+        133
+      ],
+      [
+        "terre",
+        132
+      ],
+      [
+        "quand",
+        125
+      ],
+      [
+        "peu",
+        123
+      ],
+      [
+        "dit",
+        110
+      ],
+      [
+        "père",
+        108
+      ],
+      [
+        "deux",
+        104
+      ],
+      [
+        "maison",
+        101
+      ],
+      [
+        "faire",
+        100
+      ],
+      [
+        "tous",
+        98
+      ],
+      [
+        "fois",
+        94
+      ],
+      [
+        "rien",
+        93
+      ],
+      [
+        "après",
+        92
+      ],
+      [
+        "autre",
+        90
+      ],
+      [
+        "autres",
+        90
+      ],
+      [
+        "mère",
+        87
+      ],
+      [
+        "quelques",
+        86
+      ],
+      [
+        "aussi",
+        84
+      ],
+      [
+        "neige",
+        83
+      ],
+      [
+        "temps",
+        83
+      ],
+      [
+        "leurs",
+        77
+      ],
+      [
+        "grand",
+        75
+      ],
+      [
+        "puis",
+        74
+      ],
+      [
+        "vie",
+        74
+      ],
+      [
+        "être",
+        74
+      ],
+      [
+        "vers",
+        73
+      ],
+      [
+        "yeux",
+        73
+      ],
+      [
+        "hommes",
+        72
+      ],
+      [
+        "peut",
+        72
+      ],
+      [
+        "dire",
+        71
+      ],
+      [
+        "fait",
+        71
+      ],
+      [
+        "toujours",
+        68
+      ],
+      [
+        "trois",
+        68
+      ],
+      [
+        "cela",
+        65
+      ],
+      [
+        "pays",
+        63
+      ],
+      [
+        "avant",
+        60
+      ],
+      [
+        "cette",
+        60
+      ],
+      [
+        "toutes",
+        60
+      ],
+      [
+        "presque",
+        59
+      ],
+      [
+        "françois",
+        58
+      ],
+      [
+        "près",
+        57
+      ],
+      [
+        "jour",
+        56
+      ],
+      [
+        "saint",
+        56
+      ],
+      [
+        "bon",
+        55
+      ],
+      [
+        "soir",
+        55
+      ],
+      [
+        "quelque",
+        54
+      ],
+      [
+        "homme",
+        53
+      ],
+      [
+        "monde",
+        53
+      ],
+      [
+        "voix",
+        53
+      ],
+      [
+        "hiver",
+        51
+      ],
+      [
+        "loin",
+        51
+      ],
+      [
+        "printemps",
+        51
+      ],
+      [
+        "tête",
+        50
+      ],
+      [
+        "toute",
+        48
+      ],
+      [
+        "coeur",
+        47
+      ],
+      [
+        "heure",
+        47
+      ],
+      [
+        "nouveau",
+        47
+      ],
+      [
+        "paradis",
+        47
+      ],
+      [
+        "déjà",
+        46
+      ],
+      [
+        "air",
+        44
+      ],
+      [
+        "eutrope",
+        44
+      ],
+      [
+        "fit",
+        44
+      ]
+    ],
+    "stages": {
+      "a_unicode_tokens_lowercase_only": {
+        "tokens": 49287,
+        "distinct": 6370,
+        "tokens_with_accent": 6595,
+        "top10": [
+          [
+            "de",
+            2016
+          ],
+          [
+            "et",
+            1719
+          ],
+          [
+            "la",
+            1440
+          ],
+          [
+            "le",
+            1112
+          ],
+          [
+            "les",
+            1085
+          ],
+          [
+            "à",
+            906
+          ],
+          [
+            "un",
+            663
+          ],
+          [
+            "il",
+            654
+          ],
+          [
+            "l",
+            627
+          ],
+          [
+            "des",
+            617
+          ]
+        ]
+      },
+      "a_plus_len3_elision_and_english_stopwords": {
+        "tokens": 34196,
+        "distinct": 6298,
+        "tokens_with_accent": 5321,
+        "top10": [
+          [
+            "les",
+            1085
+          ],
+          [
+            "des",
+            617
+          ],
+          [
+            "que",
+            565
+          ],
+          [
+            "une",
+            550
+          ],
+          [
+            "qui",
+            483
+          ],
+          [
+            "elle",
+            395
+          ],
+          [
+            "dans",
+            382
+          ],
+          [
+            "est",
+            325
+          ],
+          [
+            "pas",
+            324
+          ],
+          [
+            "pour",
+            311
+          ]
+        ]
+      },
+      "b1_french_nltk_stopwords_instead": {
+        "tokens": 25172,
+        "distinct": 6209,
+        "tokens_with_accent": 4707,
+        "top10": [
+          [
+            "plus",
+            248
+          ],
+          [
+            "comme",
+            231
+          ],
+          [
+            "maria",
+            201
+          ],
+          [
+            "tout",
+            196
+          ],
+          [
+            "bien",
+            176
+          ],
+          [
+            "sans",
+            165
+          ],
+          [
+            "chapdelaine",
+            161
+          ],
+          [
+            "bois",
+            157
+          ],
+          [
+            "encore",
+            133
+          ],
+          [
+            "terre",
+            132
+          ]
+        ]
+      },
+      "b2_plus_added_function_words": {
+        "tokens": 21303,
+        "distinct": 6163,
+        "tokens_with_accent": 4438,
+        "top10": [
+          [
+            "maria",
+            201
+          ],
+          [
+            "chapdelaine",
+            161
+          ],
+          [
+            "bois",
+            157
+          ],
+          [
+            "terre",
+            132
+          ],
+          [
+            "père",
+            108
+          ],
+          [
+            "maison",
+            101
+          ],
+          [
+            "mère",
+            87
+          ],
+          [
+            "neige",
+            83
+          ],
+          [
+            "temps",
+            83
+          ],
+          [
+            "grand",
+            75
+          ]
+        ]
+      },
+      "c1_plural_merge_only": {
+        "tokens": 21303,
+        "distinct": 5483,
+        "tokens_with_accent": 4438,
+        "top10": [
+          [
+            "maria",
+            201
+          ],
+          [
+            "chapdelaine",
+            161
+          ],
+          [
+            "bois",
+            157
+          ],
+          [
+            "terre",
+            134
+          ],
+          [
+            "homme",
+            125
+          ],
+          [
+            "maison",
+            125
+          ],
+          [
+            "père",
+            109
+          ],
+          [
+            "jour",
+            99
+          ],
+          [
+            "grand",
+            94
+          ],
+          [
+            "mère",
+            87
+          ]
+        ]
+      },
+      "c2_plural_and_feminine_merge": {
+        "tokens": 21303,
+        "distinct": 5304,
+        "tokens_with_accent": 4438,
+        "top10": [
+          [
+            "maria",
+            201
+          ],
+          [
+            "chapdelaine",
+            161
+          ],
+          [
+            "bois",
+            157
+          ],
+          [
+            "grand",
+            154
+          ],
+          [
+            "terre",
+            134
+          ],
+          [
+            "homme",
+            125
+          ],
+          [
+            "maison",
+            125
+          ],
+          [
+            "père",
+            109
+          ],
+          [
+            "jour",
+            99
+          ],
+          [
+            "mère",
+            87
+          ]
+        ]
+      },
+      "d_names_removed": {
+        "tokens": 20495,
+        "distinct": 5282,
+        "tokens_with_accent": 4267,
+        "top10": [
+          [
+            "bois",
+            157
+          ],
+          [
+            "grand",
+            154
+          ],
+          [
+            "terre",
+            134
+          ],
+          [
+            "homme",
+            125
+          ],
+          [
+            "maison",
+            125
+          ],
+          [
+            "père",
+            109
+          ],
+          [
+            "jour",
+            99
+          ],
+          [
+            "mère",
+            87
+          ],
+          [
+            "neige",
+            86
+          ],
+          [
+            "temps",
+            83
+          ]
+        ]
+      }
+    },
+    "merge_groups_top": [
+      [
+        "grand",
+        [
+          "grand",
+          "grande",
+          "grandes",
+          "grands"
+        ]
+      ],
+      [
+        "terre",
+        [
+          "terre",
+          "terres"
+        ]
+      ],
+      [
+        "homme",
+        [
+          "hommes",
+          "homme"
+        ]
+      ],
+      [
+        "maison",
+        [
+          "maison",
+          "maisons"
+        ]
+      ],
+      [
+        "père",
+        [
+          "père",
+          "pères"
+        ]
+      ],
+      [
+        "jour",
+        [
+          "jour",
+          "jours"
+        ]
+      ],
+      [
+        "neige",
+        [
+          "neige",
+          "neiges"
+        ]
+      ],
+      [
+        "saint",
+        [
+          "saint",
+          "sainte",
+          "saints"
+        ]
+      ],
+      [
+        "heure",
+        [
+          "heure",
+          "heures"
+        ]
+      ],
+      [
+        "bon",
+        [
+          "bon",
+          "bons"
+        ]
+      ],
+      [
+        "main",
+        [
+          "mains",
+          "main"
+        ]
+      ],
+      [
+        "soir",
+        [
+          "soir",
+          "soirs"
+        ]
+      ],
+      [
+        "fort",
+        [
+          "fort",
+          "forte",
+          "forts",
+          "fortes"
+        ]
+      ],
+      [
+        "petit",
+        [
+          "petite",
+          "petit",
+          "petites",
+          "petits"
+        ]
+      ],
+      [
+        "chemin",
+        [
+          "chemin",
+          "chemins"
+        ]
+      ],
+      [
+        "hiver",
+        [
+          "hiver",
+          "hivers"
+        ]
+      ],
+      [
+        "chose",
+        [
+          "chose",
+          "choses"
+        ]
+      ],
+      [
+        "venu",
+        [
+          "venu",
+          "venus",
+          "venue",
+          "venues"
+        ]
+      ],
+      [
+        "coeur",
+        [
+          "coeur",
+          "coeurs"
+        ]
+      ],
+      [
+        "froid",
+        [
+          "froid",
+          "froide",
+          "froids",
+          "froides"
+        ]
+      ],
+      [
+        "tête",
+        [
+          "tête",
+          "têtes"
+        ]
+      ],
+      [
+        "plein",
+        [
+          "plein",
+          "pleine",
+          "pleins",
+          "pleines"
+        ]
+      ],
+      [
+        "seul",
+        [
+          "seul",
+          "seule",
+          "seuls",
+          "seules"
+        ]
+      ],
+      [
+        "belle",
+        [
+          "belle",
+          "belles"
+        ]
+      ],
+      [
+        "mort",
+        [
+          "mort",
+          "morte",
+          "morts"
+        ]
+      ]
+    ],
+    "merge_groups_total": 718,
+    "merge_groups_short_stem": [
+      [
+        "père",
+        [
+          "père",
+          "pères"
+        ]
+      ],
+      [
+        "jour",
+        [
+          "jour",
+          "jours"
+        ]
+      ],
+      [
+        "bon",
+        [
+          "bon",
+          "bons"
+        ]
+      ],
+      [
+        "main",
+        [
+          "mains",
+          "main"
+        ]
+      ],
+      [
+        "soir",
+        [
+          "soir",
+          "soirs"
+        ]
+      ],
+      [
+        "fort",
+        [
+          "fort",
+          "forte",
+          "forts",
+          "fortes"
+        ]
+      ],
+      [
+        "venu",
+        [
+          "venu",
+          "venus",
+          "venue",
+          "venues"
+        ]
+      ],
+      [
+        "tête",
+        [
+          "tête",
+          "têtes"
+        ]
+      ],
+      [
+        "seul",
+        [
+          "seul",
+          "seule",
+          "seuls",
+          "seules"
+        ]
+      ],
+      [
+        "mort",
+        [
+          "mort",
+          "morte",
+          "morts"
+        ]
+      ],
+      [
+        "nuit",
+        [
+          "nuit",
+          "nuits"
+        ]
+      ],
+      [
+        "air",
+        [
+          "air",
+          "airs"
+        ]
+      ],
+      [
+        "haut",
+        [
+          "haut",
+          "haute",
+          "hautes",
+          "hauts"
+        ]
+      ],
+      [
+        "coup",
+        [
+          "coup",
+          "coups"
+        ]
+      ],
+      [
+        "dur",
+        [
+          "dur",
+          "dure",
+          "dures",
+          "durs"
+        ]
+      ],
+      [
+        "côté",
+        [
+          "côté",
+          "côtés"
+        ]
+      ],
+      [
+        "long",
+        [
+          "long",
+          "longs"
+        ]
+      ],
+      [
+        "fini",
+        [
+          "fini",
+          "finie"
+        ]
+      ],
+      [
+        "mot",
+        [
+          "mots",
+          "mot"
+        ]
+      ],
+      [
+        "nom",
+        [
+          "noms",
+          "nom"
+        ]
+      ],
+      [
+        "pied",
+        [
+          "pieds",
+          "pied"
+        ]
+      ],
+      [
+        "fin",
+        [
+          "fin",
+          "fine",
+          "fines",
+          "fins"
+        ]
+      ],
+      [
+        "vrai",
+        [
+          "vrai",
+          "vraie",
+          "vraies"
+        ]
+      ],
+      [
+        "foin",
+        [
+          "foin",
+          "foins"
+        ]
+      ],
+      [
+        "pipe",
+        [
+          "pipe",
+          "pipes"
+        ]
+      ],
+      [
+        "état",
+        [
+          "états",
+          "état"
+        ]
+      ],
+      [
+        "cent",
+        [
+          "cents",
+          "cent"
+        ]
+      ],
+      [
+        "sûr",
+        [
+          "sûr",
+          "sûre",
+          "sûres",
+          "sûrs"
+        ]
+      ],
+      [
+        "brun",
+        [
+          "brune",
+          "brunes",
+          "brun"
+        ]
+      ],
+      [
+        "demi",
+        [
+          "demi",
+          "demie"
+        ]
+      ],
+      [
+        "gris",
+        [
+          "gris",
+          "grise",
+          "grises"
+        ]
+      ],
+      [
+        "mur",
+        [
+          "mur",
+          "murs"
+        ]
+      ],
+      [
+        "cri",
+        [
+          "cri",
+          "cris"
+        ]
+      ],
+      [
+        "lac",
+        [
+          "lac",
+          "lacs"
+        ]
+      ],
+      [
+        "fête",
+        [
+          "fête",
+          "fêtes"
+        ]
+      ],
+      [
+        "midi",
+        [
+          "midi",
+          "midis"
+        ]
+      ],
+      [
+        "mis",
+        [
+          "mis",
+          "mises"
+        ]
+      ],
+      [
+        "noir",
+        [
+          "noires",
+          "noir",
+          "noire"
+        ]
+      ],
+      [
+        "bleu",
+        [
+          "bleu",
+          "bleue",
+          "bleues",
+          "bleus"
+        ]
+      ],
+      [
+        "pâle",
+        [
+          "pâle",
+          "pâles"
+        ]
+      ],
+      [
+        "quel",
+        [
+          "quels",
+          "quel"
+        ]
+      ],
+      [
+        "bord",
+        [
+          "bord",
+          "bords"
+        ]
+      ],
+      [
+        "prêt",
+        [
+          "prêt",
+          "prête",
+          "prêts"
+        ]
+      ],
+      [
+        "rire",
+        [
+          "rire",
+          "rires"
+        ]
+      ],
+      [
+        "face",
+        [
+          "face",
+          "faces"
+        ]
+      ],
+      [
+        "vert",
+        [
+          "vert",
+          "verts",
+          "verte"
+        ]
+      ],
+      [
+        "vif",
+        [
+          "vif",
+          "vifs"
+        ]
+      ],
+      [
+        "race",
+        [
+          "race",
+          "races"
+        ]
+      ],
+      [
+        "rare",
+        [
+          "rare",
+          "rares"
+        ]
+      ],
+      [
+        "rose",
+        [
+          "rose",
+          "roses"
+        ]
+      ],
+      [
+        "semé",
+        [
+          "semé",
+          "semés",
+          "semée"
+        ]
+      ],
+      [
+        "idée",
+        [
+          "idée",
+          "idées"
+        ]
+      ],
+      [
+        "joie",
+        [
+          "joie",
+          "joies"
+        ]
+      ],
+      [
+        "vécu",
+        [
+          "vécu",
+          "vécue"
+        ]
+      ],
+      [
+        "allé",
+        [
+          "allé",
+          "allée",
+          "allés"
+        ]
+      ],
+      [
+        "gelé",
+        [
+          "gelées",
+          "gelé",
+          "gelée"
+        ]
+      ],
+      [
+        "cité",
+        [
+          "cités",
+          "cité"
+        ]
+      ],
+      [
+        "vide",
+        [
+          "vide",
+          "vides"
+        ]
+      ],
+      [
+        "vue",
+        [
+          "vue",
+          "vues"
+        ]
+      ],
+      [
+        "coin",
+        [
+          "coin",
+          "coins"
+        ]
+      ],
+      [
+        "côte",
+        [
+          "côte",
+          "côtes"
+        ]
+      ],
+      [
+        "muet",
+        [
+          "muet",
+          "muets"
+        ]
+      ],
+      [
+        "neuf",
+        [
+          "neuf",
+          "neufs"
+        ]
+      ],
+      [
+        "plat",
+        [
+          "plat",
+          "plate",
+          "plats"
+        ]
+      ],
+      [
+        "aimé",
+        [
+          "aimé",
+          "aimée",
+          "aimés"
+        ]
+      ],
+      [
+        "béni",
+        [
+          "bénie",
+          "béni"
+        ]
+      ],
+      [
+        "cuit",
+        [
+          "cuite",
+          "cuit"
+        ]
+      ],
+      [
+        "sec",
+        [
+          "sec",
+          "secs"
+        ]
+      ],
+      [
+        "âme",
+        [
+          "âme",
+          "âmes"
+        ]
+      ],
+      [
+        "abri",
+        [
+          "abri",
+          "abris"
+        ]
+      ],
+      [
+        "banc",
+        [
+          "banc",
+          "bancs"
+        ]
+      ],
+      [
+        "cran",
+        [
+          "cran",
+          "crans"
+        ]
+      ],
+      [
+        "gréé",
+        [
+          "gréé",
+          "gréés"
+        ]
+      ],
+      [
+        "gêné",
+        [
+          "gênée",
+          "gêné"
+        ]
+      ],
+      [
+        "lot",
+        [
+          "lots",
+          "lot"
+        ]
+      ],
+      [
+        "rive",
+        [
+          "rive",
+          "rives"
+        ]
+      ],
+      [
+        "sac",
+        [
+          "sac",
+          "sacs"
+        ]
+      ],
+      [
+        "ému",
+        [
+          "émue",
+          "ému"
+        ]
+      ],
+      [
+        "bête",
+        [
+          "bête",
+          "bêtes"
+        ]
+      ],
+      [
+        "cher",
+        [
+          "cher",
+          "chers"
+        ]
+      ],
+      [
+        "fou",
+        [
+          "fou",
+          "fous"
+        ]
+      ],
+      [
+        "gai",
+        [
+          "gai",
+          "gaie",
+          "gais"
+        ]
+      ],
+      [
+        "lame",
+        [
+          "lame",
+          "lames"
+        ]
+      ],
+      [
+        "mer",
+        [
+          "mer",
+          "mers"
+        ]
+      ],
+      [
+        "mine",
+        [
+          "mine",
+          "mines"
+        ]
+      ],
+      [
+        "mûr",
+        [
+          "mûrs",
+          "mûr"
+        ]
+      ],
+      [
+        "reçu",
+        [
+          "reçu",
+          "reçus"
+        ]
+      ],
+      [
+        "soin",
+        [
+          "soin",
+          "soins"
+        ]
+      ],
+      [
+        "tenu",
+        [
+          "tenu",
+          "tenue"
+        ]
+      ],
+      [
+        "trou",
+        [
+          "trous",
+          "trou"
+        ]
+      ],
+      [
+        "uni",
+        [
+          "unis",
+          "uni",
+          "unie"
+        ]
+      ],
+      [
+        "ange",
+        [
+          "anges",
+          "ange"
+        ]
+      ],
+      [
+        "bloc",
+        [
+          "bloc",
+          "blocs"
+        ]
+      ],
+      [
+        "brut",
+        [
+          "bruts",
+          "brut"
+        ]
+      ],
+      [
+        "dru",
+        [
+          "drus",
+          "dru"
+        ]
+      ],
+      [
+        "figé",
+        [
+          "figé",
+          "figée",
+          "figés"
+        ]
+      ],
+      [
+        "goût",
+        [
+          "goûts",
+          "goût"
+        ]
+      ],
+      [
+        "loi",
+        [
+          "lois",
+          "loi"
+        ]
+      ],
+      [
+        "pan",
+        [
+          "pan",
+          "pans"
+        ]
+      ],
+      [
+        "payé",
+        [
+          "payé",
+          "payés"
+        ]
+      ],
+      [
+        "pile",
+        [
+          "piles",
+          "pile"
+        ]
+      ],
+      [
+        "rude",
+        [
+          "rude",
+          "rudes"
+        ]
+      ],
+      [
+        "sien",
+        [
+          "siens",
+          "sien"
+        ]
+      ],
+      [
+        "égal",
+        [
+          "égale",
+          "égal"
+        ]
+      ],
+      [
+        "aigu",
+        [
+          "aigu",
+          "aigus"
+        ]
+      ],
+      [
+        "bref",
+        [
+          "bref",
+          "brefs"
+        ]
+      ],
+      [
+        "ivre",
+        [
+          "ivre",
+          "ivres"
+        ]
+      ],
+      [
+        "jeté",
+        [
+          "jeté",
+          "jetés"
+        ]
+      ],
+      [
+        "mêlé",
+        [
+          "mêlé",
+          "mêlés"
+        ]
+      ],
+      [
+        "net",
+        [
+          "net",
+          "nets"
+        ]
+      ],
+      [
+        "pont",
+        [
+          "pont",
+          "ponts"
+        ]
+      ],
+      [
+        "rat",
+        [
+          "rat",
+          "rats"
+        ]
+      ],
+      [
+        "roi",
+        [
+          "roi",
+          "rois"
+        ]
+      ],
+      [
+        "usé",
+        [
+          "usé",
+          "usés"
+        ]
+      ]
+    ],
+    "top25": [
+      [
+        "maria",
+        201
+      ],
+      [
+        "chapdelaine",
+        161
+      ],
+      [
+        "bois",
+        157
+      ],
+      [
+        "grand",
+        154
+      ],
+      [
+        "terre",
+        134
+      ],
+      [
+        "homme",
+        125
+      ],
+      [
+        "maison",
+        125
+      ],
+      [
+        "père",
+        109
+      ],
+      [
+        "jour",
+        99
+      ],
+      [
+        "mère",
+        87
+      ],
+      [
+        "neige",
+        86
+      ],
+      [
+        "temps",
+        83
+      ],
+      [
+        "vie",
+        74
+      ],
+      [
+        "yeux",
+        73
+      ],
+      [
+        "saint",
+        70
+      ],
+      [
+        "heure",
+        64
+      ],
+      [
+        "pays",
+        63
+      ],
+      [
+        "bon",
+        62
+      ],
+      [
+        "main",
+        61
+      ],
+      [
+        "soir",
+        61
+      ],
+      [
+        "fort",
+        58
+      ],
+      [
+        "françois",
+        58
+      ],
+      [
+        "petit",
+        58
+      ],
+      [
+        "chemin",
+        55
+      ],
+      [
+        "hiver",
+        55
+      ]
+    ],
+    "top25_no_names": [
+      [
+        "bois",
+        157
+      ],
+      [
+        "grand",
+        154
+      ],
+      [
+        "terre",
+        134
+      ],
+      [
+        "homme",
+        125
+      ],
+      [
+        "maison",
+        125
+      ],
+      [
+        "père",
+        109
+      ],
+      [
+        "jour",
+        99
+      ],
+      [
+        "mère",
+        87
+      ],
+      [
+        "neige",
+        86
+      ],
+      [
+        "temps",
+        83
+      ],
+      [
+        "vie",
+        74
+      ],
+      [
+        "yeux",
+        73
+      ],
+      [
+        "saint",
+        70
+      ],
+      [
+        "heure",
+        64
+      ],
+      [
+        "pays",
+        63
+      ],
+      [
+        "bon",
+        62
+      ],
+      [
+        "main",
+        61
+      ],
+      [
+        "soir",
+        61
+      ],
+      [
+        "fort",
+        58
+      ],
+      [
+        "petit",
+        58
+      ],
+      [
+        "chemin",
+        55
+      ],
+      [
+        "hiver",
+        55
+      ],
+      [
+        "chose",
+        54
+      ],
+      [
+        "monde",
+        53
+      ],
+      [
+        "voix",
+        53
+      ]
+    ]
+  },
+  "names": {
+    "maria": {
+      "form": "Maria",
+      "any_case": 201,
+      "capitalized_form": 201
+    },
+    "samuel": {
+      "form": "Samuel",
+      "any_case": 24,
+      "capitalized_form": 24
+    },
+    "chapdelaine": {
+      "form": "Chapdelaine",
+      "any_case": 161,
+      "capitalized_form": 161
+    },
+    "laura": {
+      "form": "Laura",
+      "any_case": 6,
+      "capitalized_form": 6
+    },
+    "eutrope": {
+      "form": "Eutrope",
+      "any_case": 44,
+      "capitalized_form": 44
+    },
+    "gagnon": {
+      "form": "Gagnon",
+      "any_case": 27,
+      "capitalized_form": 27
+    },
+    "françois": {
+      "form": "François",
+      "any_case": 58,
+      "capitalized_form": 58
+    },
+    "paradis": {
+      "form": "Paradis",
+      "any_case": 47,
+      "capitalized_form": 43
+    },
+    "lorenzo": {
+      "form": "Lorenzo",
+      "any_case": 30,
+      "capitalized_form": 30
+    },
+    "surprenant": {
+      "form": "Surprenant",
+      "any_case": 35,
+      "capitalized_form": 35
+    },
+    "télesphore": {
+      "form": "Télesphore",
+      "any_case": 23,
+      "capitalized_form": 23
+    },
+    "titbé": {
+      "form": "Tit'Bé",
+      "any_case": 33,
+      "capitalized_form": 33
+    },
+    "éphrem": {
+      "form": "Éphrem",
+      "any_case": 14,
+      "capitalized_form": 14
+    },
+    "chaillon": {
+      "form": "Chaillon",
+      "any_case": 0,
+      "capitalized_form": 0
+    },
+    "légaré": {
+      "form": "Légaré",
+      "any_case": 17,
+      "capitalized_form": 17
+    },
+    "esdras": {
+      "form": "Esdras",
+      "any_case": 25,
+      "capitalized_form": 25
+    },
+    "dabé": {
+      "form": "Da'Bé",
+      "any_case": 16,
+      "capitalized_form": 16
+    },
+    "almarose": {
+      "form": "Alma-Rose",
+      "any_case": 17,
+      "capitalized_form": 17
+    },
+    "azalma": {
+      "form": "Azalma",
+      "any_case": 6,
+      "capitalized_form": 6
+    },
+    "edwige": {
+      "form": "Edwige",
+      "any_case": 10,
+      "capitalized_form": 10
+    },
+    "edwidge": {
+      "form": "Edwidge",
+      "any_case": 1,
+      "capitalized_form": 1
+    },
+    "wilfrid": {
+      "form": "Wilfrid",
+      "any_case": 3,
+      "capitalized_form": 3
+    },
+    "titsèbe": {
+      "form": "Tit'Sèbe",
+      "any_case": 10,
+      "capitalized_form": 10
+    },
+    "_note": "any_case = occurrences ignoring case; capitalized_form = occurrences written exactly as in 'form' (a common noun such as paradis or rose also occurs in lowercase); 49316 letter tokens in the book"
+  },
+  "names_tokens_removed_brief_list": 720,
+  "names_tokens_removed_extra_list": 88,
+  "bigrams_top15": [
+    [
+      "père chapdelaine",
+      53
+    ],
+    [
+      "mère chapdelaine",
+      52
+    ],
+    [
+      "françois paradis",
+      43
+    ],
+    [
+      "eutrope gagnon",
+      27
+    ],
+    [
+      "charles eugène",
+      20
+    ],
+    [
+      "lorenzo surprenant",
+      18
+    ],
+    [
+      "bon dieu",
+      17
+    ],
+    [
+      "samuel chapdelaine",
+      17
+    ],
+    [
+      "éphrem surprenant",
+      14
+    ],
+    [
+      "jeune homme",
+      13
+    ],
+    [
+      "saint henri",
+      12
+    ],
+    [
+      "edwige légaré",
+      9
+    ],
+    [
+      "nord ouest",
+      9
+    ],
+    [
+      "sol blanc",
+      9
+    ],
+    [
+      "belle vie",
+      8
+    ]
+  ],
+  "chapters": {
+    "method": "regex ^CHAPITRE ([IVX]+)$ over the cut novel, one chapter per heading to the next heading",
+    "headings_found": 16,
+    "numerals": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "V",
+      "VI",
+      "VII",
+      "VIII",
+      "IX",
+      "X",
+      "XI",
+      "XII",
+      "XIII",
+      "XIV",
+      "XV",
+      "XVI"
+    ],
+    "note": "16 chapters in this edition, not 12"
+  },
+  "chapter_distinctive_words": {
+    "I": {
+      "tokens": 2096,
+      "top5_by_lift": [
+        [
+          "abrupt",
+          3,
+          3,
+          10.16,
+          6.96
+        ],
+        [
+          "cléophas",
+          3,
+          3,
+          10.16,
+          6.96
+        ],
+        [
+          "désolation",
+          3,
+          3,
+          10.16,
+          6.96
+        ],
+        [
+          "espaçaient",
+          3,
+          3,
+          10.16,
+          6.96
+        ],
+        [
+          "laliberté",
+          3,
+          3,
+          10.16,
+          6.96
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "marche",
+          13,
+          24,
+          5.51,
+          22.17
+        ],
+        [
+          "charles",
+          12,
+          21,
+          5.81,
+          21.11
+        ],
+        [
+          "glace",
+          11,
+          17,
+          6.58,
+          20.72
+        ],
+        [
+          "rivière",
+          16,
+          46,
+          3.54,
+          20.2
+        ],
+        [
+          "eugène",
+          11,
+          20,
+          5.59,
+          18.93
+        ]
+      ]
+    },
+    "II": {
+      "tokens": 1282,
+      "top5_by_lift": [
+        [
+          "démon",
+          5,
+          5,
+          16.62,
+          14.05
+        ],
+        [
+          "absence",
+          3,
+          4,
+          12.46,
+          7.57
+        ],
+        [
+          "fardeau",
+          3,
+          5,
+          9.97,
+          6.9
+        ],
+        [
+          "sage",
+          3,
+          5,
+          9.97,
+          6.9
+        ],
+        [
+          "aise",
+          6,
+          11,
+          9.06,
+          13.23
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "démon",
+          5,
+          5,
+          16.62,
+          14.05
+        ],
+        [
+          "almarose",
+          7,
+          17,
+          6.84,
+          13.46
+        ],
+        [
+          "aise",
+          6,
+          11,
+          9.06,
+          13.23
+        ],
+        [
+          "chien",
+          7,
+          19,
+          6.12,
+          12.68
+        ],
+        [
+          "loin",
+          9,
+          51,
+          2.93,
+          9.68
+        ]
+      ]
+    },
+    "III": {
+      "tokens": 907,
+      "top5_by_lift": [
+        [
+          "priez",
+          3,
+          4,
+          17.62,
+          8.61
+        ],
+        [
+          "tente",
+          3,
+          6,
+          11.74,
+          7.39
+        ],
+        [
+          "chasse",
+          3,
+          7,
+          10.07,
+          6.93
+        ],
+        [
+          "simplicité",
+          3,
+          11,
+          6.41,
+          5.57
+        ],
+        [
+          "pareille",
+          3,
+          12,
+          5.87,
+          5.31
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "françois",
+          8,
+          58,
+          3.24,
+          9.4
+        ],
+        [
+          "paradis",
+          7,
+          47,
+          3.5,
+          8.77
+        ],
+        [
+          "priez",
+          3,
+          4,
+          17.62,
+          8.61
+        ],
+        [
+          "tente",
+          3,
+          6,
+          11.74,
+          7.39
+        ],
+        [
+          "sauvage",
+          5,
+          28,
+          4.19,
+          7.17
+        ]
+      ]
+    },
+    "IV": {
+      "tokens": 1417,
+      "top5_by_lift": [
+        [
+          "brutal",
+          4,
+          4,
+          15.03,
+          10.84
+        ],
+        [
+          "chaîne",
+          4,
+          4,
+          15.03,
+          10.84
+        ],
+        [
+          "engagé",
+          3,
+          3,
+          15.03,
+          8.13
+        ],
+        [
+          "auquel",
+          3,
+          4,
+          11.28,
+          7.27
+        ],
+        [
+          "blasphème",
+          3,
+          4,
+          11.28,
+          7.27
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "souche",
+          13,
+          22,
+          8.88,
+          28.39
+        ],
+        [
+          "terre",
+          25,
+          134,
+          2.8,
+          25.78
+        ],
+        [
+          "racine",
+          11,
+          17,
+          9.73,
+          25.02
+        ],
+        [
+          "légaré",
+          10,
+          17,
+          8.84,
+          21.8
+        ],
+        [
+          "tronc",
+          10,
+          23,
+          6.54,
+          18.77
+        ]
+      ]
+    },
+    "V": {
+      "tokens": 2167,
+      "top5_by_lift": [
+        [
+          "baies",
+          4,
+          4,
+          9.83,
+          9.14
+        ],
+        [
+          "elzéar",
+          3,
+          3,
+          9.83,
+          6.86
+        ],
+        [
+          "emplissait",
+          3,
+          3,
+          9.83,
+          6.86
+        ],
+        [
+          "job",
+          3,
+          3,
+          9.83,
+          6.86
+        ],
+        [
+          "lon",
+          3,
+          3,
+          9.83,
+          6.86
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "surprenant",
+          13,
+          35,
+          3.65,
+          16.84
+        ],
+        [
+          "bleuet",
+          8,
+          12,
+          6.55,
+          15.04
+        ],
+        [
+          "françois",
+          15,
+          58,
+          2.54,
+          14.0
+        ],
+        [
+          "mouche",
+          8,
+          18,
+          4.37,
+          11.8
+        ],
+        [
+          "canadien",
+          7,
+          15,
+          4.59,
+          10.66
+        ]
+      ]
+    },
+    "VI": {
+      "tokens": 1025,
+      "top5_by_lift": [
+        [
+          "four",
+          6,
+          6,
+          20.78,
+          18.2
+        ],
+        [
+          "fournée",
+          3,
+          3,
+          20.78,
+          9.1
+        ],
+        [
+          "invariablement",
+          3,
+          3,
+          20.78,
+          9.1
+        ],
+        [
+          "période",
+          3,
+          3,
+          20.78,
+          9.1
+        ],
+        [
+          "raie",
+          3,
+          3,
+          20.78,
+          9.1
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "foin",
+          10,
+          24,
+          8.66,
+          21.59
+        ],
+        [
+          "four",
+          6,
+          6,
+          20.78,
+          18.2
+        ],
+        [
+          "devait",
+          5,
+          9,
+          11.55,
+          12.23
+        ],
+        [
+          "chose",
+          9,
+          54,
+          3.46,
+          11.18
+        ],
+        [
+          "cuisson",
+          4,
+          6,
+          13.86,
+          10.51
+        ]
+      ]
+    },
+    "VII": {
+      "tokens": 316,
+      "top5_by_lift": [
+        [
+          "sécheresse",
+          4,
+          8,
+          33.71,
+          14.07
+        ],
+        [
+          "automne",
+          4,
+          12,
+          22.47,
+          12.45
+        ],
+        [
+          "gelé",
+          3,
+          9,
+          22.47,
+          9.34
+        ],
+        [
+          "grain",
+          4,
+          22,
+          12.26,
+          10.02
+        ],
+        [
+          "pluie",
+          3,
+          23,
+          8.79,
+          6.52
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "sécheresse",
+          4,
+          8,
+          33.71,
+          14.07
+        ],
+        [
+          "automne",
+          4,
+          12,
+          22.47,
+          12.45
+        ],
+        [
+          "jour",
+          7,
+          99,
+          4.77,
+          10.93
+        ],
+        [
+          "grain",
+          4,
+          22,
+          12.26,
+          10.02
+        ],
+        [
+          "gelé",
+          3,
+          9,
+          22.47,
+          9.34
+        ]
+      ]
+    },
+    "VIII": {
+      "tokens": 743,
+      "top5_by_lift": [
+        [
+          "scièrent",
+          3,
+          3,
+          28.67,
+          10.07
+        ],
+        [
+          "merisier",
+          3,
+          4,
+          21.5,
+          9.2
+        ],
+        [
+          "bouleau",
+          4,
+          7,
+          16.38,
+          11.19
+        ],
+        [
+          "défense",
+          3,
+          6,
+          14.34,
+          7.99
+        ],
+        [
+          "octobre",
+          3,
+          6,
+          14.34,
+          7.99
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "neige",
+          11,
+          86,
+          3.67,
+          14.29
+        ],
+        [
+          "maison",
+          13,
+          125,
+          2.98,
+          14.2
+        ],
+        [
+          "bois",
+          14,
+          157,
+          2.56,
+          13.14
+        ],
+        [
+          "bouleau",
+          4,
+          7,
+          16.38,
+          11.19
+        ],
+        [
+          "scièrent",
+          3,
+          3,
+          28.67,
+          10.07
+        ]
+      ]
+    },
+    "IX": {
+      "tokens": 1335,
+      "top5_by_lift": [
+        [
+          "minuit",
+          5,
+          5,
+          15.96,
+          13.85
+        ],
+        [
+          "oublierai",
+          4,
+          4,
+          15.96,
+          11.08
+        ],
+        [
+          "faveur",
+          3,
+          3,
+          15.96,
+          8.31
+        ],
+        [
+          "ave",
+          11,
+          14,
+          12.54,
+          27.82
+        ],
+        [
+          "lamente",
+          3,
+          4,
+          11.97,
+          7.45
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "ave",
+          11,
+          14,
+          12.54,
+          27.82
+        ],
+        [
+          "prière",
+          10,
+          21,
+          7.6,
+          20.28
+        ],
+        [
+          "chapelet",
+          9,
+          17,
+          8.45,
+          19.21
+        ],
+        [
+          "marie",
+          7,
+          14,
+          7.98,
+          14.54
+        ],
+        [
+          "minuit",
+          5,
+          5,
+          15.96,
+          13.85
+        ]
+      ]
+    },
+    "X": {
+      "tokens": 1506,
+      "top5_by_lift": [
+        [
+          "serre",
+          3,
+          3,
+          14.15,
+          7.95
+        ],
+        [
+          "piste",
+          3,
+          4,
+          10.61,
+          7.09
+        ],
+        [
+          "tragique",
+          3,
+          4,
+          10.61,
+          7.09
+        ],
+        [
+          "écarté",
+          5,
+          7,
+          10.1,
+          11.56
+        ],
+        [
+          "tire",
+          3,
+          5,
+          8.49,
+          6.42
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "françois",
+          14,
+          58,
+          3.41,
+          17.19
+        ],
+        [
+          "bon",
+          14,
+          62,
+          3.19,
+          16.26
+        ],
+        [
+          "homme",
+          18,
+          125,
+          2.04,
+          12.81
+        ],
+        [
+          "écarté",
+          5,
+          7,
+          10.1,
+          11.56
+        ],
+        [
+          "garçon",
+          9,
+          40,
+          3.18,
+          10.42
+        ]
+      ]
+    },
+    "XI": {
+      "tokens": 839,
+      "top5_by_lift": [
+        [
+          "grelots",
+          3,
+          6,
+          12.7,
+          7.62
+        ],
+        [
+          "prêtre",
+          8,
+          20,
+          10.16,
+          18.54
+        ],
+        [
+          "voisin",
+          3,
+          8,
+          9.52,
+          6.76
+        ],
+        [
+          "chagrin",
+          5,
+          15,
+          8.46,
+          10.68
+        ],
+        [
+          "henri",
+          4,
+          12,
+          8.46,
+          8.54
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "prêtre",
+          8,
+          20,
+          10.16,
+          18.54
+        ],
+        [
+          "messe",
+          7,
+          23,
+          7.73,
+          14.31
+        ],
+        [
+          "chagrin",
+          5,
+          15,
+          8.46,
+          10.68
+        ],
+        [
+          "chemin",
+          8,
+          55,
+          3.69,
+          10.45
+        ],
+        [
+          "henri",
+          4,
+          12,
+          8.46,
+          8.54
+        ]
+      ]
+    },
+    "XII": {
+      "tokens": 1898,
+      "top5_by_lift": [
+        [
+          "pouvez",
+          5,
+          5,
+          11.22,
+          12.09
+        ],
+        [
+          "accordeur",
+          4,
+          4,
+          11.22,
+          9.67
+        ],
+        [
+          "piano",
+          4,
+          4,
+          11.22,
+          9.67
+        ],
+        [
+          "accent",
+          3,
+          3,
+          11.22,
+          7.25
+        ],
+        [
+          "descriptions",
+          3,
+          3,
+          11.22,
+          7.25
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "vie",
+          22,
+          74,
+          3.34,
+          26.51
+        ],
+        [
+          "lorenzo",
+          13,
+          30,
+          4.86,
+          20.56
+        ],
+        [
+          "icitte",
+          13,
+          43,
+          3.39,
+          15.88
+        ],
+        [
+          "villes",
+          8,
+          16,
+          5.61,
+          13.8
+        ],
+        [
+          "habitant",
+          7,
+          13,
+          6.04,
+          12.59
+        ]
+      ]
+    },
+    "XIII": {
+      "tokens": 992,
+      "top5_by_lift": [
+        [
+          "loquet",
+          3,
+          3,
+          21.47,
+          9.2
+        ],
+        [
+          "minots",
+          3,
+          3,
+          21.47,
+          9.2
+        ],
+        [
+          "mirage",
+          3,
+          4,
+          16.11,
+          8.34
+        ],
+        [
+          "présent",
+          3,
+          4,
+          16.11,
+          8.34
+        ],
+        [
+          "offrir",
+          3,
+          5,
+          12.88,
+          7.67
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "eutrope",
+          10,
+          44,
+          4.88,
+          15.85
+        ],
+        [
+          "loquet",
+          3,
+          3,
+          21.47,
+          9.2
+        ],
+        [
+          "minots",
+          3,
+          3,
+          21.47,
+          9.2
+        ],
+        [
+          "lorenzo",
+          6,
+          30,
+          4.29,
+          8.74
+        ],
+        [
+          "maintenant",
+          6,
+          30,
+          4.29,
+          8.74
+        ]
+      ]
+    },
+    "XIV": {
+      "tokens": 2518,
+      "top5_by_lift": [
+        [
+          "malade",
+          24,
+          24,
+          8.46,
+          51.25
+        ],
+        [
+          "médecin",
+          17,
+          17,
+          8.46,
+          36.3
+        ],
+        [
+          "titsèbe",
+          10,
+          10,
+          8.46,
+          21.35
+        ],
+        [
+          "guéri",
+          9,
+          9,
+          8.46,
+          19.22
+        ],
+        [
+          "pilules",
+          7,
+          7,
+          8.46,
+          14.95
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "malade",
+          24,
+          24,
+          8.46,
+          51.25
+        ],
+        [
+          "remède",
+          19,
+          20,
+          8.04,
+          39.6
+        ],
+        [
+          "médecin",
+          17,
+          17,
+          8.46,
+          36.3
+        ],
+        [
+          "curé",
+          17,
+          24,
+          5.99,
+          30.44
+        ],
+        [
+          "maladie",
+          13,
+          14,
+          7.86,
+          26.8
+        ]
+      ]
+    },
+    "XV": {
+      "tokens": 2201,
+      "top5_by_lift": [
+        [
+          "brise",
+          5,
+          5,
+          9.68,
+          11.35
+        ],
+        [
+          "vertu",
+          4,
+          4,
+          9.68,
+          9.08
+        ],
+        [
+          "chandelier",
+          3,
+          3,
+          9.68,
+          6.81
+        ],
+        [
+          "coupe",
+          3,
+          3,
+          9.68,
+          6.81
+        ],
+        [
+          "métal",
+          3,
+          3,
+          9.68,
+          6.81
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "femme",
+          18,
+          46,
+          3.79,
+          23.97
+        ],
+        [
+          "mort",
+          17,
+          47,
+          3.5,
+          21.3
+        ],
+        [
+          "tant",
+          10,
+          22,
+          4.4,
+          14.81
+        ],
+        [
+          "mouton",
+          8,
+          13,
+          5.96,
+          14.28
+        ],
+        [
+          "brise",
+          5,
+          5,
+          9.68,
+          11.35
+        ]
+      ]
+    },
+    "XVI": {
+      "tokens": 61,
+      "top5_by_lift": [
+        [
+          "maria",
+          3,
+          201,
+          5.21,
+          4.95
+        ]
+      ],
+      "top5_by_count_weighted_lift": [
+        [
+          "maria",
+          3,
+          201,
+          5.21,
+          4.95
+        ]
+      ]
+    }
+  },
+  "chapter_lift_rule": "(count in chapter / tokens in chapter) / (count in book / tokens in book); words with >= 3 occurrences in the chapter; columns word, count in chapter, count in book, lift, count * ln(lift)",
+  "clouds": {
+    "class": {
+      "words": [
+        "les",
+        "des",
+        "que",
+        "qui",
+        "elle",
+        "une",
+        "pas",
+        "pour",
+        "est",
+        "mai",
+        "tait",
+        "dans",
+        "son",
+        "Maria",
+        "leur",
+        "avec",
+        "comme",
+        "bien",
+        "plu",
+        "avait",
+        "lui",
+        "tout",
+        "sur",
+        "par",
+        "sans",
+        "autre",
+        "vous",
+        "rent",
+        "encore",
+        "Chapdelaine",
+        "ils",
+        "aux",
+        "bois",
+        "maison",
+        "terre",
+        "ses",
+        "quand",
+        "dit",
+        "grand",
+        "jour",
+        "temp",
+        "aussi",
+        "faire",
+        "peu",
+        "quelque",
+        "rien",
+        "apr",
+        "neige",
+        "puis",
+        "tre",
+        "moi",
+        "toujours",
+        "toute",
+        "homme",
+        "taient",
+        "deux",
+        "avant",
+        "dans les",
+        "vers",
+        "presque",
+        "fait",
+        "fran ois",
+        "hiver",
+        "cette",
+        "vie",
+        "ces",
+        "soir",
+        "tou les",
+        "dire",
+        "chemin",
+        "cela",
+        "tou",
+        "tit",
+        "que les",
+        "fut",
+        "nouveau",
+        "printemps",
+        "sont",
+        "fit",
+        "avaient",
+        "mal",
+        "froid",
+        "avec des",
+        "ois paradis",
+        "grande",
+        "air",
+        "nous",
+        "pay",
+        "nuit",
+        "monde",
+        "les yeux",
+        "main",
+        "mis",
+        "voix",
+        "sur les",
+        "car",
+        "alors",
+        "bient",
+        "mort",
+        "peut tre",
+        "heure",
+        "voir",
+        "toute les",
+        "dans bois",
+        "seulement",
+        "loin",
+        "icitte",
+        "femme",
+        "avoir",
+        "table",
+        "porte",
+        "suite",
+        "eau",
+        "foi",
+        "fort",
+        "pri",
+        "seul",
+        "les autre",
+        "force",
+        "coup",
+        "regard",
+        "eux",
+        "enfant",
+        "village",
+        "semaine",
+        "non",
+        "matin",
+        "maintenant",
+        "cheval",
+        "faisait",
+        "semblait",
+        "allait",
+        "ciel",
+        "tant",
+        "vent",
+        "une belle",
+        "long",
+        "peut",
+        "parler",
+        "pendant",
+        "sauvage",
+        "nom",
+        "jamais",
+        "trop",
+        "plein",
+        "pourtant",
+        "place",
+        "est pas",
+        "rit",
+        "oui",
+        "milieu",
+        "mot",
+        "personne",
+        "elle avait",
+        "Eutrope Gagnon",
+        "rivi",
+        "dont",
+        "ann",
+        "sous",
+        "venir",
+        "pied",
+        "voil",
+        "haut",
+        "mille",
+        "chose",
+        "suis",
+        "arbre",
+        "arr",
+        "dans une",
+        "les deux",
+        "fen tre",
+        "sol",
+        "entre",
+        "venu",
+        "chacun",
+        "beau",
+        "leva",
+        "mon",
+        "vivre",
+        "Esdras",
+        "une foi",
+        "soleil",
+        "vint",
+        "fille",
+        "pareil",
+        "foin",
+        "chant",
+        "derri",
+        "journ",
+        "malade",
+        "comme une",
+        "bas",
+        "pipe",
+        "venait",
+        "silence",
+        "ont",
+        "trois",
+        "quasiment",
+        "simple",
+        "chaque"
+      ],
+      "non_ascii": []
+    },
+    "fixed": {
+      "words": [
+        "maria",
+        "chapdelaine",
+        "bois",
+        "grand",
+        "terre",
+        "homme",
+        "maison",
+        "père",
+        "jour",
+        "mère",
+        "neige",
+        "temps",
+        "vie",
+        "yeux",
+        "saint",
+        "heure",
+        "pays",
+        "bon",
+        "main",
+        "soir",
+        "fort",
+        "françois",
+        "petit",
+        "chemin",
+        "hiver",
+        "chose",
+        "voix",
+        "monde",
+        "venu",
+        "printemps",
+        "froid",
+        "loin",
+        "coeur",
+        "tête",
+        "plein",
+        "seul",
+        "belle",
+        "paradis",
+        "nouveau",
+        "mort",
+        "rivière",
+        "femme",
+        "nuit",
+        "haut",
+        "air",
+        "parce",
+        "eutrope",
+        "icitte",
+        "mal",
+        "pendant",
+        "bonne",
+        "garçon",
+        "entre",
+        "coup",
+        "sol",
+        "car",
+        "dur",
+        "jeune",
+        "sous",
+        "bientôt",
+        "eau",
+        "non",
+        "vent",
+        "voir",
+        "jamais",
+        "instant",
+        "seulement",
+        "venait",
+        "voilà",
+        "enfant",
+        "surprenant",
+        "fille",
+        "matin",
+        "cheval",
+        "porte",
+        "suite",
+        "côté",
+        "beau",
+        "ciel",
+        "titbé",
+        "force",
+        "trop",
+        "elles",
+        "regard",
+        "ans",
+        "sombre",
+        "gens",
+        "village",
+        "nouvelle",
+        "semaine",
+        "cinq",
+        "aller",
+        "arbre",
+        "maintenant",
+        "derrière",
+        "faisait",
+        "lorenzo",
+        "semblait",
+        "clair",
+        "mille",
+        "allait",
+        "contre",
+        "long",
+        "parler",
+        "ceux",
+        "tour",
+        "sauvage",
+        "longtemps",
+        "simple",
+        "passé",
+        "longue",
+        "pourtant",
+        "place",
+        "soleil",
+        "première",
+        "fini",
+        "oui",
+        "milieu",
+        "restait",
+        "mot",
+        "sorte",
+        "gagnon",
+        "personne",
+        "année",
+        "venir",
+        "pied",
+        "nom",
+        "poêle",
+        "fenêtre",
+        "lit",
+        "mourir",
+        "raison",
+        "fin",
+        "vrai",
+        "vivre",
+        "esdras",
+        "marche",
+        "samuel",
+        "pareil",
+        "foin",
+        "tard",
+        "blanc",
+        "geste",
+        "autour",
+        "journée",
+        "misère",
+        "curé",
+        "malade",
+        "champ",
+        "pluie",
+        "messe",
+        "bas",
+        "pipe",
+        "état",
+        "silence",
+        "quasiment",
+        "tronc",
+        "télesphore",
+        "nord",
+        "église",
+        "parlait",
+        "vieux",
+        "guère",
+        "québec",
+        "cent",
+        "depuis",
+        "mois",
+        "chez",
+        "devant",
+        "souche",
+        "grain",
+        "donc",
+        "enfin",
+        "tant",
+        "dessus",
+        "sûr",
+        "resta",
+        "immobile",
+        "famille",
+        "charles",
+        "voyage",
+        "prière",
+        "parole",
+        "travail",
+        "dieu",
+        "amour",
+        "lisière",
+        "plusieurs",
+        "leva",
+        "visage",
+        "eugène",
+        "lointain",
+        "prêtre",
+        "remède",
+        "chaleur",
+        "gros",
+        "brun",
+        "demi",
+        "grosse",
+        "chercher"
+      ],
+      "non_ascii": [
+        "père",
+        "mère",
+        "françois",
+        "tête",
+        "rivière",
+        "garçon",
+        "bientôt",
+        "voilà",
+        "côté",
+        "titbé",
+        "derrière",
+        "passé",
+        "première",
+        "année",
+        "poêle",
+        "fenêtre",
+        "journée",
+        "misère",
+        "curé",
+        "état",
+        "télesphore",
+        "église",
+        "guère",
+        "québec",
+        "sûr",
+        "prière",
+        "lisière",
+        "eugène",
+        "prêtre",
+        "remède"
+      ]
+    },
+    "no_names": {
+      "words": [
+        "bois",
+        "grand",
+        "terre",
+        "homme",
+        "maison",
+        "père",
+        "jour",
+        "mère",
+        "neige",
+        "temps",
+        "vie",
+        "yeux",
+        "saint",
+        "heure",
+        "pays",
+        "bon",
+        "main",
+        "soir",
+        "fort",
+        "petit",
+        "chemin",
+        "hiver",
+        "chose",
+        "voix",
+        "monde",
+        "venu",
+        "printemps",
+        "froid",
+        "loin",
+        "coeur",
+        "tête",
+        "plein",
+        "seul",
+        "belle",
+        "nouveau",
+        "mort",
+        "rivière",
+        "femme",
+        "nuit",
+        "haut",
+        "air",
+        "parce",
+        "icitte",
+        "mal",
+        "pendant",
+        "bonne",
+        "garçon",
+        "entre",
+        "coup",
+        "sol",
+        "car",
+        "dur",
+        "jeune",
+        "sous",
+        "bientôt",
+        "eau",
+        "non",
+        "vent",
+        "voir",
+        "jamais",
+        "instant",
+        "seulement",
+        "venait",
+        "voilà",
+        "enfant",
+        "fille",
+        "matin",
+        "cheval",
+        "porte",
+        "suite",
+        "côté",
+        "beau",
+        "ciel",
+        "force",
+        "trop",
+        "elles",
+        "regard",
+        "ans",
+        "sombre",
+        "gens",
+        "village",
+        "nouvelle",
+        "semaine",
+        "cinq",
+        "aller",
+        "arbre",
+        "maintenant",
+        "derrière",
+        "faisait",
+        "semblait",
+        "clair",
+        "mille",
+        "allait",
+        "contre",
+        "long",
+        "parler",
+        "ceux",
+        "tour",
+        "sauvage",
+        "longtemps",
+        "simple",
+        "passé",
+        "longue",
+        "pourtant",
+        "place",
+        "soleil",
+        "première",
+        "fini",
+        "oui",
+        "milieu",
+        "restait",
+        "mot",
+        "sorte",
+        "personne",
+        "année",
+        "venir",
+        "pied",
+        "nom",
+        "poêle",
+        "fenêtre",
+        "lit",
+        "mourir",
+        "raison",
+        "fin",
+        "vrai",
+        "vivre",
+        "marche",
+        "pareil",
+        "foin",
+        "tard",
+        "blanc",
+        "geste",
+        "autour",
+        "journée",
+        "misère",
+        "curé",
+        "malade",
+        "champ",
+        "pluie",
+        "messe",
+        "bas",
+        "pipe",
+        "état",
+        "silence",
+        "quasiment",
+        "tronc",
+        "nord",
+        "église",
+        "parlait",
+        "vieux",
+        "guère",
+        "québec",
+        "cent",
+        "depuis",
+        "mois",
+        "chez",
+        "devant",
+        "souche",
+        "grain",
+        "donc",
+        "enfin",
+        "tant",
+        "dessus",
+        "sûr",
+        "resta",
+        "immobile",
+        "famille",
+        "charles",
+        "voyage",
+        "prière",
+        "parole",
+        "travail",
+        "dieu",
+        "amour",
+        "lisière",
+        "plusieurs",
+        "leva",
+        "visage",
+        "eugène",
+        "lointain",
+        "prêtre",
+        "remède",
+        "chaleur",
+        "gros",
+        "brun",
+        "demi",
+        "grosse",
+        "chercher",
+        "chute",
+        "dernier",
+        "souvent",
+        "pouvait",
+        "moins",
+        "table",
+        "chien",
+        "seuil",
+        "animaux",
+        "hache",
+        "point",
+        "corps"
+      ],
+      "non_ascii": [
+        "père",
+        "mère",
+        "tête",
+        "rivière",
+        "garçon",
+        "bientôt",
+        "voilà",
+        "côté",
+        "derrière",
+        "passé",
+        "première",
+        "année",
+        "poêle",
+        "fenêtre",
+        "journée",
+        "misère",
+        "curé",
+        "état",
+        "église",
+        "guère",
+        "québec",
+        "sûr",
+        "prière",
+        "lisière",
+        "eugène",
+        "prêtre",
+        "remède"
+      ]
+    },
+    "font": {
+      "font": "DroidSansMono.ttf",
+      "accented_glyphs_missing": [],
+      "ok": true
+    },
+    "wordcloud_params": "700x700, random_state=42; class: defaults (English STOPWORDS, collocations on); improved: frequencies, no stopwords, collocations off"
+  },
+  "png_bytes": {
+    "m07-cloud-class.png": 206836,
+    "m07-cloud-fixed.png": 250793,
+    "m07-cloud-no-names.png": 246607
+  }
+}

@@ -1,0 +1,2051 @@
+{
+ "purpose": "Population and coordinates of Quebec municipalities for the real-data run of m05_roads.py",
+ "source": "Wikidata (https://www.wikidata.org), SPARQL endpoint https://query.wikidata.org/sparql",
+ "licence": {
+  "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "retrieved_from": "https://www.wikidata.org/w/api.php?action=parse&page=Wikidata:Licensing&prop=wikitext&format=json&formatversion=2",
+  "text": "All data in Wikidata has a CC0 license. Wikidata avoids hosting data that lacks a CC0 license."
+ },
+ "licence_line": "CC0 1.0: \"All data in Wikidata has a CC0 license. Wikidata avoids hosting data that lacks a CC0 license.\" (https://www.wikidata.org/wiki/Wikidata:Licensing)",
+ "access_date_utc": "2026-10-28T19:26:42Z",
+ "http_status_main": 200,
+ "query_main_exact": "SELECT ?item ?label ?pop ?coord (GROUP_CONCAT(DISTINCT ?tl; separator=\" | \") AS ?types) WHERE {\n  SERVICE wikibase:box {\n    ?item wdt:P625 ?coord .\n    bd:serviceParam wikibase:cornerSouthWest \"Point(-80.0 44.9)\"^^geo:wktLiteral .\n    bd:serviceParam wikibase:cornerNorthEast \"Point(-57.0 52.0)\"^^geo:wktLiteral .\n  }\n  ?item p:P1082 ?st .\n  ?st ps:P1082 ?pop ; pq:P585 ?pit .\n  FILTER(YEAR(?pit) = 2021 && xsd:integer(?pop) > 25000)\n  ?item wdt:P17 wd:Q16 .\n  ?item rdfs:label ?label . FILTER(LANG(?label) = \"fr\")\n  OPTIONAL { ?item wdt:P31 ?t . ?t rdfs:label ?tl . FILTER(LANG(?tl) = \"fr\") }\n}\nGROUP BY ?item ?label ?pop ?coord\nORDER BY DESC(xsd:integer(?pop))\nLIMIT 400\n",
+ "query_audit_exact": "SELECT DISTINCT ?item ?label ?pop ?coord WHERE {\n  ?item wdt:P31/wdt:P279* wd:Q3327873 .\n  ?item p:P1082 ?st .\n  ?st ps:P1082 ?pop ; pq:P585 ?pit .\n  FILTER(YEAR(?pit) = 2021 && xsd:integer(?pop) > 25000)\n  ?item wdt:P625 ?coord .\n  ?item rdfs:label ?label . FILTER(LANG(?label) = \"fr\")\n}\nORDER BY DESC(xsd:integer(?pop))\nLIMIT 400\n",
+ "population_property": "P1082 with point in time P585 in 2021 (2021 census as entered in Wikidata)",
+ "coordinate_property": "P625",
+ "brief_defect": "The suggested class Q3374262 is 'miasteczko' (a Polish small-town class): the query with it returned Romanian and Ukrainian towns. The class of municipalities of Quebec is Q3327873 ('local municipality of Quebec'); it is used in the audit query only (see below).",
+ "why_box_query": "The Q3327873 class query omits Cote Saint-Luc (Q139588, typed only 'ville' and 'territoire hors MRC au Quebec'), which lies inside the top 40. The main query therefore selects by a geographic box and a 2021 population over 25 000, and the Quebec municipalities are then picked out by their Wikidata classes in this script.",
+ "include_rule_any_class": [
+  "municipalité du Québec",
+  "territoire hors MRC au Québec",
+  "ville du Québec"
+ ],
+ "exclude_rule_any_class": [
+  "arrondissement de Montréal",
+  "quartier",
+  "secteur municipal",
+  "secteur résidentiel"
+ ],
+ "row_counts": {
+  "response_rows": 205,
+  "distinct_items_in_response": 201,
+  "rows_dropped_not_municipality": 158,
+  "rows_dropped_sub_municipal": 1,
+  "quebec_municipalities_after_dedup_by_item": 45,
+  "items_with_two_coordinate_values": [
+   "Q141748"
+  ],
+  "kept_top": 40
+ },
+ "rows_in_audit_class_query": 46,
+ "audit_vs_class_query": {
+  "available": true,
+  "class_Q3327873_items_over_25000": 45,
+  "kept_towns_missing_from_class_query": [
+   "Q139588 Côte Saint-Luc"
+  ],
+  "class_query_items_not_kept": [
+   "Q18534081"
+  ]
+ },
+ "dropped_rows_that_would_have_ranked_in_top_40": [
+  {
+   "qid": "Q176",
+   "name": "Québec",
+   "pop": 8501833,
+   "types": [
+    "province du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1474984",
+   "name": "Montréal",
+   "pop": 2004265,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2826806",
+   "name": "agglomération de Montréal",
+   "pop": 2004265,
+   "types": [
+    "agglomération du Québec",
+    "territoire équivalent"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q931679",
+   "name": "Montérégie",
+   "pop": 1591620,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q668850",
+   "name": "Région de la capitale nationale",
+   "pop": 1488307,
+   "types": [
+    "aire urbaine",
+    "entité territoriale statistique",
+    "subdivision de recensement du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q931679",
+   "name": "Montérégie",
+   "pop": 1460933,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1930",
+   "name": "Ottawa",
+   "pop": 1017449,
+   "types": [
+    "capitale fédérale",
+    "division de recensement du Canada",
+    "grande ville",
+    "municipalité à palier unique",
+    "subdivision de recensement du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1952",
+   "name": "Nouvelle-Écosse",
+   "pop": 969383,
+   "types": [
+    "province du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1965",
+   "name": "Nouveau-Brunswick",
+   "pop": 775610,
+   "types": [
+    "province du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q680780",
+   "name": "Capitale-Nationale",
+   "pop": 757950,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2304022",
+   "name": "Laurentides",
+   "pop": 636083,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2826812",
+   "name": "agglomération de Québec",
+   "pop": 588777,
+   "types": [
+    "agglomération du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q11832939",
+   "name": "agglomération de Québec",
+   "pop": 588777,
+   "types": [
+    "territoire équivalent"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q692825",
+   "name": "Lanaudière",
+   "pop": 528598,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1122368",
+   "name": "Estrie",
+   "pop": 499197,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q6502283",
+   "name": "Agglomération de Laval",
+   "pop": 438366,
+   "types": [
+    "agglomération du Québec",
+    "territoire équivalent"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2826810",
+   "name": "agglomération de Longueuil",
+   "pop": 436785,
+   "types": [
+    "agglomération du Québec",
+    "territoire équivalent"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1068386",
+   "name": "Chaudière-Appalaches",
+   "pop": 433312,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q222948",
+   "name": "Outaouais",
+   "pop": 405158,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1122368",
+   "name": "Estrie",
+   "pop": 337701,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q615914",
+   "name": "Saguenay–Lac-Saint-Jean",
+   "pop": 275552,
+   "types": [
+    "entité territoriale administrative",
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q615914",
+   "name": "Saguenay–Lac-Saint-Jean",
+   "pop": 275552,
+   "types": [
+    "entité territoriale administrative",
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q510572",
+   "name": "Mauricie",
+   "pop": 273055,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q764294",
+   "name": "Centre-du-Québec",
+   "pop": 250445,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q809729",
+   "name": "Bas-Saint-Laurent",
+   "pop": 199039,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1810607",
+   "name": "Roussillon",
+   "pop": 185568,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1811004",
+   "name": "Les Moulins",
+   "pop": 171127,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517947",
+   "name": "Thérèse-De Blainville",
+   "pop": 163632,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517624",
+   "name": "Vaudreuil-Soulanges",
+   "pop": 162600,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1978",
+   "name": "Île-du-Prince-Édouard",
+   "pop": 154331,
+   "types": [
+    "province du Canada"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q321529",
+   "name": "Abitibi-Témiscamingue",
+   "pop": 147082,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517943",
+   "name": "La Rivière-du-Nord",
+   "pop": 140394,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3357764",
+   "name": "Orléans",
+   "pop": 139309,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3338266",
+   "name": "Nepean",
+   "pop": 132769,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517930",
+   "name": "La Vallée-du-Richelieu",
+   "pop": 131803,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2939078",
+   "name": "Carleton",
+   "pop": 131375,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q136488030",
+   "name": "Pontiac",
+   "pop": 129781,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3555066",
+   "name": "Vaudreuil—Soulanges",
+   "pop": 129612,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q748828",
+   "name": "L'Assomption",
+   "pop": 128087,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3357743",
+   "name": "Ottawa-Centre",
+   "pop": 126360,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3357747",
+   "name": "Ottawa-Sud",
+   "pop": 125090,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3219613",
+   "name": "Laurentides—Labelle",
+   "pop": 123796,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q428070",
+   "name": "Rivière-du-Nord",
+   "pop": 122654,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517613",
+   "name": "Le Haut-Richelieu",
+   "pop": 121277,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3272022",
+   "name": "Bellechasse—Les Etchemins—Lévis",
+   "pop": 120179,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q18534081",
+   "name": "Tétreaultville",
+   "pop": 119944,
+   "types": [
+    "municipalité du Québec",
+    "quartier",
+    "secteur résidentiel"
+   ],
+   "reason": "sub-municipal unit: quartier, secteur résidentiel"
+  },
+  {
+   "qid": "Q16962445",
+   "name": "Dorval—Lachine—LaSalle",
+   "pop": 119395,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3427232",
+   "name": "Repentigny",
+   "pop": 119204,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3481910",
+   "name": "Sherbrooke",
+   "pop": 119038,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3357766",
+   "name": "Ottawa—Vanier",
+   "pop": 118806,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3259970",
+   "name": "Lévis—Lotbinière",
+   "pop": 118608,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q16826254",
+   "name": "Ahuntsic-Cartierville",
+   "pop": 118170,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q28660563",
+   "name": "Gatineau",
+   "pop": 117920,
+   "types": [
+    "secteur municipal"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3219676",
+   "name": "Laurier—Sainte-Marie",
+   "pop": 116932,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3108745",
+   "name": "Glengarry—Prescott—Russell",
+   "pop": 116463,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3357746",
+   "name": "Ottawa-Ouest-Nepean",
+   "pop": 116409,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3462835",
+   "name": "Saint-Léonard—Saint-Michel",
+   "pop": 115553,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q21027519",
+   "name": "Longueuil—Saint-Hubert",
+   "pop": 115082,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3462577",
+   "name": "Saint-Jean",
+   "pop": 114617,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3539914",
+   "name": "Trois-Rivières",
+   "pop": 114064,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2926009",
+   "name": "Brome—Missisquoi",
+   "pop": 113913,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q136489296",
+   "name": "Joliette",
+   "pop": 112418,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q16653356",
+   "name": "Longueuil—Charles-LeMoyne",
+   "pop": 112257,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3462967",
+   "name": "Saint-Maurice—Champlain",
+   "pop": 111997,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3219763",
+   "name": "Laval—Les Îles",
+   "pop": 111784,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q16976721",
+   "name": "Lanark—Frontenac—Kingston",
+   "pop": 111424,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3260598",
+   "name": "Louis-Hébert",
+   "pop": 111322,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2990889",
+   "name": "Compton—Stanstead",
+   "pop": 111088,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2893126",
+   "name": "Beauce",
+   "pop": 111034,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3143028",
+   "name": "Hull—Aylmer",
+   "pop": 110881,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3362910",
+   "name": "Papineau",
+   "pop": 110813,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3211775",
+   "name": "La Pointe-de-l'Île",
+   "pop": 110486,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3214654",
+   "name": "Lac-Saint-Louis",
+   "pop": 110093,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q429015",
+   "name": "Charlesbourg—Haute-Saint-Charles",
+   "pop": 109690,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q600123",
+   "name": "Pierrefonds—Dollard",
+   "pop": 109497,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3321616",
+   "name": "Mount Royal",
+   "pop": 108494,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q136528880",
+   "name": "Hochelaga",
+   "pop": 108264,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1261297",
+   "name": "Drummond",
+   "pop": 107967,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3040119",
+   "name": "Drummond",
+   "pop": 107967,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1612609",
+   "name": "Rivière-des-Prairies–Pointe-aux-Trembles",
+   "pop": 107941,
+   "types": [
+    "arrondissement de Montréal"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3425442",
+   "name": "Renfrew—Nipissing—Pembroke",
+   "pop": 107420,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q693762",
+   "name": "Gatineau",
+   "pop": 107286,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2922232",
+   "name": "Bourassa",
+   "pop": 105637,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q17044892",
+   "name": "Notre-Dame-de-Grâce—Westmount",
+   "pop": 105601,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3433602",
+   "name": "Rivière-des-Mille-Îles",
+   "pop": 105589,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2899323",
+   "name": "Berthier—Maskinongé",
+   "pop": 105280,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q136530031",
+   "name": "Saint-Hyacinthe—Bagot",
+   "pop": 105086,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3287683",
+   "name": "Marc-Aurèle-Fortin",
+   "pop": 104636,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3140203",
+   "name": "Honoré-Mercier",
+   "pop": 104578,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3366038",
+   "name": "Parry Sound—Muskoka",
+   "pop": 104494,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3499856",
+   "name": "Stormont—Dundas—South Glengarry",
+   "pop": 104493,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Ontario"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2821652",
+   "name": "Abitibi—Témiscamingue",
+   "pop": 103735,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3358662",
+   "name": "Outremont",
+   "pop": 103620,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q16845155",
+   "name": "Pierre-Boucher—Les Patriotes—Verchères",
+   "pop": 103020,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3462729",
+   "name": "Saint-Laurent",
+   "pop": 102104,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1206594",
+   "name": "Deux-Montagnes",
+   "pop": 102052,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2834924",
+   "name": "Alfred-Pellan",
+   "pop": 102020,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q134593673",
+   "name": "Québec",
+   "pop": 98772,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3322832",
+   "name": "Montmagny—L'Islet—Kamouraska—Rivière-du-Loup",
+   "pop": 96724,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2886296",
+   "name": "Bécancour—Nicolet—Saurel",
+   "pop": 96439,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2893257",
+   "name": "Beauport—Limoilou",
+   "pop": 96064,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q528161",
+   "name": "Beauport-Côte-de-Beaupré-Île d'Orléans-Charlevoix",
+   "pop": 95736,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1497865",
+   "name": "La Haute-Yamaska",
+   "pop": 92796,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517861",
+   "name": "Les Maskoutains",
+   "pop": 89432,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q728139",
+   "name": "Gaspésie–Îles-de-la-Madeleine",
+   "pop": 89342,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3332796",
+   "name": "Mégantic—L'Érable",
+   "pop": 88894,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2893293",
+   "name": "Beauséjour",
+   "pop": 88797,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3285881",
+   "name": "Manicouagan",
+   "pop": 88525,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1124109",
+   "name": "Côte-Nord",
+   "pop": 88525,
+   "types": [
+    "région administrative du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3087204",
+   "name": "Fredericton",
+   "pop": 87436,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3432128",
+   "name": "Rimouski-Neigette—Témiscouata—Les Basques",
+   "pop": 85556,
+   "types": [
+    "circonscription électorale",
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q267073",
+   "name": "Fundy Royal",
+   "pop": 83721,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q16979314",
+   "name": "Saint John—Rothesay",
+   "pop": 81996,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2963421",
+   "name": "Chicoutimi—Le Fjord",
+   "pop": 80593,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517923",
+   "name": "Marguerite-D'Youville",
+   "pop": 80313,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q457334",
+   "name": "Moncton",
+   "pop": 79470,
+   "types": [
+    "ville"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2822240",
+   "name": "Acadie—Bathurst",
+   "pop": 77594,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3098861",
+   "name": "Gaspésie—Les Îles-de-la-Madeleine",
+   "pop": 75927,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "liste des circonscriptions fédérales du Québec par région"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q707993",
+   "name": "Arthabaska",
+   "pop": 74348,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1444781",
+   "name": "Joliette",
+   "pop": 71124,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q614586",
+   "name": "Tobique—Mactaquac",
+   "pop": 69344,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q813402",
+   "name": "Beauharnois-Salaberry",
+   "pop": 68322,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q926504",
+   "name": "Brome-Missisquoi",
+   "pop": 64786,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2138",
+   "name": "Fredericton",
+   "pop": 63116,
+   "types": [
+    "capitale d'une province ou d'un territoire canadien",
+    "ville"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3275454",
+   "name": "Madawaska—Restigouche",
+   "pop": 60184,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale du Nouveau-Brunswick"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q981122",
+   "name": "Montcalm",
+   "pop": 58680,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517260",
+   "name": "Rimouski-Neigette",
+   "pop": 57191,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517350",
+   "name": "Portneuf",
+   "pop": 55523,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1908110",
+   "name": "Matawinie",
+   "pop": 55500,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517596",
+   "name": "Memphrémagog",
+   "pop": 54797,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1451121",
+   "name": "Les Collines-de-l'Outaouais",
+   "pop": 54498,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q813348",
+   "name": "Beauce-Sartigan",
+   "pop": 53384,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517990",
+   "name": "Lac-Saint-Jean-Est",
+   "pop": 52475,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517640",
+   "name": "Pierre-De Saurel",
+   "pop": 51843,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517938",
+   "name": "Les Laurentides",
+   "pop": 50777,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517325",
+   "name": "La Jacques-Cartier",
+   "pop": 47813,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q773444",
+   "name": "Les Pays-d'en-Haut",
+   "pop": 46906,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q975170",
+   "name": "D'Autray",
+   "pop": 44080,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517564",
+   "name": "Les Appalaches",
+   "pop": 43412,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q575254",
+   "name": "La Vallée-de-l'Or",
+   "pop": 43347,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2938039",
+   "name": "Cardigan",
+   "pop": 39866,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Île-du-Prince-Édouard"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q513772",
+   "name": "Malpeque",
+   "pop": 39731,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Île-du-Prince-Édouard"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2127",
+   "name": "Charlottetown",
+   "pop": 38809,
+   "types": [
+    "municipalité au Canada",
+    "ville"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2961057",
+   "name": "Charlottetown",
+   "pop": 38809,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Île-du-Prince-Édouard"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q815883",
+   "name": "Bellechasse",
+   "pop": 38000,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q125495",
+   "name": "La Nouvelle-Beauce",
+   "pop": 37988,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517997",
+   "name": "Rouville",
+   "pop": 37889,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1342831",
+   "name": "Maskinongé",
+   "pop": 37292,
+   "types": [
+    "division de recensement du Canada",
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q585440",
+   "name": "Antoine-Labelle",
+   "pop": 36462,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q3049209",
+   "name": "Egmont",
+   "pop": 35925,
+   "types": [
+    "circonscription électorale fédérale canadienne",
+    "circonscription électorale fédérale de l'Île-du-Prince-Édouard"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517236",
+   "name": "Rivière-du-Loup",
+   "pop": 35338,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q645211",
+   "name": "Argenteuil",
+   "pop": 34752,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q2773006",
+   "name": "Lotbinière",
+   "pop": 34586,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q763526",
+   "name": "Sept-Rivières",
+   "pop": 34358,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517286",
+   "name": "Le Val-Saint-François",
+   "pop": 31551,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1511248",
+   "name": "Le Domaine-du-Roy",
+   "pop": 31095,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q528670",
+   "name": "Les Jardins-de-Napierville",
+   "pop": 30339,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q1517234",
+   "name": "La Côte-de-Beaupré",
+   "pop": 30240,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  },
+  {
+   "qid": "Q972230",
+   "name": "Manicouagan",
+   "pop": 30158,
+   "types": [
+    "municipalité régionale de comté du Québec"
+   ],
+   "reason": "no Quebec-municipality class (region, county, riding, agglomeration, other province)"
+  }
+ ],
+ "duplicates_checked": {
+  "same_item_repeated_in_response": "collapsed by Wikidata item (QID); items with two P625 values take the lexicographically smallest coordinate literal",
+  "identical_population_values_among_kept_towns": [],
+  "boroughs_vs_city": "borough items (arrondissements de Montreal, secteurs of Gatineau) and the administrative regions/agglomerations carrying the same name are dropped by class; the municipal 'ville' item is kept, so Montreal counts once at its municipal population, not once per borough.",
+  "towns_closer_than_8_km_kept_as_distinct_municipalities": [
+   [
+    "Montréal",
+    "Côte Saint-Luc",
+    7.39
+   ],
+   [
+    "Québec",
+    "Lévis",
+    3.63
+   ],
+   [
+    "Longueuil",
+    "Brossard",
+    5.35
+   ],
+   [
+    "Terrebonne",
+    "Mascouche",
+    6.11
+   ],
+   [
+    "Dollard-des-Ormeaux",
+    "Pointe-Claire",
+    3.71
+   ]
+  ]
+ },
+ "projection": {
+  "type": "equirectangular",
+  "lon0_mean": -73.25686850782499,
+  "lat0_mean": 46.0297671648,
+  "radius_km": 6371.0088,
+  "formula": "x = R*cos(lat0)*(lon-lon0), y = R*(lat-lat0), angles in radians"
+ },
+ "towns": [
+  {
+   "rank": 1,
+   "qid": "Q340",
+   "name": "Montréal",
+   "pop_2021": 1762949,
+   "lon": -73.5868411,
+   "lat": 45.5033426,
+   "x_km": -25.47422291272133,
+   "y_km": -58.53582171983816
+  },
+  {
+   "rank": 2,
+   "qid": "Q2145",
+   "name": "Québec",
+   "pop_2021": 549459,
+   "lon": -71.224167,
+   "lat": 46.816111,
+   "x_km": 156.92664346466336,
+   "y_km": 87.43756584620802
+  },
+  {
+   "rank": 3,
+   "qid": "Q141810",
+   "name": "Laval",
+   "pop_2021": 438366,
+   "lon": -73.75,
+   "lat": 45.5833,
+   "x_km": -38.07025751486169,
+   "y_km": -49.64495221157372
+  },
+  {
+   "rank": 4,
+   "qid": "Q141844",
+   "name": "Gatineau",
+   "pop_2021": 291041,
+   "lon": -75.65,
+   "lat": 45.483333,
+   "x_km": -184.75220832518755,
+   "y_km": -60.76079079727924
+  },
+  {
+   "rank": 5,
+   "qid": "Q139398",
+   "name": "Longueuil",
+   "pop_2021": 254483,
+   "lon": -73.438027777,
+   "lat": 45.514083333,
+   "x_km": -13.985681584191386,
+   "y_km": -57.341505052136355
+  },
+  {
+   "rank": 6,
+   "qid": "Q139473",
+   "name": "Sherbrooke",
+   "pop_2021": 172950,
+   "lon": -71.9,
+   "lat": 45.4,
+   "x_km": 104.75164195834948,
+   "y_km": -70.02701041838058
+  },
+  {
+   "rank": 7,
+   "qid": "Q139208",
+   "name": "Lévis",
+   "pop_2021": 149683,
+   "lon": -71.1833,
+   "lat": 46.8,
+   "x_km": 160.0816178245393,
+   "y_km": 85.64610190856531
+  },
+  {
+   "rank": 8,
+   "qid": "Q139229",
+   "name": "Saguenay",
+   "pop_2021": 144723,
+   "lon": -71.0667,
+   "lat": 48.4167,
+   "x_km": 169.08325754268918,
+   "y_km": 265.41518812211814
+  },
+  {
+   "rank": 9,
+   "qid": "Q44012",
+   "name": "Trois-Rivières",
+   "pop_2021": 139163,
+   "lon": -72.55,
+   "lat": 46.35,
+   "x_km": 54.57097457587038,
+   "y_km": 35.60831580347598
+  },
+  {
+   "rank": 10,
+   "qid": "Q139190",
+   "name": "Terrebonne",
+   "pop_2021": 119944,
+   "lon": -73.633333333,
+   "lat": 45.7,
+   "x_km": -29.063471035862104,
+   "y_km": -36.66848634832024
+  },
+  {
+   "rank": 11,
+   "qid": "Q141977",
+   "name": "Saint-Jean-sur-Richelieu",
+   "pop_2021": 97873,
+   "lon": -73.253611111,
+   "lat": 45.305555555,
+   "x_km": 0.25147437939641737,
+   "y_km": -80.52876805776714
+  },
+  {
+   "rank": 12,
+   "qid": "Q139104",
+   "name": "Brossard",
+   "pop_2021": 91525,
+   "lon": -73.45,
+   "lat": 45.4667,
+   "x_km": -14.909949492178944,
+   "y_km": -62.61029856680346
+  },
+  {
+   "rank": 13,
+   "qid": "Q139427",
+   "name": "Repentigny",
+   "pop_2021": 86100,
+   "lon": -73.466666666,
+   "lat": 45.733333333,
+   "x_km": -16.19663321974891,
+   "y_km": -32.96198371093479
+  },
+  {
+   "rank": 14,
+   "qid": "Q141724",
+   "name": "Saint-Jérôme",
+   "pop_2021": 80213,
+   "lon": -74.0,
+   "lat": 45.783333333,
+   "x_km": -57.370514200430826,
+   "y_km": -27.402229699257667
+  },
+  {
+   "rank": 15,
+   "qid": "Q141940",
+   "name": "Drummondville",
+   "pop_2021": 79258,
+   "lon": -72.483333333,
+   "lat": 45.883333333,
+   "x_km": 59.71770971775526,
+   "y_km": -16.28272167590422
+  },
+  {
+   "rank": 16,
+   "qid": "Q141881",
+   "name": "Granby",
+   "pop_2021": 69025,
+   "lon": -72.733333333,
+   "lat": 45.4,
+   "x_km": 40.417453032186124,
+   "y_km": -70.02701041838058
+  },
+  {
+   "rank": 17,
+   "qid": "Q141921",
+   "name": "Mirabel",
+   "pop_2021": 61108,
+   "lon": -74.083333333,
+   "lat": 45.65,
+   "x_km": -63.80393306988677,
+   "y_km": -42.22824035999737
+  },
+  {
+   "rank": 18,
+   "qid": "Q139568",
+   "name": "Blainville",
+   "pop_2021": 59819,
+   "lon": -73.883333333,
+   "lat": 45.666666666,
+   "x_km": -48.36372772143124,
+   "y_km": -40.374989096901984
+  },
+  {
+   "rank": 19,
+   "qid": "Q141873",
+   "name": "Saint-Hyacinthe",
+   "pop_2021": 57239,
+   "lon": -72.95,
+   "lat": 45.616666666,
+   "x_km": 23.690563878959324,
+   "y_km": -45.93474310857832
+  },
+  {
+   "rank": 20,
+   "qid": "Q141748",
+   "name": "Mascouche",
+   "pop_2021": 51183,
+   "lon": -73.59956,
+   "lat": 45.74965,
+   "x_km": -26.456135051753353,
+   "y_km": -31.14765061472537
+  },
+  {
+   "rank": 21,
+   "qid": "Q141522",
+   "name": "Châteauguay",
+   "pop_2021": 50815,
+   "lon": -73.75,
+   "lat": 45.383333333,
+   "x_km": -38.07025751486169,
+   "y_km": -71.88026179267067
+  },
+  {
+   "rank": 22,
+   "qid": "Q141980",
+   "name": "Shawinigan",
+   "pop_2021": 49620,
+   "lon": -72.75,
+   "lat": 46.5667,
+   "x_km": 39.13076922741486,
+   "y_km": 59.7042896900821
+  },
+  {
+   "rank": 23,
+   "qid": "Q1336",
+   "name": "Rimouski",
+   "pop_2021": 48935,
+   "lon": -68.533333333,
+   "lat": 48.45,
+   "x_km": 364.6617653497478,
+   "y_km": 269.11798429389523
+  },
+  {
+   "rank": 24,
+   "qid": "Q141998",
+   "name": "Dollard-des-Ormeaux",
+   "pop_2021": 48403,
+   "lon": -73.816666666,
+   "lat": 45.483333333,
+   "x_km": -43.21699257954636,
+   "y_km": -60.760753769318015
+  },
+  {
+   "rank": 25,
+   "qid": "Q141731",
+   "name": "Victoriaville",
+   "pop_2021": 47760,
+   "lon": -71.966666666,
+   "lat": 46.05,
+   "x_km": 99.6049068936659,
+   "y_km": 2.249791733415635
+  },
+  {
+   "rank": 26,
+   "qid": "Q141505",
+   "name": "Saint-Eustache",
+   "pop_2021": 45276,
+   "lon": -73.9,
+   "lat": 45.566666666,
+   "x_km": -49.65041152620361,
+   "y_km": -51.49449712025465
+  },
+  {
+   "rank": 27,
+   "qid": "Q141711",
+   "name": "Vaudreuil-Dorion",
+   "pop_2021": 43268,
+   "lon": -74.033333333,
+   "lat": 45.4,
+   "x_km": -59.94388173277316,
+   "y_km": -70.02701041838058
+  },
+  {
+   "rank": 28,
+   "qid": "Q142039",
+   "name": "Salaberry-de-Valleyfield",
+   "pop_2021": 42787,
+   "lon": -74.133333333,
+   "lat": 45.25,
+   "x_km": -67.66398440700037,
+   "y_km": -86.70627245341038
+  },
+  {
+   "rank": 29,
+   "qid": "Q141804",
+   "name": "Rouyn-Noranda",
+   "pop_2021": 42313,
+   "lon": -79.0167,
+   "lat": 48.2333,
+   "x_km": -444.6649050584096,
+   "y_km": 245.02201040728832
+  },
+  {
+   "rank": 30,
+   "qid": "Q141924",
+   "name": "Boucherville",
+   "pop_2021": 41743,
+   "lon": -73.45,
+   "lat": 45.6,
+   "x_km": -14.909949492178944,
+   "y_km": -47.7879943716737
+  },
+  {
+   "rank": 31,
+   "qid": "Q142010",
+   "name": "Sorel-Tracy",
+   "pop_2021": 35165,
+   "lon": -73.1167,
+   "lat": 46.0333,
+   "x_km": 10.821152721022473,
+   "y_km": 0.3928338935156179
+  },
+  {
+   "rank": 32,
+   "qid": "Q139588",
+   "name": "Côte Saint-Luc",
+   "pop_2021": 34504,
+   "lon": -73.666666666,
+   "lat": 45.466666666,
+   "x_km": -31.636838568204436,
+   "y_km": -62.6140051436081
+  },
+  {
+   "rank": 33,
+   "qid": "Q142271",
+   "name": "Pointe-Claire",
+   "pop_2021": 33488,
+   "lon": -73.816666666,
+   "lat": 45.45,
+   "x_km": -43.21699257954636,
+   "y_km": -64.46725640670347
+  },
+  {
+   "rank": 34,
+   "qid": "Q143227",
+   "name": "Saint-Georges",
+   "pop_2021": 32935,
+   "lon": -70.666666666,
+   "lat": 46.116666666,
+   "x_km": 199.9662416586252,
+   "y_km": 9.662797008188138
+  },
+  {
+   "rank": 35,
+   "qid": "Q141937",
+   "name": "Val-d'Or",
+   "pop_2021": 32752,
+   "lon": -77.789166666,
+   "lat": 48.101944444,
+   "x_km": -349.89807131323965,
+   "y_km": 230.4159188187477
+  },
+  {
+   "rank": 36,
+   "qid": "Q142069",
+   "name": "Chambly",
+   "pop_2021": 31444,
+   "lon": -73.2833,
+   "lat": 45.45,
+   "x_km": -2.0405383342409937,
+   "y_km": -64.46725640670347
+  },
+  {
+   "rank": 37,
+   "qid": "Q141973",
+   "name": "Alma",
+   "pop_2021": 30331,
+   "lon": -71.65,
+   "lat": 48.55,
+   "x_km": 124.05189864391862,
+   "y_km": 280.23749231724787
+  },
+  {
+   "rank": 38,
+   "qid": "Q142156",
+   "name": "Sainte-Julie",
+   "pop_2021": 30045,
+   "lon": -73.333333333,
+   "lat": 45.583333333,
+   "x_km": -5.903163013179359,
+   "y_km": -49.64124574596457
+  },
+  {
+   "rank": 39,
+   "qid": "Q142064",
+   "name": "Saint-Constant",
+   "pop_2021": 29954,
+   "lon": -73.566666666,
+   "lat": 45.366666666,
+   "x_km": -23.916735893977222,
+   "y_km": -73.73351316696154
+  },
+  {
+   "rank": 40,
+   "qid": "Q142004",
+   "name": "Magog",
+   "pop_2021": 28312,
+   "lon": -72.15,
+   "lat": 45.266666666,
+   "x_km": 85.45138527278033,
+   "y_km": -84.85302119031499
+  }
+ ],
+ "raw_file": "data/m05-quebec-municipalities.json"
+}

@@ -1,0 +1,517 @@
+{
+  "class_method": {
+    "percent_marked_saturated_x5": 81.08,
+    "percent_marked_unsaturated": 14.364,
+    "percent_with_red_above_200_only_unsaturated": 57.864,
+    "rule": "red > T and red > 2*green and red > 2*blue",
+    "saturation_factor": 5,
+    "sweep_percent_marked_by_saturation_factor_and_threshold": {
+      "1": {
+        "120": 27.976,
+        "140": 26.46,
+        "160": 24.309,
+        "180": 20.388,
+        "200": 14.364,
+        "220": 5.423,
+        "240": 0.311
+      },
+      "1.5": {
+        "120": 43.445,
+        "140": 42.536,
+        "160": 41.006,
+        "180": 38.798,
+        "200": 35.784,
+        "220": 30.935,
+        "240": 23.594
+      },
+      "2": {
+        "120": 52.955,
+        "140": 52.505,
+        "160": 51.714,
+        "180": 50.351,
+        "200": 48.249,
+        "220": 45.132,
+        "240": 40.465
+      },
+      "3": {
+        "120": 65.808,
+        "140": 65.503,
+        "160": 65.168,
+        "180": 64.712,
+        "200": 63.987,
+        "220": 62.882,
+        "240": 60.952
+      },
+      "5": {
+        "120": 82.4,
+        "140": 81.933,
+        "160": 81.614,
+        "180": 81.348,
+        "200": 81.08,
+        "220": 80.78,
+        "240": 80.378
+      }
+    },
+    "sweep_percent_marked_by_threshold": {
+      "no_saturation": {
+        "120": 27.976,
+        "140": 26.46,
+        "160": 24.309,
+        "180": 20.388,
+        "200": 14.364,
+        "220": 5.423,
+        "240": 0.311
+      },
+      "saturation_x5": {
+        "120": 82.4,
+        "140": 81.933,
+        "160": 81.614,
+        "180": 81.348,
+        "200": 81.08,
+        "220": 80.78,
+        "240": 80.378
+      }
+    },
+    "threshold": 200,
+    "vectorised_equals_notebook_loop_on_crop": true
+  },
+  "cleaning": {
+    "final_percent_marked": 27.202,
+    "note": "Intermediate percentages use the class formula (sum of pixel values / all-white maximum); blur and contrast produce grays, so that formula and the count above 127 can differ.",
+    "order": [
+      "raw HSV red mask",
+      "median 5",
+      "min 5 (thin)",
+      "max 5 (fatten)",
+      "gaussian blur r=8",
+      "contrast x4",
+      "yes/no cut value > 200"
+    ],
+    "steps": [
+      {
+        "percent_marked_class_formula_mean_intensity": 25.541,
+        "percent_of_frame_flipped_vs_previous_step": 0.0,
+        "percent_pixels_above_127": 25.541,
+        "step": "raw HSV red mask"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 25.256,
+        "percent_of_frame_flipped_vs_previous_step": 1.756,
+        "percent_pixels_above_127": 25.256,
+        "step": "median 5"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 19.162,
+        "percent_of_frame_flipped_vs_previous_step": 6.094,
+        "percent_pixels_above_127": 19.162,
+        "step": "min 5 (thin)"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 24.302,
+        "percent_of_frame_flipped_vs_previous_step": 5.14,
+        "percent_pixels_above_127": 24.302,
+        "step": "max 5 (fatten)"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 24.301,
+        "percent_of_frame_flipped_vs_previous_step": 4.348,
+        "percent_pixels_above_127": 23.464,
+        "step": "gaussian blur r=8"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 29.789,
+        "percent_of_frame_flipped_vs_previous_step": 6.145,
+        "percent_pixels_above_127": 29.609,
+        "step": "contrast x4"
+      },
+      {
+        "percent_marked_class_formula_mean_intensity": 27.202,
+        "percent_of_frame_flipped_vs_previous_step": 2.407,
+        "percent_pixels_above_127": 27.202,
+        "step": "yes/no cut value > 200"
+      }
+    ],
+    "variant_with_class_brightness_x3_before_contrast": {
+      "final_percent_marked": 35.892,
+      "percent_after_brightness_x3": 36.857
+    }
+  },
+  "figures": {
+    "m06-01-original.png": {
+      "bytes": 1225036,
+      "file": "m06-01-original.png",
+      "height": 667,
+      "width": 1000
+    },
+    "m06-02-saturated.png": {
+      "bytes": 1263044,
+      "file": "m06-02-saturated.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-03-class-rule.png": {
+      "bytes": 882175,
+      "file": "m06-03-class-rule.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-03b-class-rule-unsaturated.png": {
+      "bytes": 432514,
+      "file": "m06-03b-class-rule-unsaturated.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-04-hsv-rule.png": {
+      "bytes": 110000,
+      "file": "m06-04-hsv-rule.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-05-cleaned-mask.png": {
+      "bytes": 21181,
+      "file": "m06-05-cleaned-mask.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-06-overlay.png": {
+      "bytes": 1194141,
+      "file": "m06-06-overlay.png",
+      "height": 667,
+      "width": 1000
+    },
+    "m06-07-grayed.png": {
+      "bytes": 1064201,
+      "file": "m06-07-grayed.png",
+      "height": 800,
+      "width": 1200
+    },
+    "m06-08-side-by-side.png": {
+      "bytes": 1178382,
+      "file": "m06-08-side-by-side.png",
+      "height": 497,
+      "width": 1500
+    },
+    "m06-09-grayed-flat-class-style.png": {
+      "bytes": 786459,
+      "file": "m06-09-grayed-flat-class-style.png",
+      "height": 1000,
+      "width": 1500
+    },
+    "m06-steps.png": {
+      "bytes": 1055908,
+      "dpi": 200,
+      "file": "m06-steps.png"
+    }
+  },
+  "gifs": {
+    "loop_equals_1_probe_info_loop_read_back": 1,
+    "m06-steps-once.gif": {
+      "bytes": 402985,
+      "durations_ms": [
+        600,
+        600,
+        600,
+        600,
+        600,
+        600
+      ],
+      "file": "m06-steps-once.gif",
+      "info_loop": "absent",
+      "n_frames": 6,
+      "saved_with": "width 400, duration=600, loop omitted, optimize=True",
+      "size_px": [
+        400,
+        291
+      ]
+    },
+    "m06-steps.gif": {
+      "bytes": 787528,
+      "durations_ms": [
+        1200,
+        1200,
+        1200,
+        1200,
+        1200,
+        1200
+      ],
+      "file": "m06-steps.gif",
+      "info_loop": 0,
+      "n_frames": 6,
+      "saved_with": "width 600, duration=1200, loop=0, optimize=True",
+      "size_px": [
+        600,
+        431
+      ]
+    },
+    "parameters": {
+      "looping": "loop=0 writes the NETSCAPE extension with count 0 = repeat forever; omitting loop writes no extension and viewers play the animation once; loop=N writes count N, which browsers treat as N repeats after the first play",
+      "size": "resize frames before saving (width); optimize=True and fewer palette colours (quantize colors=128) shrink bytes",
+      "speed": "duration= milliseconds per frame (a list gives one value per frame)"
+    }
+  },
+  "hsv_rule": {
+    "agreement": {
+      "class_rule_unsaturated_pixels_in_each_hsv_class_percent_of_class": {
+        "brown_dark_other": 0.28,
+        "green": 0.0,
+        "orange_yellow": 15.23,
+        "red": 84.49
+      },
+      "class_rule_unsaturated_pixels_that_are_hsv_red_percent_of_class": 84.49,
+      "hsv_red_pixels_caught_by_unsaturated_class_rule_percent_of_hsv_red": 47.51
+    },
+    "class_rule_percent_for_comparison": {
+      "saturated_x5": 81.08,
+      "unsaturated": 14.364
+    },
+    "cutoffs": {
+      "green_hue_max": 130,
+      "green_min_saturation": 40,
+      "hue_scale": "PIL 0-255 (255 = 360 degrees), centred on red (hue>=128 minus 256)",
+      "orange_yellow_hue_max": 40,
+      "red_hue_max_centred": 10,
+      "saturation_min_vivid": 140,
+      "value_min": 96
+    },
+    "histograms": {
+      "hue_of_vivid_pixels_4_wide_bins_from_minus_16": [
+        10,
+        553,
+        21038,
+        47281,
+        107709,
+        119135,
+        118512,
+        130560,
+        116669,
+        79952,
+        51631,
+        18536,
+        511,
+        11,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturation_32_bins_of_8": [
+        795,
+        4477,
+        9413,
+        11776,
+        10704,
+        9555,
+        9230,
+        10496,
+        13916,
+        41302,
+        77193,
+        101040,
+        98780,
+        80381,
+        68865,
+        52275,
+        41854,
+        36898,
+        39266,
+        54093,
+        88104,
+        119906,
+        134032,
+        113847,
+        80643,
+        55286,
+        35634,
+        24866,
+        18534,
+        14977,
+        13836,
+        28026
+      ],
+      "saturation_valley_bin_start": 136,
+      "value_32_bins_of_8": [
+        8,
+        152,
+        1460,
+        6423,
+        15813,
+        21008,
+        19009,
+        15581,
+        12599,
+        9470,
+        7387,
+        6358,
+        6961,
+        9029,
+        11713,
+        14152,
+        16475,
+        20475,
+        25188,
+        30006,
+        38540,
+        51214,
+        68809,
+        90530,
+        116995,
+        151501,
+        201665,
+        219034,
+        176253,
+        92255,
+        37552,
+        6385
+      ],
+      "value_valley_bin_start": 88
+    },
+    "percent": {
+      "brown_dark_other": 45.843,
+      "green": 0.017,
+      "orange_yellow": 28.6,
+      "other_split_dark_v_below_cut": 7.685,
+      "other_split_pale_or_desaturated": 38.158,
+      "red": 25.541
+    },
+    "red_percent_sensitivity": {
+      "red_hue_max": {
+        "10": 25.541,
+        "12": 29.784,
+        "14": 34.123,
+        "16": 38.585,
+        "4": 13.694,
+        "6": 17.758,
+        "8": 21.635
+      },
+      "saturation_cut": {
+        "100": 28.797,
+        "120": 27.114,
+        "140": 25.541,
+        "160": 22.336,
+        "180": 12.081
+      },
+      "value_cut": {
+        "112": 25.065,
+        "130": 24.164,
+        "60": 25.971,
+        "80": 25.785,
+        "96": 25.541
+      }
+    },
+    "unreliable": {
+      "global": {
+        "dark_pixels_with_vivid_red_or_orange_hue_percent_of_frame": 1.795,
+        "near_white_glare_v_ge_235_s_lt_60_percent_of_frame": 0.002,
+        "pale_red_hue_pixels_s_60_to_139_hue_le_10_percent_of_frame": 5.897,
+        "saturation_within_20_of_cut_percent_of_frame": 15.559
+      },
+      "regions": {
+        "asphalt_gap_between_leaves_center_left": {
+          "box_xyxy_in_1500px": [
+            500,
+            560,
+            570,
+            650
+          ],
+          "mean_rgb": [
+            98.4,
+            78.6,
+            65.5
+          ],
+          "percent_dark_v_below_cut": 71.063,
+          "percent_green": 0.0,
+          "percent_orange_yellow": 9.0,
+          "percent_other": 90.889,
+          "percent_red": 0.111
+        },
+        "deep_crimson_leaves_in_shadow_lower_center": {
+          "box_xyxy_in_1500px": [
+            780,
+            730,
+            880,
+            900
+          ],
+          "mean_rgb": [
+            148.3,
+            65.6,
+            48.6
+          ],
+          "percent_dark_v_below_cut": 8.435,
+          "percent_green": 0.0,
+          "percent_orange_yellow": 18.406,
+          "percent_other": 20.324,
+          "percent_red": 61.271
+        },
+        "large_pale_peach_leaf_center": {
+          "box_xyxy_in_1500px": [
+            640,
+            420,
+            790,
+            540
+          ],
+          "mean_rgb": [
+            213.1,
+            164.3,
+            133.9
+          ],
+          "percent_dark_v_below_cut": 0.0,
+          "percent_green": 0.0,
+          "percent_orange_yellow": 5.244,
+          "percent_other": 94.672,
+          "percent_red": 0.083
+        },
+        "olive_green_leaf_top_right": {
+          "box_xyxy_in_1500px": [
+            1385,
+            70,
+            1490,
+            170
+          ],
+          "mean_rgb": [
+            153.8,
+            127.4,
+            86.5
+          ],
+          "percent_dark_v_below_cut": 7.124,
+          "percent_green": 0.114,
+          "percent_orange_yellow": 22.59,
+          "percent_other": 77.248,
+          "percent_red": 0.048
+        }
+      }
+    }
+  },
+  "image": {
+    "original_bytes": 13430622,
+    "original_file": "data/leaves-original.jpg",
+    "original_sha256": "a3f1c465459e4e69be0e875afb9cd438c234f2a6d9932e377f74a7760d5593bd",
+    "original_size_px": [
+      6000,
+      4000
+    ],
+    "resampling": "LANCZOS, JPEG quality 90",
+    "working_bytes": 462497,
+    "working_file": "data/leaves-1500.jpg",
+    "working_size_px": [
+      1500,
+      1000
+    ]
+  },
+  "problems": [
+    "Playback of loop=1 was not tested in a browser; the once-GIF omits loop, which every viewer plays once.",
+    "Saturation x5 makes the class red rule mark most of the frame (see class_method), so frame 3 of the GIF is the rule failing, shown as the class defines it."
+  ],
+  "source": {
+    "accessed": "2026-10-28",
+    "author": "Wilfredor (Wikimedia Commons user; Wikidata Q115464159)",
+    "date_taken": "2018-10-06 12:25:28",
+    "description_on_commons": "Fallen maple leaves in Quebec City in early October. Quebec City, Quebec, Canada. Photographed at Vieux-Limoilou.",
+    "direct_image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Autumn_leaves_on_the_ground_in_Quebec_City.jpg",
+    "licence_short": "CC0 1.0",
+    "licence_text_provenance": "Commons API extmetadata (LicenseUrl, UsageTerms); the rendered file page was not fetched.",
+    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licence_usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "page": "https://commons.wikimedia.org/wiki/File:Autumn_leaves_on_the_ground_in_Quebec_City.jpg"
+  }
+}
