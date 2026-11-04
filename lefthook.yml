@@ -1,0 +1,61 @@
+# Seeded by `mise run repo-gates -- seed` in condor-ai, and owned by THIS repo from
+# here on: repo-gates writes a file only when it is absent and never rewrites one.
+# Edit this file here. To take a fresh copy of the current template, delete it and
+# re-run the seed.
+#
+# colors: false — lefthook emits 24-bit ANSI even when redirected, which breaks grep and
+# makes the summary markers unparseable for an agent reading a captured log.
+# output: [summary, failure] — under parallel: true, success spam otherwise scrolls the
+# failing command's diagnostic out of view.
+#
+# Dispatch model: every gate runs `mise run <task> -- {staged_files}`, so the command,
+# its flags, and its exclusions live exactly once, in mise.gates.toml. The glob decides
+# WHEN a gate fires; the task decides WHAT runs. Passing {staged_files} also keeps a
+# gate from failing on an edit this commit does not touch; `mise run check` is the
+# full-tree backstop.
+#
+# lefthook 2.1.10 drops staged *deletions* from {staged_files} on its own (verified:
+# a commit staging one modification and one deletion passes only the modification), so
+# the gate bodies need no "skip paths that no longer exist" guard.
+#
+# pre-commit only: the whole set is glob-scoped and offline. This does not disable
+# git-lfs — lefthook renames the LFS hooks aside and invokes them itself (verified
+# end-to-end: an LFS-tracked blob still uploaded on push with a lefthook pre-push
+# declared).
+colors: false
+output:
+  - summary
+  - failure
+
+pre-commit:
+  parallel: true
+  commands:
+    lint-md:
+      glob: "*.md"
+      run: "mise run lint-md -- {staged_files}"
+      fail_text: "reproduce: mise run lint-md"
+    fmt-md-check:
+      glob: "*.md"
+      run: "mise run fmt-md-check -- {staged_files}"
+      fail_text: "fix: mise run fmt-md -- <paths> | reproduce: mise run fmt-md-check"
+    links:
+      glob: "*.md"
+      run: "mise run links -- {staged_files}"
+      fail_text: "reproduce: mise run links"
+    lint-yaml:
+      glob: "*.{yml,yaml}"
+      run: "mise run lint-yaml -- {staged_files}"
+      fail_text: "reproduce: mise run lint-yaml"
+    secrets-staged:
+      run: "mise run secrets-staged"
+      fail_text: "reproduce: mise run secrets-staged"
+    lfs-coverage:
+      run: "mise run lfs-coverage"
+      fail_text: "reproduce: mise run lfs-coverage"
+    conflict-markers:
+      glob: "*.md"
+      run: "mise run conflict-markers -- {staged_files}"
+      fail_text: "reproduce: mise run conflict-markers"
+    tests:
+      run: "mise run tests -- --staged"
+      fail_text: "reproduce: mise run tests"

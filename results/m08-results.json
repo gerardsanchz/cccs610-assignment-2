@@ -1,0 +1,5896 @@
+{
+  "seed": 8,
+  "cars": {
+    "name": "cars",
+    "n_alternatives": 613,
+    "criteria": [
+      {
+        "column": "Combined (L/100 km)",
+        "direction": "min"
+      },
+      {
+        "column": "Engine size (L)",
+        "direction": "max"
+      },
+      {
+        "column": "Smog rating",
+        "direction": "max"
+      }
+    ],
+    "pareto_check": {
+      "subsample_size": 300,
+      "naive_pareto_size": 20,
+      "fast_pareto_size": 20,
+      "fast_equals_naive": true,
+      "class_loop_pareto_size": 57,
+      "class_loop_wrongly_kept": 37,
+      "full_naive_equals_fast": true,
+      "full_class_loop_wrongly_kept": 60
+    },
+    "pareto_size": 24,
+    "pareto_share_percent": 3.92,
+    "correlations": {
+      "Combined (L/100 km)": {
+        "Combined (L/100 km)": 1.0,
+        "CO2 emissions (g/km)": 0.988,
+        "CO2 rating": -0.962,
+        "Engine size (L)": 0.776,
+        "Cylinders": 0.764,
+        "Smog rating": -0.515
+      },
+      "CO2 emissions (g/km)": {
+        "Combined (L/100 km)": 0.988,
+        "CO2 emissions (g/km)": 1.0,
+        "CO2 rating": -0.973,
+        "Engine size (L)": 0.772,
+        "Cylinders": 0.764,
+        "Smog rating": -0.52
+      },
+      "CO2 rating": {
+        "Combined (L/100 km)": -0.962,
+        "CO2 emissions (g/km)": -0.973,
+        "CO2 rating": 1.0,
+        "Engine size (L)": -0.728,
+        "Cylinders": -0.722,
+        "Smog rating": 0.509
+      },
+      "Engine size (L)": {
+        "Combined (L/100 km)": 0.776,
+        "CO2 emissions (g/km)": 0.772,
+        "CO2 rating": -0.728,
+        "Engine size (L)": 1.0,
+        "Cylinders": 0.923,
+        "Smog rating": -0.49
+      },
+      "Cylinders": {
+        "Combined (L/100 km)": 0.764,
+        "CO2 emissions (g/km)": 0.764,
+        "CO2 rating": -0.722,
+        "Engine size (L)": 0.923,
+        "Cylinders": 1.0,
+        "Smog rating": -0.549
+      },
+      "Smog rating": {
+        "Combined (L/100 km)": -0.515,
+        "CO2 emissions (g/km)": -0.52,
+        "CO2 rating": 0.509,
+        "Engine size (L)": -0.49,
+        "Cylinders": -0.549,
+        "Smog rating": 1.0
+      }
+    },
+    "weighted_sum": {
+      "weights": {
+        "Combined (L/100 km)": 0.5,
+        "Engine size (L)": 0.3,
+        "Smog rating": 0.2
+      },
+      "top5": [
+        {
+          "id": 549,
+          "label": "Toyota Camry (2026)",
+          "Combined (L/100 km)": 5.0,
+          "Engine size (L)": 2.5,
+          "Smog rating": 7.0,
+          "score": 0.24869875222816398
+        },
+        {
+          "id": 578,
+          "label": "Toyota Prius AWD (2026)",
+          "Combined (L/100 km)": 4.8,
+          "Engine size (L)": 2.0,
+          "Smog rating": 6.0,
+          "score": 0.3027688651218063
+        },
+        {
+          "id": 555,
+          "label": "Toyota Corolla Hybrid (2026)",
+          "Combined (L/100 km)": 4.7,
+          "Engine size (L)": 1.8,
+          "Smog rating": 6.0,
+          "score": 0.31040998217468807
+        },
+        {
+          "id": 342,
+          "label": "Kia Niro FE (2026)",
+          "Combined (L/100 km)": 4.4,
+          "Engine size (L)": 1.6,
+          "Smog rating": 6.0,
+          "score": 0.31151515151515147
+        },
+        {
+          "id": 61,
+          "label": "BMW M440i xDrive Coupe (2026)",
+          "Combined (L/100 km)": 8.1,
+          "Engine size (L)": 3.0,
+          "Smog rating": 6.0,
+          "score": 0.3560665478312537
+        }
+      ]
+    },
+    "weight_sensitivity": {
+      "draws": 1000,
+      "distribution": "Dirichlet(1,...,1), uniform on the simplex",
+      "pareto_candidates": 24,
+      "distinct_cost_vectors_among_candidates": 16,
+      "distinct_winners": 7,
+      "pareto_never_winner_in_1000": 10,
+      "distinct_winners_vs_draws": {
+        "10": 4,
+        "30": 6,
+        "100": 7,
+        "300": 7,
+        "1000": 7
+      },
+      "top_winners": [
+        {
+          "id": 549,
+          "label": "Toyota Camry (2026)",
+          "Combined (L/100 km)": 5.0,
+          "Engine size (L)": 2.5,
+          "Smog rating": 7.0,
+          "wins": 604,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 162,
+          "label": "Ferrari 12Cilindri (2026)",
+          "Combined (L/100 km)": 16.5,
+          "Engine size (L)": 6.5,
+          "Smog rating": 5.0,
+          "wins": 157,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 115,
+          "label": "Chevrolet Corvette (2026)",
+          "Combined (L/100 km)": 12.5,
+          "Engine size (L)": 6.2,
+          "Smog rating": 4.0,
+          "wins": 90,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 134,
+          "label": "Chevrolet Silverado 4WD (2026)",
+          "Combined (L/100 km)": 14.0,
+          "Engine size (L)": 6.2,
+          "Smog rating": 5.0,
+          "wins": 50,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 125,
+          "label": "Chevrolet Silverado (2026)",
+          "Combined (L/100 km)": 13.6,
+          "Engine size (L)": 5.3,
+          "Smog rating": 6.0,
+          "wins": 43,
+          "alternatives_sharing_this_cost_vector": 2
+        },
+        {
+          "id": 342,
+          "label": "Kia Niro FE (2026)",
+          "Combined (L/100 km)": 4.4,
+          "Engine size (L)": 1.6,
+          "Smog rating": 6.0,
+          "wins": 29,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 522,
+          "label": "Rolls-Royce Cullinan (2026)",
+          "Combined (L/100 km)": 16.4,
+          "Engine size (L)": 6.7,
+          "Smog rating": 2.0,
+          "wins": 27,
+          "alternatives_sharing_this_cost_vector": 7
+        }
+      ],
+      "share_won_by_most_frequent_percent": 60.4,
+      "class_pick_wins_in_draws": 604,
+      "reachability_draws": 400000,
+      "reachability_draws_note": "200000 draws from Dirichlet(1) plus 200000 from Dirichlet(0.3); a sample, so the never-winner count is an upper bound on the points no weights can reach. Points with the same cost vector tie and share one count.",
+      "pareto_never_winner_in_400000": 10,
+      "never_winner_in_400000_labels": [
+        "BMW 760i xDrive Sedan (2026)",
+        "BMW M440i xDrive Coupe (2026)",
+        "Chrysler Grand Caravan (2026)",
+        "Chrysler Pacifica (2026)",
+        "Ford F-150 (2026)",
+        "Mazda CX-70 4WD (2026)",
+        "Nissan Frontier (2026)",
+        "Ram 1500 eTorque (2026)",
+        "Toyota Corolla Hybrid (2026)",
+        "Toyota Prius AWD (2026)"
+      ]
+    },
+    "epsilon_constraint": {
+      "minimise": "Combined (L/100 km)",
+      "bounds": {
+        "Engine size (L)": [
+          ">=",
+          3.0
+        ],
+        "Smog rating": [
+          ">=",
+          5
+        ]
+      },
+      "feasible_alternatives": 125,
+      "pick": {
+        "id": 61,
+        "label": "BMW M440i xDrive Coupe (2026)",
+        "Combined (L/100 km)": 8.1,
+        "Engine size (L)": 3.0,
+        "Smog rating": 6.0
+      },
+      "pick_is_pareto": true,
+      "sweep_of": "Engine size (L) >= bound, other bounds fixed",
+      "sweep": [
+        {
+          "bound": 1.5,
+          "feasible": 396,
+          "label": "Kia Niro FE (2026)",
+          "Combined (L/100 km)": 4.4
+        },
+        {
+          "bound": 2.0,
+          "feasible": 359,
+          "label": "Toyota Prius AWD (2026)",
+          "Combined (L/100 km)": 4.8
+        },
+        {
+          "bound": 2.5,
+          "feasible": 206,
+          "label": "Toyota Camry (2026)",
+          "Combined (L/100 km)": 5.0
+        },
+        {
+          "bound": 3.0,
+          "feasible": 125,
+          "label": "BMW M440i xDrive Coupe (2026)",
+          "Combined (L/100 km)": 8.1
+        },
+        {
+          "bound": 3.5,
+          "feasible": 75,
+          "label": "Chrysler Grand Caravan (2026)",
+          "Combined (L/100 km)": 10.6
+        },
+        {
+          "bound": 4.0,
+          "feasible": 38,
+          "label": "Ford F-150 (2026)",
+          "Combined (L/100 km)": 12.4
+        },
+        {
+          "bound": 5.0,
+          "feasible": 31,
+          "label": "Ford F-150 (2026)",
+          "Combined (L/100 km)": 12.4
+        },
+        {
+          "bound": 6.0,
+          "feasible": 14,
+          "label": "Chevrolet Silverado 4WD (2026)",
+          "Combined (L/100 km)": 14.0
+        }
+      ]
+    },
+    "lexicographic": {
+      "priority_order": [
+        "Combined (L/100 km)",
+        "Engine size (L)",
+        "Smog rating"
+      ],
+      "variants": {
+        "tolerance_0.0": {
+          "survivors_after_each_step": [
+            1,
+            1,
+            1
+          ],
+          "pick": {
+            "id": 342,
+            "label": "Kia Niro FE (2026)",
+            "Combined (L/100 km)": 4.4,
+            "Engine size (L)": 1.6,
+            "Smog rating": 6.0
+          }
+        },
+        "tolerance_0.1": {
+          "survivors_after_each_step": [
+            4,
+            2,
+            1
+          ],
+          "pick": {
+            "id": 549,
+            "label": "Toyota Camry (2026)",
+            "Combined (L/100 km)": 5.0,
+            "Engine size (L)": 2.5,
+            "Smog rating": 7.0
+          }
+        }
+      },
+      "tolerance_note": "a criterion keeps every candidate within the tolerance (in normalised units, 0 = best, 1 = worst) of the best one"
+    },
+    "distance_methods": {
+      "topsis_closeness": {
+        "pick": {
+          "id": 549,
+          "label": "Toyota Camry (2026)",
+          "Combined (L/100 km)": 5.0,
+          "Engine size (L)": 2.5,
+          "Smog rating": 7.0
+        },
+        "closeness": 0.6478577697465179
+      },
+      "euclid_distance_to_ideal": {
+        "pick": {
+          "id": 125,
+          "label": "Chevrolet Silverado (2026)",
+          "Combined (L/100 km)": 13.6,
+          "Engine size (L)": 5.3,
+          "Smog rating": 6.0
+        },
+        "distance": 0.673900216948333
+      },
+      "chebyshev_to_ideal": {
+        "pick": {
+          "id": 48,
+          "label": "BMW 760i xDrive Sedan (2026)",
+          "Combined (L/100 km)": 11.5,
+          "Engine size (L)": 4.4,
+          "Smog rating": 4.0
+        },
+        "max_cost": 0.5
+      },
+      "goal_point": {
+        "goal": {
+          "Combined (L/100 km)": 8.0,
+          "Engine size (L)": 3.0,
+          "Smog rating": 6
+        },
+        "pick": {
+          "id": 61,
+          "label": "BMW M440i xDrive Coupe (2026)",
+          "Combined (L/100 km)": 8.1,
+          "Engine size (L)": 3.0,
+          "Smog rating": 6.0
+        },
+        "achievement": 0.006542483660130696
+      }
+    },
+    "diversity": {
+      "front_size": 24,
+      "mean_nearest_neighbour_distance": 0.06931867119623382,
+      "median_nearest_neighbour_distance": 0.03694634842695883,
+      "max_nearest_neighbour_distance": 0.20769884890512877,
+      "max_possible_distance": 1.7320508075688772,
+      "points_with_identical_cost_vector": 11,
+      "max_gap_per_criterion_normalised": {
+        "Combined (L/100 km)": 0.20261437908496732,
+        "Engine size (L)": 0.16363636363636372,
+        "Smog rating": 0.33333333333333337
+      },
+      "k": 6,
+      "fps_start": "Kia Niro FE (2026) (lowest Combined (L/100 km))",
+      "fps_representatives": [
+        {
+          "id": 342,
+          "label": "Kia Niro FE (2026)",
+          "Combined (L/100 km)": 4.4,
+          "Engine size (L)": 1.6,
+          "Smog rating": 6.0
+        },
+        {
+          "id": 522,
+          "label": "Rolls-Royce Cullinan (2026)",
+          "Combined (L/100 km)": 16.4,
+          "Engine size (L)": 6.7,
+          "Smog rating": 2.0
+        },
+        {
+          "id": 125,
+          "label": "Chevrolet Silverado (2026)",
+          "Combined (L/100 km)": 13.6,
+          "Engine size (L)": 5.3,
+          "Smog rating": 6.0
+        },
+        {
+          "id": 400,
+          "label": "Mazda CX-70 4WD (2026)",
+          "Combined (L/100 km)": 9.3,
+          "Engine size (L)": 3.3,
+          "Smog rating": 5.0
+        },
+        {
+          "id": 115,
+          "label": "Chevrolet Corvette (2026)",
+          "Combined (L/100 km)": 12.5,
+          "Engine size (L)": 6.2,
+          "Smog rating": 4.0
+        },
+        {
+          "id": 162,
+          "label": "Ferrari 12Cilindri (2026)",
+          "Combined (L/100 km)": 16.5,
+          "Engine size (L)": 6.5,
+          "Smog rating": 5.0
+        }
+      ],
+      "covering_radius_max_and_mean": {
+        "farthest_point_sampling": [
+          0.2974114762875155,
+          0.07726352023823606
+        ],
+        "top_6_by_weighted_sum": [
+          0.42936066835786935,
+          0.2526856866977441
+        ],
+        "random_k_median_of_200": [
+          0.3823482089677662
+        ]
+      }
+    },
+    "all_pareto": [
+      {
+        "id": 549,
+        "label": "Toyota Camry (2026)",
+        "Combined (L/100 km)": 5.0,
+        "Engine size (L)": 2.5,
+        "Smog rating": 7.0
+      },
+      {
+        "id": 578,
+        "label": "Toyota Prius AWD (2026)",
+        "Combined (L/100 km)": 4.8,
+        "Engine size (L)": 2.0,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 555,
+        "label": "Toyota Corolla Hybrid (2026)",
+        "Combined (L/100 km)": 4.7,
+        "Engine size (L)": 1.8,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 342,
+        "label": "Kia Niro FE (2026)",
+        "Combined (L/100 km)": 4.4,
+        "Engine size (L)": 1.6,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 61,
+        "label": "BMW M440i xDrive Coupe (2026)",
+        "Combined (L/100 km)": 8.1,
+        "Engine size (L)": 3.0,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 115,
+        "label": "Chevrolet Corvette (2026)",
+        "Combined (L/100 km)": 12.5,
+        "Engine size (L)": 6.2,
+        "Smog rating": 4.0
+      },
+      {
+        "id": 134,
+        "label": "Chevrolet Silverado 4WD (2026)",
+        "Combined (L/100 km)": 14.0,
+        "Engine size (L)": 6.2,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 125,
+        "label": "Chevrolet Silverado (2026)",
+        "Combined (L/100 km)": 13.6,
+        "Engine size (L)": 5.3,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 231,
+        "label": "GMC Sierra (2026)",
+        "Combined (L/100 km)": 13.6,
+        "Engine size (L)": 5.3,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 515,
+        "label": "Ram 1500 eTorque (2026)",
+        "Combined (L/100 km)": 10.8,
+        "Engine size (L)": 3.6,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 400,
+        "label": "Mazda CX-70 4WD (2026)",
+        "Combined (L/100 km)": 9.3,
+        "Engine size (L)": 3.3,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 190,
+        "label": "Ford F-150 (2026)",
+        "Combined (L/100 km)": 12.4,
+        "Engine size (L)": 5.0,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 483,
+        "label": "Nissan Frontier (2026)",
+        "Combined (L/100 km)": 11.6,
+        "Engine size (L)": 3.8,
+        "Smog rating": 6.0
+      },
+      {
+        "id": 154,
+        "label": "Chrysler Grand Caravan (2026)",
+        "Combined (L/100 km)": 10.6,
+        "Engine size (L)": 3.6,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 155,
+        "label": "Chrysler Pacifica (2026)",
+        "Combined (L/100 km)": 10.6,
+        "Engine size (L)": 3.6,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 48,
+        "label": "BMW 760i xDrive Sedan (2026)",
+        "Combined (L/100 km)": 11.5,
+        "Engine size (L)": 4.4,
+        "Smog rating": 4.0
+      },
+      {
+        "id": 162,
+        "label": "Ferrari 12Cilindri (2026)",
+        "Combined (L/100 km)": 16.5,
+        "Engine size (L)": 6.5,
+        "Smog rating": 5.0
+      },
+      {
+        "id": 522,
+        "label": "Rolls-Royce Cullinan (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 523,
+        "label": "Rolls-Royce Black Badge Cullinan (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 524,
+        "label": "Rolls-Royce Ghost (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 525,
+        "label": "Rolls-Royce Black Badge Ghost (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 526,
+        "label": "Rolls-Royce Ghost Extended (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 527,
+        "label": "Rolls-Royce Phantom (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      },
+      {
+        "id": 528,
+        "label": "Rolls-Royce Phantom Extended (2026)",
+        "Combined (L/100 km)": 16.4,
+        "Engine size (L)": 6.7,
+        "Smog rating": 2.0
+      }
+    ],
+    "top_picks": {
+      "weighted_sum": "Toyota Camry (2026)",
+      "epsilon_constraint": "BMW M440i xDrive Coupe (2026)",
+      "lexicographic": "Toyota Camry (2026)",
+      "topsis": "Toyota Camry (2026)",
+      "chebyshev_ideal": "BMW 760i xDrive Sedan (2026)",
+      "goal_point": "BMW M440i xDrive Coupe (2026)"
+    },
+    "distinct_picks": 3,
+    "labelled_in_pareto_figure": [
+      "Kia Niro FE (2026)",
+      "Rolls-Royce Cullinan (2026)",
+      "Toyota Camry (2026)",
+      "BMW M440i xDrive Coupe (2026)",
+      "BMW 760i xDrive Sedan (2026)",
+      "Chevrolet Silverado (2026)",
+      "Mazda CX-70 4WD (2026)",
+      "Chevrolet Corvette (2026)",
+      "Ferrari 12Cilindri (2026)"
+    ],
+    "criteria_rationale": {
+      "Combined (L/100 km)": "minimise: fuel cost and the proxy for CO2, the stand-in for the class Price and FuelEfficiency",
+      "Engine size (L)": "maximise: proxy for power, towing and cabin refinement (no power rating exists in the file); it conflicts with fuel",
+      "Smog rating": "maximise: higher is cleaner for local air pollutants (NOx, particulates); only partly aligned with fuel",
+      "excluded": "CO2 g/km and CO2 rating (correlation with combined fuel about 0.99 in magnitude, they would add no conflict); highway and city fuel (components of combined); cylinders (collinear with engine size)"
+    }
+  },
+  "houses": {
+    "name": "houses",
+    "n_alternatives": 72315,
+    "criteria": [
+      {
+        "column": "value",
+        "direction": "min"
+      },
+      {
+        "column": "floor_m2",
+        "direction": "max"
+      },
+      {
+        "column": "year_built",
+        "direction": "max"
+      },
+      {
+        "column": "lot_m2",
+        "direction": "max"
+      }
+    ],
+    "pareto_check": {
+      "subsample_size": 300,
+      "naive_pareto_size": 55,
+      "fast_pareto_size": 55,
+      "fast_equals_naive": true,
+      "class_loop_pareto_size": 122,
+      "class_loop_wrongly_kept": 67
+    },
+    "pareto_size": 581,
+    "pareto_share_percent": 0.8,
+    "correlations": {
+      "value": {
+        "value": 1.0,
+        "floor_m2": 0.718,
+        "year_built": 0.345,
+        "lot_m2": 0.113
+      },
+      "floor_m2": {
+        "value": 0.718,
+        "floor_m2": 1.0,
+        "year_built": 0.095,
+        "lot_m2": 0.181
+      },
+      "year_built": {
+        "value": 0.345,
+        "floor_m2": 0.095,
+        "year_built": 1.0,
+        "lot_m2": -0.045
+      },
+      "lot_m2": {
+        "value": 0.113,
+        "floor_m2": 0.181,
+        "year_built": -0.045,
+        "lot_m2": 1.0
+      }
+    },
+    "weighted_sum": {
+      "weights": {
+        "value": 0.4,
+        "floor_m2": 0.3,
+        "year_built": 0.2,
+        "lot_m2": 0.1
+      },
+      "top5": [
+        {
+          "id": 238337,
+          "label": "2942 rue Rivière-Nelson (#238337)",
+          "value": 278000.0,
+          "floor_m2": 297.7,
+          "year_built": 1968.0,
+          "lot_m2": 2450.2,
+          "score": 0.3405942540966549
+        },
+        {
+          "id": 236989,
+          "label": "3826 rue Saint-Maxime (#236989)",
+          "value": 317000.0,
+          "floor_m2": 214.4,
+          "year_built": 1976.0,
+          "lot_m2": 3769.3,
+          "score": 0.39155184474790283
+        },
+        {
+          "id": 151917,
+          "label": "7 rue Hautes-Terres (#151917)",
+          "value": 322000.0,
+          "floor_m2": 232.6,
+          "year_built": 1976.0,
+          "lot_m2": 2747.1,
+          "score": 0.4043910518353671
+        },
+        {
+          "id": 237633,
+          "label": "13780 rue Marianne (#237633)",
+          "value": 280000.0,
+          "floor_m2": 247.2,
+          "year_built": 1981.0,
+          "lot_m2": 604.9,
+          "score": 0.4135805307773739
+        },
+        {
+          "id": 378953,
+          "label": "226 rue Bernier Est (#378953)",
+          "value": 362000.0,
+          "floor_m2": 161.7,
+          "year_built": 2010.0,
+          "lot_m2": 3619.8,
+          "score": 0.41466881936563726
+        }
+      ]
+    },
+    "weight_sensitivity": {
+      "draws": 1000,
+      "distribution": "Dirichlet(1,...,1), uniform on the simplex",
+      "pareto_candidates": 581,
+      "distinct_cost_vectors_among_candidates": 581,
+      "distinct_winners": 32,
+      "pareto_never_winner_in_1000": 549,
+      "distinct_winners_vs_draws": {
+        "10": 7,
+        "30": 15,
+        "100": 22,
+        "300": 27,
+        "1000": 32
+      },
+      "top_winners": [
+        {
+          "id": 134714,
+          "label": "3 rue Kayak (#134714)",
+          "value": 119000.0,
+          "floor_m2": 77.3,
+          "year_built": 1954.0,
+          "lot_m2": 3624.5,
+          "wins": 131,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 397468,
+          "label": "1860 rue Hautes-Terres (#397468)",
+          "value": 570000.0,
+          "floor_m2": 207.7,
+          "year_built": 2018.0,
+          "lot_m2": 4000.0,
+          "wins": 122,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 373554,
+          "label": "7831 Trait-Carré Est (#373554)",
+          "value": 655000.0,
+          "floor_m2": 375.8,
+          "year_built": 2010.0,
+          "lot_m2": 1166.2,
+          "wins": 115,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 238337,
+          "label": "2942 rue Rivière-Nelson (#238337)",
+          "value": 278000.0,
+          "floor_m2": 297.7,
+          "year_built": 1968.0,
+          "lot_m2": 2450.2,
+          "wins": 111,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 275569,
+          "label": "2129 rue Aigles-Pecheurs (#275569)",
+          "value": 500000.0,
+          "floor_m2": 247.0,
+          "year_built": 1997.0,
+          "lot_m2": 3992.0,
+          "wins": 88,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 376703,
+          "label": "2230 boulevard Talbot (#376703)",
+          "value": 355000.0,
+          "floor_m2": 98.9,
+          "year_built": 2012.0,
+          "lot_m2": 4000.0,
+          "wins": 66,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 376704,
+          "label": "2220 boulevard Talbot (#376704)",
+          "value": 402000.0,
+          "floor_m2": 158.0,
+          "year_built": 2012.0,
+          "lot_m2": 4000.0,
+          "wins": 61,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 266224,
+          "label": "1568 chemin Belair (#266224)",
+          "value": 264000.0,
+          "floor_m2": 72.7,
+          "year_built": 2025.0,
+          "lot_m2": 1567.7,
+          "wins": 53,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 123892,
+          "label": "707 rue Seigneuriale (#123892)",
+          "value": 750000.0,
+          "floor_m2": 387.7,
+          "year_built": 1979.0,
+          "lot_m2": 2361.9,
+          "wins": 48,
+          "alternatives_sharing_this_cost_vector": 1
+        },
+        {
+          "id": 278584,
+          "label": "1037 avenue Lac-Saint-Charles (#278584)",
+          "value": 236000.0,
+          "floor_m2": 63.4,
+          "year_built": 2012.0,
+          "lot_m2": 3066.2,
+          "wins": 35,
+          "alternatives_sharing_this_cost_vector": 1
+        }
+      ],
+      "share_won_by_most_frequent_percent": 13.1,
+      "class_pick_wins_in_draws": 111,
+      "reachability_draws": 400000,
+      "reachability_draws_note": "200000 draws from Dirichlet(1) plus 200000 from Dirichlet(0.3); a sample, so the never-winner count is an upper bound on the points no weights can reach. Points with the same cost vector tie and share one count.",
+      "pareto_never_winner_in_400000": 540,
+      "never_winner_in_400000_labels": [
+        "21013 boulevard Henri-Bourassa (#105915)",
+        "2417 avenue Royale (#107954)",
+        "254 avenue Plante (#109002)",
+        "815 rue Sorbier (#121524)",
+        "811 rue Sorbier (#121525)",
+        "2950 rue Rheaume (#121847)",
+        "2200 boulevard Louis-XIV (#123044)",
+        "756 rue Grenelle (#123603)",
+        "762 rue Sorbier (#123625)",
+        "703 rue Seigneuriale (#123931)",
+        "755 rue Seigneuriale (#123960)",
+        "778 rue Seigneuriale (#123988)",
+        "797 rue Bourg-Talon (#123998)",
+        "25 rue Hautes-Terres (#124161)",
+        "23 rue Hautes-Terres (#124162)",
+        "3325 rue Arthur-Grenier (#124677)",
+        "500 rue Antoine-Gautier (#126137)",
+        "269 rue Simone-Routier (#128059)",
+        "116 avenue Rang-Saint-Ignace (#128121)",
+        "101 rue Bolets (#128205)",
+        "172 rue Coprins (#128248)",
+        "1619 boulevard Raymond (#128367)",
+        "1646 boulevard Raymond (#128373)",
+        "241A avenue Saint-Michel (#131026)",
+        "640 rue Desnos (#131223)",
+        "638 rue Desnos (#131227)",
+        "579 rue Anick (#131392)",
+        "70 rue Isabelle (#132422)",
+        "129 rue Berrouard (#133108)",
+        "110 rue Lucien (#133125)",
+        "165 rue Tardif (#133352)",
+        "142 rue Saint-Raoul (#133592)",
+        "124 rue Coprins (#133721)",
+        "93 rue Auger (#133831)",
+        "140 CA Marie-Guérin (#133836)",
+        "265 rue Germaine-Viger (#133851)",
+        "129 rue Amis (#133884)",
+        "114 CA Marie-Guérin (#133943)",
+        "221 rue Germaine-Viger (#133946)",
+        "229 rue Germaine-Viger (#133954)",
+        "225 rue Germaine-Viger (#133955)",
+        "228 rue Germaine-Viger (#133961)",
+        "501 avenue Castillon (#134058)",
+        "173 rue Amis (#134080)",
+        "1346 boulevard Raymond (#134333)",
+        "1240 boulevard Raymond (#134394)",
+        "1244 boulevard Raymond (#134398)",
+        "1367 boulevard Raymond (#134569)",
+        "143 rue Parulines (#134611)",
+        "135 rue Parulines (#134613)"
+      ]
+    },
+    "epsilon_constraint": {
+      "minimise": "value",
+      "bounds": {
+        "floor_m2": [
+          ">=",
+          140
+        ],
+        "year_built": [
+          ">=",
+          1990
+        ],
+        "lot_m2": [
+          ">=",
+          500
+        ]
+      },
+      "feasible_alternatives": 5329,
+      "pick": {
+        "id": 342725,
+        "label": "2205 boulevard Talbot (#342725)",
+        "value": 320000.0,
+        "floor_m2": 144.3,
+        "year_built": 1999.0,
+        "lot_m2": 2557.3
+      },
+      "pick_is_pareto": true,
+      "sweep_of": "floor_m2 >= bound, other bounds fixed",
+      "sweep": [
+        {
+          "bound": 80,
+          "feasible": 12515,
+          "label": "8 rue Archerie (#327905)",
+          "value": 204000.0
+        },
+        {
+          "bound": 100,
+          "feasible": 9926,
+          "label": "8 rue Archerie (#327905)",
+          "value": 204000.0
+        },
+        {
+          "bound": 120,
+          "feasible": 7909,
+          "label": "2642 chemin Lac-Cote (#254785)",
+          "value": 232000.0
+        },
+        {
+          "bound": 140,
+          "feasible": 5329,
+          "label": "2205 boulevard Talbot (#342725)",
+          "value": 320000.0
+        },
+        {
+          "bound": 160,
+          "feasible": 2750,
+          "label": "226 rue Bernier Est (#378953)",
+          "value": 362000.0
+        },
+        {
+          "bound": 200,
+          "feasible": 564,
+          "label": "4088 route Jean-Gauvin (#254307)",
+          "value": 387000.0
+        },
+        {
+          "bound": 250,
+          "feasible": 48,
+          "label": "1597 rue Guillebert (#267975)",
+          "value": 515000.0
+        },
+        {
+          "bound": 300,
+          "feasible": 4,
+          "label": "7831 Trait-Carré Est (#373554)",
+          "value": 655000.0
+        }
+      ]
+    },
+    "lexicographic": {
+      "priority_order": [
+        "year_built",
+        "floor_m2",
+        "value",
+        "lot_m2"
+      ],
+      "variants": {
+        "tolerance_0.0": {
+          "survivors_after_each_step": [
+            7,
+            1,
+            1,
+            1
+          ],
+          "pick": {
+            "id": 204242,
+            "label": "1435 avenue Verlaine (#204242)",
+            "value": 725000.0,
+            "floor_m2": 199.8,
+            "year_built": 2025.0,
+            "lot_m2": 585.3
+          }
+        },
+        "tolerance_0.05": {
+          "survivors_after_each_step": [
+            106,
+            1,
+            1,
+            1
+          ],
+          "pick": {
+            "id": 230983,
+            "label": "7235 rue Emile-Fleury (#230983)",
+            "value": 730000.0,
+            "floor_m2": 273.4,
+            "year_built": 2023.0,
+            "lot_m2": 1313.8
+          }
+        }
+      },
+      "tolerance_note": "a criterion keeps every candidate within the tolerance (in normalised units, 0 = best, 1 = worst) of the best one"
+    },
+    "distance_methods": {
+      "topsis_closeness": {
+        "pick": {
+          "id": 236989,
+          "label": "3826 rue Saint-Maxime (#236989)",
+          "value": 317000.0,
+          "floor_m2": 214.4,
+          "year_built": 1976.0,
+          "lot_m2": 3769.3
+        },
+        "closeness": 0.6424523802722579
+      },
+      "euclid_distance_to_ideal": {
+        "pick": {
+          "id": 238337,
+          "label": "2942 rue Rivière-Nelson (#238337)",
+          "value": 278000.0,
+          "floor_m2": 297.7,
+          "year_built": 1968.0,
+          "lot_m2": 2450.2
+        },
+        "distance": 0.7375829172853274
+      },
+      "chebyshev_to_ideal": {
+        "pick": {
+          "id": 238337,
+          "label": "2942 rue Rivière-Nelson (#238337)",
+          "value": 278000.0,
+          "floor_m2": 297.7,
+          "year_built": 1968.0,
+          "lot_m2": 2450.2
+        },
+        "max_cost": 0.456
+      },
+      "goal_point": {
+        "goal": {
+          "value": 350000,
+          "floor_m2": 140,
+          "year_built": 2000,
+          "lot_m2": 600
+        },
+        "pick": {
+          "id": 327383,
+          "label": "1088 rue Lavande (#327383)",
+          "value": 355000.0,
+          "floor_m2": 139.8,
+          "year_built": 2019.0,
+          "lot_m2": 723.7
+        },
+        "achievement": 0.007166353625934978
+      }
+    },
+    "diversity": {
+      "front_size": 581,
+      "mean_nearest_neighbour_distance": 0.0672601107491394,
+      "median_nearest_neighbour_distance": 0.057627946989875084,
+      "max_nearest_neighbour_distance": 0.38514996379196215,
+      "max_possible_distance": 2.0,
+      "points_with_identical_cost_vector": 0,
+      "max_gap_per_criterion_normalised": {
+        "value": 0.030837004405286344,
+        "floor_m2": 0.05558876270173349,
+        "year_built": 0.07999999999999996,
+        "lot_m2": 0.0163909195844556
+      },
+      "k": 8,
+      "fps_start": "1466 rue Provancher (#151211) (lowest value)",
+      "fps_representatives": [
+        {
+          "id": 151211,
+          "label": "1466 rue Provancher (#151211)",
+          "value": 69000.0,
+          "floor_m2": 64.6,
+          "year_built": 1900.0,
+          "lot_m2": 112.7
+        },
+        {
+          "id": 326129,
+          "label": "2528 avenue Rivière-Jaune (#326129)",
+          "value": 735000.0,
+          "floor_m2": 282.6,
+          "year_built": 2013.0,
+          "lot_m2": 3293.7
+        },
+        {
+          "id": 238259,
+          "label": "3325 rue Rivière-Nelson (#238259)",
+          "value": 246000.0,
+          "floor_m2": 69.4,
+          "year_built": 1955.0,
+          "lot_m2": 3937.0
+        },
+        {
+          "id": 389606,
+          "label": "403 rue Milans (#389606)",
+          "value": 360000.0,
+          "floor_m2": 115.9,
+          "year_built": 2021.0,
+          "lot_m2": 346.0
+        },
+        {
+          "id": 144347,
+          "label": "12606 boulevard Valcartier (#144347)",
+          "value": 469000.0,
+          "floor_m2": 328.7,
+          "year_built": 1909.0,
+          "lot_m2": 1827.3
+        },
+        {
+          "id": 351198,
+          "label": "2860 rue Hibou (#351198)",
+          "value": 640000.0,
+          "floor_m2": 287.8,
+          "year_built": 2004.0,
+          "lot_m2": 729.2
+        },
+        {
+          "id": 275236,
+          "label": "2910 rue Sentier (#275236)",
+          "value": 126000.0,
+          "floor_m2": 116.0,
+          "year_built": 1963.0,
+          "lot_m2": 1522.2
+        },
+        {
+          "id": 406039,
+          "label": "3425 rue Rivière-Nelson (#406039)",
+          "value": 406000.0,
+          "floor_m2": 124.8,
+          "year_built": 2020.0,
+          "lot_m2": 3256.2
+        }
+      ],
+      "covering_radius_max_and_mean": {
+        "farthest_point_sampling": [
+          0.5882205115222499,
+          0.2714089362682075
+        ],
+        "top_8_by_weighted_sum": [
+          0.9108572896709051,
+          0.43586701524994514
+        ],
+        "random_k_median_of_200": [
+          0.8478475564780464
+        ]
+      }
+    },
+    "all_pareto": [
+      {
+        "id": 238337,
+        "label": "2942 rue Rivière-Nelson (#238337)",
+        "value": 278000.0,
+        "floor_m2": 297.7,
+        "year_built": 1968.0,
+        "lot_m2": 2450.2
+      },
+      {
+        "id": 236989,
+        "label": "3826 rue Saint-Maxime (#236989)",
+        "value": 317000.0,
+        "floor_m2": 214.4,
+        "year_built": 1976.0,
+        "lot_m2": 3769.3
+      },
+      {
+        "id": 151917,
+        "label": "7 rue Hautes-Terres (#151917)",
+        "value": 322000.0,
+        "floor_m2": 232.6,
+        "year_built": 1976.0,
+        "lot_m2": 2747.1
+      },
+      {
+        "id": 237633,
+        "label": "13780 rue Marianne (#237633)",
+        "value": 280000.0,
+        "floor_m2": 247.2,
+        "year_built": 1981.0,
+        "lot_m2": 604.9
+      },
+      {
+        "id": 378953,
+        "label": "226 rue Bernier Est (#378953)",
+        "value": 362000.0,
+        "floor_m2": 161.7,
+        "year_built": 2010.0,
+        "lot_m2": 3619.8
+      },
+      {
+        "id": 134618,
+        "label": "130 chemin Derry (#134618)",
+        "value": 299000.0,
+        "floor_m2": 206.9,
+        "year_built": 1976.0,
+        "lot_m2": 2336.7
+      },
+      {
+        "id": 376704,
+        "label": "2220 boulevard Talbot (#376704)",
+        "value": 402000.0,
+        "floor_m2": 158.0,
+        "year_built": 2012.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 326131,
+        "label": "2542 avenue Rivière-Jaune (#326131)",
+        "value": 406000.0,
+        "floor_m2": 195.4,
+        "year_built": 2003.0,
+        "lot_m2": 3318.1
+      },
+      {
+        "id": 275569,
+        "label": "2129 rue Aigles-Pecheurs (#275569)",
+        "value": 500000.0,
+        "floor_m2": 247.0,
+        "year_built": 1997.0,
+        "lot_m2": 3992.0
+      },
+      {
+        "id": 238289,
+        "label": "15220 boulevard Valcartier (#238289)",
+        "value": 350000.0,
+        "floor_m2": 172.4,
+        "year_built": 1986.0,
+        "lot_m2": 3716.1
+      },
+      {
+        "id": 269003,
+        "label": "1345 rue Galier (#269003)",
+        "value": 575000.0,
+        "floor_m2": 376.9,
+        "year_built": 1987.0,
+        "lot_m2": 1575.1
+      },
+      {
+        "id": 134714,
+        "label": "3 rue Kayak (#134714)",
+        "value": 119000.0,
+        "floor_m2": 77.3,
+        "year_built": 1954.0,
+        "lot_m2": 3624.5
+      },
+      {
+        "id": 326507,
+        "label": "2200 chemin Sagamite (#326507)",
+        "value": 364000.0,
+        "floor_m2": 233.4,
+        "year_built": 1984.0,
+        "lot_m2": 1906.9
+      },
+      {
+        "id": 270739,
+        "label": "1333 rue Émond (#270739)",
+        "value": 305000.0,
+        "floor_m2": 231.3,
+        "year_built": 1973.0,
+        "lot_m2": 1244.6
+      },
+      {
+        "id": 326478,
+        "label": "2468 avenue Rivière-Jaune (#326478)",
+        "value": 315000.0,
+        "floor_m2": 195.9,
+        "year_built": 1978.0,
+        "lot_m2": 2367.3
+      },
+      {
+        "id": 278584,
+        "label": "1037 avenue Lac-Saint-Charles (#278584)",
+        "value": 236000.0,
+        "floor_m2": 63.4,
+        "year_built": 2012.0,
+        "lot_m2": 3066.2
+      },
+      {
+        "id": 145832,
+        "label": "94 rue Giroux (#145832)",
+        "value": 253000.0,
+        "floor_m2": 261.1,
+        "year_built": 1950.0,
+        "lot_m2": 370.4
+      },
+      {
+        "id": 317029,
+        "label": "8685 avenue Jean-Paul-Sartre (#317029)",
+        "value": 483000.0,
+        "floor_m2": 359.5,
+        "year_built": 1971.0,
+        "lot_m2": 870.1
+      },
+      {
+        "id": 238915,
+        "label": "2806 rue Rivière-Nelson (#238915)",
+        "value": 187000.0,
+        "floor_m2": 103.0,
+        "year_built": 1960.0,
+        "lot_m2": 3711.1
+      },
+      {
+        "id": 137782,
+        "label": "179 rue Trois-Saults (#137782)",
+        "value": 234000.0,
+        "floor_m2": 116.0,
+        "year_built": 2000.0,
+        "lot_m2": 1829.9
+      },
+      {
+        "id": 225795,
+        "label": "1720 boulevard Bastien (#225795)",
+        "value": 194000.0,
+        "floor_m2": 62.0,
+        "year_built": 1991.0,
+        "lot_m2": 3277.0
+      },
+      {
+        "id": 274401,
+        "label": "1203 rue Jonquille (#274401)",
+        "value": 540000.0,
+        "floor_m2": 312.1,
+        "year_built": 1974.0,
+        "lot_m2": 3509.8
+      },
+      {
+        "id": 275238,
+        "label": "2840 rue Sentier (#275238)",
+        "value": 199000.0,
+        "floor_m2": 134.4,
+        "year_built": 1962.0,
+        "lot_m2": 2618.1
+      },
+      {
+        "id": 275236,
+        "label": "2910 rue Sentier (#275236)",
+        "value": 126000.0,
+        "floor_m2": 116.0,
+        "year_built": 1963.0,
+        "lot_m2": 1522.2
+      },
+      {
+        "id": 267134,
+        "label": "3953 route Aéroport (#267134)",
+        "value": 329000.0,
+        "floor_m2": 141.7,
+        "year_built": 1987.0,
+        "lot_m2": 3719.2
+      },
+      {
+        "id": 275441,
+        "label": "1865 avenue Lac-Saint-Charles (#275441)",
+        "value": 250000.0,
+        "floor_m2": 173.6,
+        "year_built": 1967.0,
+        "lot_m2": 1941.4
+      },
+      {
+        "id": 273866,
+        "label": "1343 rue Landreau (#273866)",
+        "value": 311000.0,
+        "floor_m2": 91.5,
+        "year_built": 2016.0,
+        "lot_m2": 3147.6
+      },
+      {
+        "id": 266402,
+        "label": "1293 chemin Belair (#266402)",
+        "value": 408000.0,
+        "floor_m2": 200.5,
+        "year_built": 1992.0,
+        "lot_m2": 3053.1
+      },
+      {
+        "id": 342725,
+        "label": "2205 boulevard Talbot (#342725)",
+        "value": 320000.0,
+        "floor_m2": 144.3,
+        "year_built": 1999.0,
+        "lot_m2": 2557.3
+      },
+      {
+        "id": 267159,
+        "label": "1043 rue Gemmi (#267159)",
+        "value": 242000.0,
+        "floor_m2": 111.4,
+        "year_built": 1971.0,
+        "lot_m2": 3657.8
+      },
+      {
+        "id": 328678,
+        "label": "3 rue Bocage-Normand (#328678)",
+        "value": 224000.0,
+        "floor_m2": 158.1,
+        "year_built": 1946.0,
+        "lot_m2": 3151.5
+      },
+      {
+        "id": 140540,
+        "label": "274 rue Trois-Saults (#140540)",
+        "value": 238000.0,
+        "floor_m2": 61.9,
+        "year_built": 2014.0,
+        "lot_m2": 2582.9
+      },
+      {
+        "id": 327905,
+        "label": "8 rue Archerie (#327905)",
+        "value": 204000.0,
+        "floor_m2": 105.7,
+        "year_built": 1997.0,
+        "lot_m2": 1313.6
+      },
+      {
+        "id": 155187,
+        "label": "1329 rue Ecoliers (#155187)",
+        "value": 296000.0,
+        "floor_m2": 178.6,
+        "year_built": 1985.0,
+        "lot_m2": 1604.3
+      },
+      {
+        "id": 266564,
+        "label": "1215 rue Gaudar (#266564)",
+        "value": 520000.0,
+        "floor_m2": 229.3,
+        "year_built": 2001.0,
+        "lot_m2": 3958.2
+      },
+      {
+        "id": 134615,
+        "label": "150 rue Parulines (#134615)",
+        "value": 195000.0,
+        "floor_m2": 155.1,
+        "year_built": 1950.0,
+        "lot_m2": 2289.1
+      },
+      {
+        "id": 266220,
+        "label": "2075 rue Marronniers (#266220)",
+        "value": 278000.0,
+        "floor_m2": 100.8,
+        "year_built": 1988.0,
+        "lot_m2": 3712.8
+      },
+      {
+        "id": 142750,
+        "label": "3879 rue Golf (#142750)",
+        "value": 444000.0,
+        "floor_m2": 321.0,
+        "year_built": 1964.0,
+        "lot_m2": 1300.6
+      },
+      {
+        "id": 238209,
+        "label": "15115 rue Roland-Saint-Laurent (#238209)",
+        "value": 229000.0,
+        "floor_m2": 182.1,
+        "year_built": 1950.0,
+        "lot_m2": 2104.1
+      },
+      {
+        "id": 134701,
+        "label": "1497 boulevard Raymond (#134701)",
+        "value": 454000.0,
+        "floor_m2": 189.0,
+        "year_built": 2011.0,
+        "lot_m2": 3202.7
+      },
+      {
+        "id": 275247,
+        "label": "2860 rue Sentier (#275247)",
+        "value": 95000.0,
+        "floor_m2": 63.4,
+        "year_built": 1976.0,
+        "lot_m2": 1539.0
+      },
+      {
+        "id": 376703,
+        "label": "2230 boulevard Talbot (#376703)",
+        "value": 355000.0,
+        "floor_m2": 98.9,
+        "year_built": 2012.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 254307,
+        "label": "4088 route Jean-Gauvin (#254307)",
+        "value": 387000.0,
+        "floor_m2": 217.6,
+        "year_built": 2005.0,
+        "lot_m2": 999.7
+      },
+      {
+        "id": 140548,
+        "label": "288 rue Trois-Saults (#140548)",
+        "value": 191000.0,
+        "floor_m2": 104.0,
+        "year_built": 1960.0,
+        "lot_m2": 3248.7
+      },
+      {
+        "id": 266902,
+        "label": "1175 chemin Jean-Gauvin (#266902)",
+        "value": 425000.0,
+        "floor_m2": 235.6,
+        "year_built": 1979.0,
+        "lot_m2": 2809.2
+      },
+      {
+        "id": 278181,
+        "label": "386 rue Bouchard (#278181)",
+        "value": 372000.0,
+        "floor_m2": 195.6,
+        "year_built": 2003.0,
+        "lot_m2": 1488.0
+      },
+      {
+        "id": 373554,
+        "label": "7831 Trait-Carré Est (#373554)",
+        "value": 655000.0,
+        "floor_m2": 375.8,
+        "year_built": 2010.0,
+        "lot_m2": 1166.2
+      },
+      {
+        "id": 254785,
+        "label": "2642 chemin Lac-Cote (#254785)",
+        "value": 232000.0,
+        "floor_m2": 136.4,
+        "year_built": 1999.0,
+        "lot_m2": 522.4
+      },
+      {
+        "id": 266428,
+        "label": "1088 chemin Belair (#266428)",
+        "value": 570000.0,
+        "floor_m2": 292.2,
+        "year_built": 1992.0,
+        "lot_m2": 3245.8
+      },
+      {
+        "id": 137791,
+        "label": "195 rue Trois-Saults (#137791)",
+        "value": 218000.0,
+        "floor_m2": 138.2,
+        "year_built": 1975.0,
+        "lot_m2": 1620.3
+      },
+      {
+        "id": 266221,
+        "label": "2053 rue Marronniers (#266221)",
+        "value": 274000.0,
+        "floor_m2": 96.9,
+        "year_built": 1988.0,
+        "lot_m2": 3504.5
+      },
+      {
+        "id": 128248,
+        "label": "172 rue Coprins (#128248)",
+        "value": 210000.0,
+        "floor_m2": 102.8,
+        "year_built": 1987.0,
+        "lot_m2": 1873.5
+      },
+      {
+        "id": 134658,
+        "label": "35 chemin Rivière-Du-Lac (#134658)",
+        "value": 165000.0,
+        "floor_m2": 79.9,
+        "year_built": 1956.0,
+        "lot_m2": 3561.9
+      },
+      {
+        "id": 236558,
+        "label": "16840 boulevard Valcartier (#236558)",
+        "value": 202000.0,
+        "floor_m2": 71.4,
+        "year_built": 1969.0,
+        "lot_m2": 3853.8
+      },
+      {
+        "id": 238916,
+        "label": "2804 rue Rivière-Nelson (#238916)",
+        "value": 268000.0,
+        "floor_m2": 137.0,
+        "year_built": 1987.0,
+        "lot_m2": 1946.9
+      },
+      {
+        "id": 123998,
+        "label": "797 rue Bourg-Talon (#123998)",
+        "value": 209000.0,
+        "floor_m2": 129.7,
+        "year_built": 1965.0,
+        "lot_m2": 2220.0
+      },
+      {
+        "id": 278682,
+        "label": "482 rue Marie-Didace (#278682)",
+        "value": 205000.0,
+        "floor_m2": 97.0,
+        "year_built": 2010.0,
+        "lot_m2": 461.9
+      },
+      {
+        "id": 123931,
+        "label": "703 rue Seigneuriale (#123931)",
+        "value": 354000.0,
+        "floor_m2": 199.4,
+        "year_built": 1978.0,
+        "lot_m2": 2247.6
+      },
+      {
+        "id": 277470,
+        "label": "1255 avenue Lac-Saint-Charles (#277470)",
+        "value": 351000.0,
+        "floor_m2": 299.2,
+        "year_built": 1930.0,
+        "lot_m2": 1680.4
+      },
+      {
+        "id": 140499,
+        "label": "10 avenue Sablonnières (#140499)",
+        "value": 207000.0,
+        "floor_m2": 139.6,
+        "year_built": 1949.0,
+        "lot_m2": 2761.1
+      },
+      {
+        "id": 267030,
+        "label": "1371 avenue Montagne Ouest (#267030)",
+        "value": 535000.0,
+        "floor_m2": 293.6,
+        "year_built": 2002.0,
+        "lot_m2": 1577.8
+      },
+      {
+        "id": 326463,
+        "label": "5 chemin Adelard-Laberge (#326463)",
+        "value": 217000.0,
+        "floor_m2": 97.0,
+        "year_built": 1969.0,
+        "lot_m2": 3207.9
+      },
+      {
+        "id": 254259,
+        "label": "4240 chemin Lac-Apollo (#254259)",
+        "value": 239000.0,
+        "floor_m2": 136.0,
+        "year_built": 1961.0,
+        "lot_m2": 2842.2
+      },
+      {
+        "id": 278616,
+        "label": "483 rue Mascaret (#278616)",
+        "value": 555000.0,
+        "floor_m2": 219.3,
+        "year_built": 2016.0,
+        "lot_m2": 3711.4
+      },
+      {
+        "id": 275316,
+        "label": "2418 rue Sablières (#275316)",
+        "value": 232000.0,
+        "floor_m2": 80.3,
+        "year_built": 1977.0,
+        "lot_m2": 3605.8
+      },
+      {
+        "id": 137708,
+        "label": "212 rue Trois-Saults (#137708)",
+        "value": 300000.0,
+        "floor_m2": 95.8,
+        "year_built": 1996.0,
+        "lot_m2": 3429.4
+      },
+      {
+        "id": 278086,
+        "label": "1366 rue Thibodeau (#278086)",
+        "value": 296000.0,
+        "floor_m2": 163.3,
+        "year_built": 1979.0,
+        "lot_m2": 2022.4
+      },
+      {
+        "id": 280035,
+        "label": "3179 avenue Lapierre (#280035)",
+        "value": 292000.0,
+        "floor_m2": 98.1,
+        "year_built": 1985.0,
+        "lot_m2": 3833.7
+      },
+      {
+        "id": 266224,
+        "label": "1568 chemin Belair (#266224)",
+        "value": 264000.0,
+        "floor_m2": 72.7,
+        "year_built": 2025.0,
+        "lot_m2": 1567.7
+      },
+      {
+        "id": 278624,
+        "label": "1106 avenue Lac-Saint-Charles (#278624)",
+        "value": 254000.0,
+        "floor_m2": 89.2,
+        "year_built": 1987.0,
+        "lot_m2": 3118.8
+      },
+      {
+        "id": 237141,
+        "label": "15889 boulevard Valcartier (#237141)",
+        "value": 173000.0,
+        "floor_m2": 114.2,
+        "year_built": 1946.0,
+        "lot_m2": 2943.9
+      },
+      {
+        "id": 137700,
+        "label": "23 rue Jeanne-Laroche (#137700)",
+        "value": 299000.0,
+        "floor_m2": 168.6,
+        "year_built": 1980.0,
+        "lot_m2": 1802.1
+      },
+      {
+        "id": 383557,
+        "label": "2860 rue Rivière-Nelson (#383557)",
+        "value": 374000.0,
+        "floor_m2": 159.4,
+        "year_built": 2011.0,
+        "lot_m2": 1904.4
+      },
+      {
+        "id": 237150,
+        "label": "15890 boulevard Valcartier (#237150)",
+        "value": 356000.0,
+        "floor_m2": 109.1,
+        "year_built": 2008.0,
+        "lot_m2": 3424.9
+      },
+      {
+        "id": 327305,
+        "label": "2285 boulevard Talbot (#327305)",
+        "value": 230000.0,
+        "floor_m2": 190.4,
+        "year_built": 1940.0,
+        "lot_m2": 1938.3
+      },
+      {
+        "id": 134638,
+        "label": "102 chemin Derry (#134638)",
+        "value": 229000.0,
+        "floor_m2": 134.0,
+        "year_built": 1950.0,
+        "lot_m2": 3258.3
+      },
+      {
+        "id": 406039,
+        "label": "3425 rue Rivière-Nelson (#406039)",
+        "value": 406000.0,
+        "floor_m2": 124.8,
+        "year_built": 2020.0,
+        "lot_m2": 3256.2
+      },
+      {
+        "id": 223202,
+        "label": "3245 rue Richardson (#223202)",
+        "value": 355000.0,
+        "floor_m2": 238.5,
+        "year_built": 1987.0,
+        "lot_m2": 133.7
+      },
+      {
+        "id": 276725,
+        "label": "2074 rue Beau-Site (#276725)",
+        "value": 219000.0,
+        "floor_m2": 107.0,
+        "year_built": 1983.0,
+        "lot_m2": 1858.1
+      },
+      {
+        "id": 335485,
+        "label": "1175 rue Comte (#335485)",
+        "value": 398000.0,
+        "floor_m2": 279.2,
+        "year_built": 1971.0,
+        "lot_m2": 650.3
+      },
+      {
+        "id": 124198,
+        "label": "1783 boulevard Raymond (#124198)",
+        "value": 315000.0,
+        "floor_m2": 112.4,
+        "year_built": 1980.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 278683,
+        "label": "479 rue Marie-Didace (#278683)",
+        "value": 152000.0,
+        "floor_m2": 72.4,
+        "year_built": 1998.0,
+        "lot_m2": 542.3
+      },
+      {
+        "id": 275495,
+        "label": "2165 avenue Lac-Saint-Charles (#275495)",
+        "value": 324000.0,
+        "floor_m2": 116.0,
+        "year_built": 1997.0,
+        "lot_m2": 3019.2
+      },
+      {
+        "id": 254800,
+        "label": "2550 chemin Lac-Cote (#254800)",
+        "value": 179000.0,
+        "floor_m2": 127.2,
+        "year_built": 1965.0,
+        "lot_m2": 1277.2
+      },
+      {
+        "id": 278565,
+        "label": "550 rue Repos (#278565)",
+        "value": 120000.0,
+        "floor_m2": 86.6,
+        "year_built": 1966.0,
+        "lot_m2": 1275.1
+      },
+      {
+        "id": 275104,
+        "label": "2900 rue Sentier (#275104)",
+        "value": 112000.0,
+        "floor_m2": 139.2,
+        "year_built": 1942.0,
+        "lot_m2": 747.7
+      },
+      {
+        "id": 326465,
+        "label": "2375 avenue Rivière-Jaune (#326465)",
+        "value": 200000.0,
+        "floor_m2": 128.7,
+        "year_built": 1950.0,
+        "lot_m2": 2630.0
+      },
+      {
+        "id": 267768,
+        "label": "5 ruelle Rodrigue (#267768)",
+        "value": 328000.0,
+        "floor_m2": 103.6,
+        "year_built": 2014.0,
+        "lot_m2": 2440.4
+      },
+      {
+        "id": 238323,
+        "label": "2946 rue Rivière-Nelson (#238323)",
+        "value": 197000.0,
+        "floor_m2": 136.6,
+        "year_built": 1940.0,
+        "lot_m2": 2880.0
+      },
+      {
+        "id": 327302,
+        "label": "2201 boulevard Talbot (#327302)",
+        "value": 314000.0,
+        "floor_m2": 109.9,
+        "year_built": 2004.0,
+        "lot_m2": 2500.0
+      },
+      {
+        "id": 278174,
+        "label": "1308 rue Thibodeau (#278174)",
+        "value": 426000.0,
+        "floor_m2": 202.8,
+        "year_built": 2004.0,
+        "lot_m2": 1814.6
+      },
+      {
+        "id": 326106,
+        "label": "2552 avenue Rivière-Jaune (#326106)",
+        "value": 316000.0,
+        "floor_m2": 90.3,
+        "year_built": 2002.0,
+        "lot_m2": 3345.2
+      },
+      {
+        "id": 134611,
+        "label": "143 rue Parulines (#134611)",
+        "value": 99000.0,
+        "floor_m2": 74.3,
+        "year_built": 1970.0,
+        "lot_m2": 916.9
+      },
+      {
+        "id": 267129,
+        "label": "1070 rue Gaudar (#267129)",
+        "value": 286000.0,
+        "floor_m2": 107.9,
+        "year_built": 1977.0,
+        "lot_m2": 3578.6
+      },
+      {
+        "id": 276462,
+        "label": "528 rue Gaétan (#276462)",
+        "value": 436000.0,
+        "floor_m2": 248.4,
+        "year_built": 1990.0,
+        "lot_m2": 1291.5
+      },
+      {
+        "id": 134663,
+        "label": "26 chemin Rivière-Du-Lac (#134663)",
+        "value": 134000.0,
+        "floor_m2": 76.3,
+        "year_built": 1964.0,
+        "lot_m2": 2002.4
+      },
+      {
+        "id": 397468,
+        "label": "1860 rue Hautes-Terres (#397468)",
+        "value": 570000.0,
+        "floor_m2": 207.7,
+        "year_built": 2018.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 280771,
+        "label": "2274 rue Érablière (#280771)",
+        "value": 226000.0,
+        "floor_m2": 103.8,
+        "year_built": 2002.0,
+        "lot_m2": 752.5
+      },
+      {
+        "id": 327231,
+        "label": "2155 avenue Rivière-Jaune (#327231)",
+        "value": 460000.0,
+        "floor_m2": 207.9,
+        "year_built": 1989.0,
+        "lot_m2": 3262.4
+      },
+      {
+        "id": 124677,
+        "label": "3325 rue Arthur-Grenier (#124677)",
+        "value": 493000.0,
+        "floor_m2": 321.2,
+        "year_built": 1967.0,
+        "lot_m2": 1412.1
+      },
+      {
+        "id": 267890,
+        "label": "1399 rue Hamon (#267890)",
+        "value": 535000.0,
+        "floor_m2": 220.8,
+        "year_built": 2005.0,
+        "lot_m2": 3502.0
+      },
+      {
+        "id": 277416,
+        "label": "543 rue Detente (#277416)",
+        "value": 270000.0,
+        "floor_m2": 111.4,
+        "year_built": 2018.0,
+        "lot_m2": 433.1
+      },
+      {
+        "id": 277224,
+        "label": "579 rue Roussin (#277224)",
+        "value": 167000.0,
+        "floor_m2": 71.3,
+        "year_built": 1970.0,
+        "lot_m2": 2470.2
+      },
+      {
+        "id": 280437,
+        "label": "1909 rue Fréchette (#280437)",
+        "value": 269000.0,
+        "floor_m2": 196.8,
+        "year_built": 1970.0,
+        "lot_m2": 417.2
+      },
+      {
+        "id": 337802,
+        "label": "1771 chemin Château-Bigot (#337802)",
+        "value": 326000.0,
+        "floor_m2": 117.9,
+        "year_built": 1998.0,
+        "lot_m2": 2729.0
+      },
+      {
+        "id": 236720,
+        "label": "2945 rue Sentier (#236720)",
+        "value": 243000.0,
+        "floor_m2": 146.7,
+        "year_built": 1964.0,
+        "lot_m2": 1941.4
+      },
+      {
+        "id": 123988,
+        "label": "778 rue Seigneuriale (#123988)",
+        "value": 380000.0,
+        "floor_m2": 197.9,
+        "year_built": 1977.0,
+        "lot_m2": 2463.3
+      },
+      {
+        "id": 236564,
+        "label": "3120 rue Richardson (#236564)",
+        "value": 316000.0,
+        "floor_m2": 130.9,
+        "year_built": 1977.0,
+        "lot_m2": 3292.0
+      },
+      {
+        "id": 278626,
+        "label": "1107 avenue Lac-Saint-Charles (#278626)",
+        "value": 190000.0,
+        "floor_m2": 104.5,
+        "year_built": 1982.0,
+        "lot_m2": 1013.5
+      },
+      {
+        "id": 327710,
+        "label": "308 rue Cantons (#327710)",
+        "value": 127000.0,
+        "floor_m2": 86.7,
+        "year_built": 1966.0,
+        "lot_m2": 1161.3
+      },
+      {
+        "id": 266576,
+        "label": "4254 route Aéroport (#266576)",
+        "value": 279000.0,
+        "floor_m2": 109.9,
+        "year_built": 1972.0,
+        "lot_m2": 3456.7
+      },
+      {
+        "id": 238352,
+        "label": "15445 boulevard Valcartier (#238352)",
+        "value": 331000.0,
+        "floor_m2": 115.5,
+        "year_built": 1988.0,
+        "lot_m2": 3441.9
+      },
+      {
+        "id": 278566,
+        "label": "519 rue Rae (#278566)",
+        "value": 139000.0,
+        "floor_m2": 80.3,
+        "year_built": 1970.0,
+        "lot_m2": 1393.6
+      },
+      {
+        "id": 369273,
+        "label": "17561 chemin Grande-Ligne (#369273)",
+        "value": 400000.0,
+        "floor_m2": 105.2,
+        "year_built": 2011.0,
+        "lot_m2": 3931.9
+      },
+      {
+        "id": 140510,
+        "label": "23 avenue Sablonnières (#140510)",
+        "value": 166000.0,
+        "floor_m2": 68.3,
+        "year_built": 1971.0,
+        "lot_m2": 2352.5
+      },
+      {
+        "id": 275461,
+        "label": "1796 chemin Passe (#275461)",
+        "value": 315000.0,
+        "floor_m2": 97.3,
+        "year_built": 2004.0,
+        "lot_m2": 2690.4
+      },
+      {
+        "id": 274327,
+        "label": "1916 rue Ivanhoe (#274327)",
+        "value": 230000.0,
+        "floor_m2": 80.5,
+        "year_built": 2009.0,
+        "lot_m2": 1015.5
+      },
+      {
+        "id": 266907,
+        "label": "1174 chemin Jean-Gauvin (#266907)",
+        "value": 440000.0,
+        "floor_m2": 164.2,
+        "year_built": 2000.0,
+        "lot_m2": 3459.0
+      },
+      {
+        "id": 124162,
+        "label": "23 rue Hautes-Terres (#124162)",
+        "value": 222000.0,
+        "floor_m2": 113.7,
+        "year_built": 1973.0,
+        "lot_m2": 1884.5
+      },
+      {
+        "id": 238245,
+        "label": "15065 rue Roland-Saint-Laurent (#238245)",
+        "value": 341000.0,
+        "floor_m2": 160.9,
+        "year_built": 1985.0,
+        "lot_m2": 2189.0
+      },
+      {
+        "id": 337808,
+        "label": "1830 chemin Château-Bigot (#337808)",
+        "value": 471000.0,
+        "floor_m2": 202.5,
+        "year_built": 2004.0,
+        "lot_m2": 2510.0
+      },
+      {
+        "id": 327809,
+        "label": "165 rue Josée (#327809)",
+        "value": 195000.0,
+        "floor_m2": 131.9,
+        "year_built": 1974.0,
+        "lot_m2": 519.3
+      },
+      {
+        "id": 324136,
+        "label": "725 rue Nemours (#324136)",
+        "value": 496000.0,
+        "floor_m2": 305.7,
+        "year_built": 1960.0,
+        "lot_m2": 2205.2
+      },
+      {
+        "id": 124161,
+        "label": "25 rue Hautes-Terres (#124161)",
+        "value": 186000.0,
+        "floor_m2": 89.2,
+        "year_built": 1973.0,
+        "lot_m2": 1858.0
+      },
+      {
+        "id": 361601,
+        "label": "1136 boulevard Raymond (#361601)",
+        "value": 385000.0,
+        "floor_m2": 198.1,
+        "year_built": 2007.0,
+        "lot_m2": 486.8
+      },
+      {
+        "id": 267300,
+        "label": "1093 rue Gatineau (#267300)",
+        "value": 130000.0,
+        "floor_m2": 116.7,
+        "year_built": 1960.0,
+        "lot_m2": 418.2
+      },
+      {
+        "id": 236974,
+        "label": "15200 rue Petit-Vallon (#236974)",
+        "value": 110000.0,
+        "floor_m2": 72.9,
+        "year_built": 1971.0,
+        "lot_m2": 802.5
+      },
+      {
+        "id": 254056,
+        "label": "3875 avenue Notre-Dame (#254056)",
+        "value": 180000.0,
+        "floor_m2": 88.1,
+        "year_built": 1960.0,
+        "lot_m2": 2559.5
+      },
+      {
+        "id": 368000,
+        "label": "27 rue Mitrelles (#368000)",
+        "value": 595000.0,
+        "floor_m2": 233.0,
+        "year_built": 2008.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 328511,
+        "label": "401 rue Berne (#328511)",
+        "value": 202000.0,
+        "floor_m2": 117.0,
+        "year_built": 1968.0,
+        "lot_m2": 1544.4
+      },
+      {
+        "id": 358319,
+        "label": "579 rue Elegance (#358319)",
+        "value": 235000.0,
+        "floor_m2": 97.5,
+        "year_built": 2007.0,
+        "lot_m2": 539.1
+      },
+      {
+        "id": 266939,
+        "label": "1195 rue Beau-Milieu (#266939)",
+        "value": 177000.0,
+        "floor_m2": 118.9,
+        "year_built": 1960.0,
+        "lot_m2": 1393.5
+      },
+      {
+        "id": 140508,
+        "label": "190 rue William-Bartlett (#140508)",
+        "value": 170000.0,
+        "floor_m2": 71.5,
+        "year_built": 1976.0,
+        "lot_m2": 1878.5
+      },
+      {
+        "id": 327187,
+        "label": "1770 boulevard Talbot (#327187)",
+        "value": 273000.0,
+        "floor_m2": 80.3,
+        "year_built": 1993.0,
+        "lot_m2": 2862.0
+      },
+      {
+        "id": 332823,
+        "label": "2 rue Léo-Flamand (#332823)",
+        "value": 198000.0,
+        "floor_m2": 76.4,
+        "year_built": 1963.0,
+        "lot_m2": 3140.9
+      },
+      {
+        "id": 254067,
+        "label": "3875 avenue Notre-Dame (#254067)",
+        "value": 253000.0,
+        "floor_m2": 91.1,
+        "year_built": 1975.0,
+        "lot_m2": 3130.3
+      },
+      {
+        "id": 278547,
+        "label": "566 rue Repos (#278547)",
+        "value": 90000.0,
+        "floor_m2": 63.2,
+        "year_built": 1966.0,
+        "lot_m2": 929.0
+      },
+      {
+        "id": 327218,
+        "label": "4 chemin Engoulevent (#327218)",
+        "value": 315000.0,
+        "floor_m2": 143.5,
+        "year_built": 1955.0,
+        "lot_m2": 3930.1
+      },
+      {
+        "id": 275566,
+        "label": "2124 rue Aigles-Pecheurs (#275566)",
+        "value": 456000.0,
+        "floor_m2": 205.1,
+        "year_built": 1980.0,
+        "lot_m2": 3439.9
+      },
+      {
+        "id": 267026,
+        "label": "1048 rue Beausoleil (#267026)",
+        "value": 235000.0,
+        "floor_m2": 69.9,
+        "year_built": 1967.0,
+        "lot_m2": 3906.7
+      },
+      {
+        "id": 267147,
+        "label": "1007 rue Gemmi (#267147)",
+        "value": 182000.0,
+        "floor_m2": 117.7,
+        "year_built": 1970.0,
+        "lot_m2": 823.6
+      },
+      {
+        "id": 128367,
+        "label": "1619 boulevard Raymond (#128367)",
+        "value": 328000.0,
+        "floor_m2": 64.2,
+        "year_built": 2007.0,
+        "lot_m2": 3716.1
+      },
+      {
+        "id": 266443,
+        "label": "1158 rue Belugas (#266443)",
+        "value": 145000.0,
+        "floor_m2": 65.2,
+        "year_built": 1960.0,
+        "lot_m2": 2417.3
+      },
+      {
+        "id": 266857,
+        "label": "1442 chemin Jean-Gauvin (#266857)",
+        "value": 600000.0,
+        "floor_m2": 294.9,
+        "year_built": 1978.0,
+        "lot_m2": 3670.7
+      },
+      {
+        "id": 140533,
+        "label": "310 rue Trois-Saults (#140533)",
+        "value": 259000.0,
+        "floor_m2": 92.5,
+        "year_built": 1975.0,
+        "lot_m2": 3118.8
+      },
+      {
+        "id": 276728,
+        "label": "498 chemin Baie-De-L'Echo (#276728)",
+        "value": 288000.0,
+        "floor_m2": 91.8,
+        "year_built": 1991.0,
+        "lot_m2": 2805.8
+      },
+      {
+        "id": 275564,
+        "label": "2145 rue Aigles-Pecheurs (#275564)",
+        "value": 294000.0,
+        "floor_m2": 141.6,
+        "year_built": 1979.0,
+        "lot_m2": 1951.0
+      },
+      {
+        "id": 236790,
+        "label": "12055 rue Pierre-Mercure (#236790)",
+        "value": 386000.0,
+        "floor_m2": 146.5,
+        "year_built": 1978.0,
+        "lot_m2": 3937.1
+      },
+      {
+        "id": 358294,
+        "label": "580 rue Elegance (#358294)",
+        "value": 228000.0,
+        "floor_m2": 90.0,
+        "year_built": 2006.0,
+        "lot_m2": 546.2
+      },
+      {
+        "id": 276733,
+        "label": "2061 rue Beau-Site (#276733)",
+        "value": 320000.0,
+        "floor_m2": 117.0,
+        "year_built": 1988.0,
+        "lot_m2": 2828.2
+      },
+      {
+        "id": 134670,
+        "label": "22 chemin Rivière-Du-Lac (#134670)",
+        "value": 105000.0,
+        "floor_m2": 79.9,
+        "year_built": 1965.0,
+        "lot_m2": 621.5
+      },
+      {
+        "id": 268834,
+        "label": "1304 rue Gaboury (#268834)",
+        "value": 281000.0,
+        "floor_m2": 150.9,
+        "year_built": 1975.0,
+        "lot_m2": 1534.8
+      },
+      {
+        "id": 137770,
+        "label": "129 rue Trois-Saults (#137770)",
+        "value": 172000.0,
+        "floor_m2": 90.4,
+        "year_built": 1968.0,
+        "lot_m2": 1589.5
+      },
+      {
+        "id": 278652,
+        "label": "1097 avenue Lac-Saint-Charles (#278652)",
+        "value": 174000.0,
+        "floor_m2": 145.1,
+        "year_built": 1943.0,
+        "lot_m2": 1282.4
+      },
+      {
+        "id": 134684,
+        "label": "1 rue Kayak (#134684)",
+        "value": 101000.0,
+        "floor_m2": 83.3,
+        "year_built": 1966.0,
+        "lot_m2": 335.3
+      },
+      {
+        "id": 326906,
+        "label": "10 rue Michaud (#326906)",
+        "value": 173000.0,
+        "floor_m2": 147.8,
+        "year_built": 1949.0,
+        "lot_m2": 788.3
+      },
+      {
+        "id": 375030,
+        "label": "282 rue Berrouard (#375030)",
+        "value": 235000.0,
+        "floor_m2": 89.2,
+        "year_built": 2011.0,
+        "lot_m2": 385.6
+      },
+      {
+        "id": 328986,
+        "label": "228 rue Josée (#328986)",
+        "value": 478000.0,
+        "floor_m2": 211.9,
+        "year_built": 2013.0,
+        "lot_m2": 1533.3
+      },
+      {
+        "id": 238276,
+        "label": "15320 boulevard Valcartier (#238276)",
+        "value": 294000.0,
+        "floor_m2": 112.9,
+        "year_built": 1966.0,
+        "lot_m2": 3712.0
+      },
+      {
+        "id": 204695,
+        "label": "3435 boulevard Neuvialle (#204695)",
+        "value": 267000.0,
+        "floor_m2": 126.3,
+        "year_built": 1963.0,
+        "lot_m2": 2804.3
+      },
+      {
+        "id": 266941,
+        "label": "1182 rue Bourgeons (#266941)",
+        "value": 294000.0,
+        "floor_m2": 87.3,
+        "year_built": 2005.0,
+        "lot_m2": 2159.9
+      },
+      {
+        "id": 134706,
+        "label": "1504 boulevard Raymond (#134706)",
+        "value": 234000.0,
+        "floor_m2": 89.5,
+        "year_built": 1976.0,
+        "lot_m2": 2500.0
+      },
+      {
+        "id": 276763,
+        "label": "280 rue Monier (#276763)",
+        "value": 335000.0,
+        "floor_m2": 154.6,
+        "year_built": 1984.0,
+        "lot_m2": 2035.8
+      },
+      {
+        "id": 328425,
+        "label": "695 cote Bedard (#328425)",
+        "value": 277000.0,
+        "floor_m2": 189.5,
+        "year_built": 1967.0,
+        "lot_m2": 547.1
+      },
+      {
+        "id": 278567,
+        "label": "521 rue Guylaine (#278567)",
+        "value": 149000.0,
+        "floor_m2": 68.7,
+        "year_built": 1972.0,
+        "lot_m2": 1520.6
+      },
+      {
+        "id": 402495,
+        "label": "254B rue Germaine-Viger (#402495)",
+        "value": 275000.0,
+        "floor_m2": 96.7,
+        "year_built": 2017.0,
+        "lot_m2": 611.5
+      },
+      {
+        "id": 275868,
+        "label": "625 rue Eaux-Fraiches (#275868)",
+        "value": 161000.0,
+        "floor_m2": 82.8,
+        "year_built": 1970.0,
+        "lot_m2": 1393.4
+      },
+      {
+        "id": 140506,
+        "label": "17 avenue Sablonnières (#140506)",
+        "value": 177000.0,
+        "floor_m2": 100.2,
+        "year_built": 1956.0,
+        "lot_m2": 2024.7
+      },
+      {
+        "id": 254187,
+        "label": "1928 rang Saint-Ange (#254187)",
+        "value": 510000.0,
+        "floor_m2": 261.5,
+        "year_built": 1983.0,
+        "lot_m2": 2322.6
+      },
+      {
+        "id": 382075,
+        "label": "149 rue Etourneaux (#382075)",
+        "value": 268000.0,
+        "floor_m2": 92.3,
+        "year_built": 2012.0,
+        "lot_m2": 884.7
+      },
+      {
+        "id": 238268,
+        "label": "15040 rue Roland-Saint-Laurent (#238268)",
+        "value": 254000.0,
+        "floor_m2": 77.3,
+        "year_built": 2014.0,
+        "lot_m2": 961.8
+      },
+      {
+        "id": 375029,
+        "label": "280 rue Berrouard (#375029)",
+        "value": 258000.0,
+        "floor_m2": 101.5,
+        "year_built": 2011.0,
+        "lot_m2": 384.2
+      },
+      {
+        "id": 280858,
+        "label": "2267 rue Thomas-Duchaine (#280858)",
+        "value": 285000.0,
+        "floor_m2": 117.1,
+        "year_built": 1984.0,
+        "lot_m2": 2129.7
+      },
+      {
+        "id": 276414,
+        "label": "649A rue Jobin (#276414)",
+        "value": 169500.0,
+        "floor_m2": 90.3,
+        "year_built": 1960.0,
+        "lot_m2": 1916.0
+      },
+      {
+        "id": 140492,
+        "label": "185 rue William-Bartlett (#140492)",
+        "value": 144000.0,
+        "floor_m2": 76.5,
+        "year_built": 1973.0,
+        "lot_m2": 1002.8
+      },
+      {
+        "id": 382073,
+        "label": "169 rue Perruches (#382073)",
+        "value": 244000.0,
+        "floor_m2": 89.8,
+        "year_built": 2012.0,
+        "lot_m2": 394.3
+      },
+      {
+        "id": 134743,
+        "label": "66 rue Remous (#134743)",
+        "value": 132000.0,
+        "floor_m2": 80.3,
+        "year_built": 1976.0,
+        "lot_m2": 404.4
+      },
+      {
+        "id": 281281,
+        "label": "6371 rue Eloi-Garneau (#281281)",
+        "value": 253000.0,
+        "floor_m2": 163.3,
+        "year_built": 1969.0,
+        "lot_m2": 700.5
+      },
+      {
+        "id": 254784,
+        "label": "2630 chemin Lac-Cote (#254784)",
+        "value": 250000.0,
+        "floor_m2": 85.4,
+        "year_built": 2006.0,
+        "lot_m2": 1044.2
+      },
+      {
+        "id": 277423,
+        "label": "539 rue Beau-Repos (#277423)",
+        "value": 229000.0,
+        "floor_m2": 123.4,
+        "year_built": 1987.0,
+        "lot_m2": 419.9
+      },
+      {
+        "id": 236725,
+        "label": "2940 rue Sentier (#236725)",
+        "value": 169000.0,
+        "floor_m2": 120.8,
+        "year_built": 1959.0,
+        "lot_m2": 880.7
+      },
+      {
+        "id": 277107,
+        "label": "584 rue Tranquillité (#277107)",
+        "value": 202000.0,
+        "floor_m2": 101.1,
+        "year_built": 1987.0,
+        "lot_m2": 578.0
+      },
+      {
+        "id": 327161,
+        "label": "1850 avenue Rivière-Jaune (#327161)",
+        "value": 238000.0,
+        "floor_m2": 157.9,
+        "year_built": 1962.0,
+        "lot_m2": 976.2
+      },
+      {
+        "id": 275567,
+        "label": "2120 rue Aigles-Pecheurs (#275567)",
+        "value": 356000.0,
+        "floor_m2": 104.0,
+        "year_built": 1987.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 278699,
+        "label": "457 rue Marie-Didace (#278699)",
+        "value": 307000.0,
+        "floor_m2": 135.9,
+        "year_built": 2003.0,
+        "lot_m2": 761.1
+      },
+      {
+        "id": 266054,
+        "label": "2202 chemin Belair (#266054)",
+        "value": 312000.0,
+        "floor_m2": 104.0,
+        "year_built": 1980.0,
+        "lot_m2": 3424.8
+      },
+      {
+        "id": 327383,
+        "label": "1088 rue Lavande (#327383)",
+        "value": 355000.0,
+        "floor_m2": 139.8,
+        "year_built": 2019.0,
+        "lot_m2": 723.7
+      },
+      {
+        "id": 267044,
+        "label": "1310 avenue Montagne Ouest (#267044)",
+        "value": 186000.0,
+        "floor_m2": 132.5,
+        "year_built": 1964.0,
+        "lot_m2": 538.9
+      },
+      {
+        "id": 328712,
+        "label": "715 boulevard Lac (#328712)",
+        "value": 219000.0,
+        "floor_m2": 157.9,
+        "year_built": 1950.0,
+        "lot_m2": 1277.6
+      },
+      {
+        "id": 134632,
+        "label": "38 rue Habel (#134632)",
+        "value": 218000.0,
+        "floor_m2": 74.0,
+        "year_built": 1981.0,
+        "lot_m2": 2249.4
+      },
+      {
+        "id": 375048,
+        "label": "317 rue Simone-Routier (#375048)",
+        "value": 241000.0,
+        "floor_m2": 87.1,
+        "year_built": 2011.0,
+        "lot_m2": 446.4
+      },
+      {
+        "id": 275363,
+        "label": "610 rue Courte-Botte (#275363)",
+        "value": 286000.0,
+        "floor_m2": 87.5,
+        "year_built": 2001.0,
+        "lot_m2": 2084.6
+      },
+      {
+        "id": 128373,
+        "label": "1646 boulevard Raymond (#128373)",
+        "value": 311000.0,
+        "floor_m2": 119.9,
+        "year_built": 1983.0,
+        "lot_m2": 2646.1
+      },
+      {
+        "id": 254168,
+        "label": "4276 chemin Lac-Apollo (#254168)",
+        "value": 169000.0,
+        "floor_m2": 88.5,
+        "year_built": 1960.0,
+        "lot_m2": 1926.0
+      },
+      {
+        "id": 375054,
+        "label": "297 rue Berrouard (#375054)",
+        "value": 243000.0,
+        "floor_m2": 89.0,
+        "year_built": 2012.0,
+        "lot_m2": 356.4
+      },
+      {
+        "id": 328661,
+        "label": "5 rue Bocage-Normand (#328661)",
+        "value": 204000.0,
+        "floor_m2": 157.4,
+        "year_built": 1945.0,
+        "lot_m2": 1251.3
+      },
+      {
+        "id": 327345,
+        "label": "2058 rue Primeroses (#327345)",
+        "value": 257000.0,
+        "floor_m2": 86.3,
+        "year_built": 2018.0,
+        "lot_m2": 386.7
+      },
+      {
+        "id": 328648,
+        "label": "9 rue Bocage-Normand (#328648)",
+        "value": 299000.0,
+        "floor_m2": 130.2,
+        "year_built": 1951.0,
+        "lot_m2": 3980.0
+      },
+      {
+        "id": 266215,
+        "label": "2087 rue Marronniers (#266215)",
+        "value": 260000.0,
+        "floor_m2": 90.5,
+        "year_built": 1978.0,
+        "lot_m2": 2784.0
+      },
+      {
+        "id": 278434,
+        "label": "1713 rue Epinettes-Rouges (#278434)",
+        "value": 505000.0,
+        "floor_m2": 254.5,
+        "year_built": 1979.0,
+        "lot_m2": 2593.0
+      },
+      {
+        "id": 134644,
+        "label": "1565 boulevard Raymond (#134644)",
+        "value": 179000.0,
+        "floor_m2": 135.1,
+        "year_built": 1932.0,
+        "lot_m2": 2229.5
+      },
+      {
+        "id": 375033,
+        "label": "286 rue Berrouard (#375033)",
+        "value": 262000.0,
+        "floor_m2": 101.1,
+        "year_built": 2011.0,
+        "lot_m2": 388.4
+      },
+      {
+        "id": 236552,
+        "label": "16940 boulevard Valcartier (#236552)",
+        "value": 295000.0,
+        "floor_m2": 120.4,
+        "year_built": 1982.0,
+        "lot_m2": 2271.5
+      },
+      {
+        "id": 327599,
+        "label": "20985 boulevard Henri-Bourassa (#327599)",
+        "value": 207000.0,
+        "floor_m2": 155.7,
+        "year_built": 1953.0,
+        "lot_m2": 827.1
+      },
+      {
+        "id": 358297,
+        "label": "584 rue Elegance (#358297)",
+        "value": 262000.0,
+        "floor_m2": 105.1,
+        "year_built": 2006.0,
+        "lot_m2": 542.4
+      },
+      {
+        "id": 382092,
+        "label": "152 rue Perruches (#382092)",
+        "value": 256000.0,
+        "floor_m2": 94.9,
+        "year_built": 2012.0,
+        "lot_m2": 375.6
+      },
+      {
+        "id": 238351,
+        "label": "15455 boulevard Valcartier (#238351)",
+        "value": 268000.0,
+        "floor_m2": 129.3,
+        "year_built": 1955.0,
+        "lot_m2": 3000.0
+      },
+      {
+        "id": 237568,
+        "label": "4400 rue Beaubien (#237568)",
+        "value": 560000.0,
+        "floor_m2": 317.9,
+        "year_built": 1981.0,
+        "lot_m2": 1470.7
+      },
+      {
+        "id": 133721,
+        "label": "124 rue Coprins (#133721)",
+        "value": 310000.0,
+        "floor_m2": 148.8,
+        "year_built": 1986.0,
+        "lot_m2": 1331.2
+      },
+      {
+        "id": 275563,
+        "label": "2149 rue Aigles-Pecheurs (#275563)",
+        "value": 303000.0,
+        "floor_m2": 108.7,
+        "year_built": 1983.0,
+        "lot_m2": 2745.0
+      },
+      {
+        "id": 377751,
+        "label": "2785 avenue Notre-Dame (#377751)",
+        "value": 515000.0,
+        "floor_m2": 186.8,
+        "year_built": 2013.0,
+        "lot_m2": 2991.2
+      },
+      {
+        "id": 134694,
+        "label": "50 chemin Rivière-Du-Lac (#134694)",
+        "value": 99000.0,
+        "floor_m2": 68.5,
+        "year_built": 1955.0,
+        "lot_m2": 1213.5
+      },
+      {
+        "id": 240120,
+        "label": "8215 boulevard Ormière (#240120)",
+        "value": 222000.0,
+        "floor_m2": 180.7,
+        "year_built": 1950.0,
+        "lot_m2": 408.8
+      },
+      {
+        "id": 272201,
+        "label": "2678 route Aéroport (#272201)",
+        "value": 417000.0,
+        "floor_m2": 214.0,
+        "year_built": 1991.0,
+        "lot_m2": 1150.3
+      },
+      {
+        "id": 415315,
+        "label": "3145 avenue Notre-Dame (#415315)",
+        "value": 411000.0,
+        "floor_m2": 130.3,
+        "year_built": 2013.0,
+        "lot_m2": 2563.3
+      },
+      {
+        "id": 277443,
+        "label": "529 rue Aisance (#277443)",
+        "value": 163000.0,
+        "floor_m2": 95.5,
+        "year_built": 1976.0,
+        "lot_m2": 397.2
+      },
+      {
+        "id": 266852,
+        "label": "1469 chemin Jean-Gauvin (#266852)",
+        "value": 221000.0,
+        "floor_m2": 68.0,
+        "year_built": 1970.0,
+        "lot_m2": 3060.7
+      },
+      {
+        "id": 375050,
+        "label": "305 rue Berrouard (#375050)",
+        "value": 238000.0,
+        "floor_m2": 80.3,
+        "year_built": 2012.0,
+        "lot_m2": 394.8
+      },
+      {
+        "id": 327079,
+        "label": "1995 avenue Rivière-Jaune (#327079)",
+        "value": 460000.0,
+        "floor_m2": 239.7,
+        "year_built": 1979.0,
+        "lot_m2": 1961.5
+      },
+      {
+        "id": 280473,
+        "label": "2011 rue Aquarelle (#280473)",
+        "value": 223000.0,
+        "floor_m2": 127.0,
+        "year_built": 1978.0,
+        "lot_m2": 534.2
+      },
+      {
+        "id": 144277,
+        "label": "13494 boulevard Valcartier (#144277)",
+        "value": 290000.0,
+        "floor_m2": 170.2,
+        "year_built": 1945.0,
+        "lot_m2": 2612.7
+      },
+      {
+        "id": 327711,
+        "label": "305 rue Cantons (#327711)",
+        "value": 291000.0,
+        "floor_m2": 132.9,
+        "year_built": 1960.0,
+        "lot_m2": 3000.0
+      },
+      {
+        "id": 133125,
+        "label": "110 rue Lucien (#133125)",
+        "value": 214000.0,
+        "floor_m2": 123.7,
+        "year_built": 1976.0,
+        "lot_m2": 557.4
+      },
+      {
+        "id": 274223,
+        "label": "2088 avenue Industrielle (#274223)",
+        "value": 191000.0,
+        "floor_m2": 68.4,
+        "year_built": 1963.0,
+        "lot_m2": 2769.1
+      },
+      {
+        "id": 258312,
+        "label": "7331 boulevard Wilfrid-Hamel (#258312)",
+        "value": 189000.0,
+        "floor_m2": 167.2,
+        "year_built": 1945.0,
+        "lot_m2": 378.3
+      },
+      {
+        "id": 327463,
+        "label": "653 rue George-Muir (#327463)",
+        "value": 327000.0,
+        "floor_m2": 178.8,
+        "year_built": 1979.0,
+        "lot_m2": 1009.9
+      },
+      {
+        "id": 375025,
+        "label": "272 rue Berrouard (#375025)",
+        "value": 263000.0,
+        "floor_m2": 95.5,
+        "year_built": 2012.0,
+        "lot_m2": 378.7
+      },
+      {
+        "id": 383265,
+        "label": "2045 rue Primeroses (#383265)",
+        "value": 259000.0,
+        "floor_m2": 86.3,
+        "year_built": 2009.0,
+        "lot_m2": 795.7
+      },
+      {
+        "id": 277109,
+        "label": "491 rue Raoul (#277109)",
+        "value": 173000.0,
+        "floor_m2": 78.0,
+        "year_built": 1971.0,
+        "lot_m2": 1486.4
+      },
+      {
+        "id": 375062,
+        "label": "281 rue Berrouard (#375062)",
+        "value": 264000.0,
+        "floor_m2": 95.2,
+        "year_built": 2010.0,
+        "lot_m2": 530.5
+      },
+      {
+        "id": 134613,
+        "label": "135 rue Parulines (#134613)",
+        "value": 114000.0,
+        "floor_m2": 83.5,
+        "year_built": 1960.0,
+        "lot_m2": 620.6
+      },
+      {
+        "id": 266581,
+        "label": "4196 route Aéroport (#266581)",
+        "value": 496000.0,
+        "floor_m2": 160.8,
+        "year_built": 2012.0,
+        "lot_m2": 3420.7
+      },
+      {
+        "id": 238303,
+        "label": "15134 boulevard Valcartier (#238303)",
+        "value": 349000.0,
+        "floor_m2": 150.2,
+        "year_built": 1989.0,
+        "lot_m2": 1858.1
+      },
+      {
+        "id": 382090,
+        "label": "144 rue Perruches (#382090)",
+        "value": 237000.0,
+        "floor_m2": 74.4,
+        "year_built": 2013.0,
+        "lot_m2": 443.7
+      },
+      {
+        "id": 134058,
+        "label": "501 avenue Castillon (#134058)",
+        "value": 256000.0,
+        "floor_m2": 138.4,
+        "year_built": 1974.0,
+        "lot_m2": 1065.9
+      },
+      {
+        "id": 131227,
+        "label": "638 rue Desnos (#131227)",
+        "value": 278000.0,
+        "floor_m2": 103.6,
+        "year_built": 2011.0,
+        "lot_m2": 467.2
+      },
+      {
+        "id": 328379,
+        "label": "5 rue Rebord (#328379)",
+        "value": 191000.0,
+        "floor_m2": 106.1,
+        "year_built": 1966.0,
+        "lot_m2": 1190.8
+      },
+      {
+        "id": 140505,
+        "label": "15 avenue Sablonnières (#140505)",
+        "value": 185000.0,
+        "floor_m2": 93.3,
+        "year_built": 1956.0,
+        "lot_m2": 2118.4
+      },
+      {
+        "id": 135690,
+        "label": "78 rue Duchatel (#135690)",
+        "value": 515000.0,
+        "floor_m2": 324.9,
+        "year_built": 1963.0,
+        "lot_m2": 1131.7
+      },
+      {
+        "id": 278176,
+        "label": "1311 rue Thibodeau (#278176)",
+        "value": 306000.0,
+        "floor_m2": 113.8,
+        "year_built": 2004.0,
+        "lot_m2": 1166.0
+      },
+      {
+        "id": 375060,
+        "label": "285 rue Berrouard (#375060)",
+        "value": 268000.0,
+        "floor_m2": 98.5,
+        "year_built": 2010.0,
+        "lot_m2": 453.1
+      },
+      {
+        "id": 327370,
+        "label": "2088 rue Prunelles (#327370)",
+        "value": 161000.0,
+        "floor_m2": 75.3,
+        "year_built": 1986.0,
+        "lot_m2": 305.8
+      },
+      {
+        "id": 375063,
+        "label": "279 rue Berrouard (#375063)",
+        "value": 268000.0,
+        "floor_m2": 94.9,
+        "year_built": 2010.0,
+        "lot_m2": 569.2
+      },
+      {
+        "id": 320357,
+        "label": "7480 3e Avenue Est (#320357)",
+        "value": 575000.0,
+        "floor_m2": 340.9,
+        "year_built": 1960.0,
+        "lot_m2": 2110.7
+      },
+      {
+        "id": 328371,
+        "label": "16 rue Bernier Est (#328371)",
+        "value": 187000.0,
+        "floor_m2": 92.2,
+        "year_built": 1963.0,
+        "lot_m2": 1728.2
+      },
+      {
+        "id": 237184,
+        "label": "15690 boulevard Valcartier (#237184)",
+        "value": 268000.0,
+        "floor_m2": 79.0,
+        "year_built": 1966.0,
+        "lot_m2": 3856.0
+      },
+      {
+        "id": 137750,
+        "label": "250 rue Trois-Saults (#137750)",
+        "value": 291000.0,
+        "floor_m2": 118.8,
+        "year_built": 1981.0,
+        "lot_m2": 2050.1
+      },
+      {
+        "id": 254319,
+        "label": "1865 rang Saint-Ange (#254319)",
+        "value": 479000.0,
+        "floor_m2": 194.4,
+        "year_built": 1980.0,
+        "lot_m2": 3768.3
+      },
+      {
+        "id": 382072,
+        "label": "165 rue Perruches (#382072)",
+        "value": 267000.0,
+        "floor_m2": 94.9,
+        "year_built": 2012.0,
+        "lot_m2": 394.5
+      },
+      {
+        "id": 375066,
+        "label": "273 rue Berrouard (#375066)",
+        "value": 257000.0,
+        "floor_m2": 86.1,
+        "year_built": 2010.0,
+        "lot_m2": 588.3
+      },
+      {
+        "id": 328428,
+        "label": "1 rue Rebord (#328428)",
+        "value": 141000.0,
+        "floor_m2": 121.5,
+        "year_built": 1951.0,
+        "lot_m2": 371.7
+      },
+      {
+        "id": 278696,
+        "label": "454 rue Marie-Didace (#278696)",
+        "value": 177000.0,
+        "floor_m2": 93.7,
+        "year_built": 1966.0,
+        "lot_m2": 1228.9
+      },
+      {
+        "id": 326406,
+        "label": "2040 rue Belleville (#326406)",
+        "value": 331000.0,
+        "floor_m2": 97.2,
+        "year_built": 1990.0,
+        "lot_m2": 3135.7
+      },
+      {
+        "id": 375044,
+        "label": "308 rue Berrouard (#375044)",
+        "value": 262000.0,
+        "floor_m2": 92.6,
+        "year_built": 2011.0,
+        "lot_m2": 403.8
+      },
+      {
+        "id": 230988,
+        "label": "7260 rue Emile-Fleury (#230988)",
+        "value": 510000.0,
+        "floor_m2": 278.4,
+        "year_built": 1975.0,
+        "lot_m2": 1831.7
+      },
+      {
+        "id": 123960,
+        "label": "755 rue Seigneuriale (#123960)",
+        "value": 454000.0,
+        "floor_m2": 218.0,
+        "year_built": 1980.0,
+        "lot_m2": 2342.5
+      },
+      {
+        "id": 375061,
+        "label": "283 rue Berrouard (#375061)",
+        "value": 269000.0,
+        "floor_m2": 97.9,
+        "year_built": 2009.0,
+        "lot_m2": 491.8
+      },
+      {
+        "id": 275244,
+        "label": "16142 boulevard Valcartier (#275244)",
+        "value": 143000.0,
+        "floor_m2": 78.7,
+        "year_built": 1952.0,
+        "lot_m2": 1828.2
+      },
+      {
+        "id": 267235,
+        "label": "1032 rue Leblanc (#267235)",
+        "value": 138000.0,
+        "floor_m2": 66.9,
+        "year_built": 1970.0,
+        "lot_m2": 999.4
+      },
+      {
+        "id": 326470,
+        "label": "2399 avenue Rivière-Jaune (#326470)",
+        "value": 477000.0,
+        "floor_m2": 264.8,
+        "year_built": 1974.0,
+        "lot_m2": 1593.5
+      },
+      {
+        "id": 123603,
+        "label": "756 rue Grenelle (#123603)",
+        "value": 458000.0,
+        "floor_m2": 224.1,
+        "year_built": 1981.0,
+        "lot_m2": 2140.9
+      },
+      {
+        "id": 254041,
+        "label": "3875 avenue Notre-Dame (#254041)",
+        "value": 283000.0,
+        "floor_m2": 74.2,
+        "year_built": 2011.0,
+        "lot_m2": 1500.5
+      },
+      {
+        "id": 277302,
+        "label": "570 rue Pause (#277302)",
+        "value": 293000.0,
+        "floor_m2": 113.1,
+        "year_built": 2009.0,
+        "lot_m2": 494.0
+      },
+      {
+        "id": 237187,
+        "label": "15575 boulevard Valcartier (#237187)",
+        "value": 478000.0,
+        "floor_m2": 161.1,
+        "year_built": 1999.0,
+        "lot_m2": 3669.7
+      },
+      {
+        "id": 270957,
+        "label": "1454 rue Émond (#270957)",
+        "value": 248000.0,
+        "floor_m2": 185.3,
+        "year_built": 1943.0,
+        "lot_m2": 1046.1
+      },
+      {
+        "id": 134692,
+        "label": "17 cote Trenton (#134692)",
+        "value": 206000.0,
+        "floor_m2": 68.0,
+        "year_built": 1977.0,
+        "lot_m2": 2062.4
+      },
+      {
+        "id": 278693,
+        "label": "471 rue Marie-Didace (#278693)",
+        "value": 147000.0,
+        "floor_m2": 72.3,
+        "year_built": 1976.0,
+        "lot_m2": 620.5
+      },
+      {
+        "id": 326660,
+        "label": "135 rue Vallon (#326660)",
+        "value": 192000.0,
+        "floor_m2": 112.4,
+        "year_built": 1972.0,
+        "lot_m2": 497.4
+      },
+      {
+        "id": 375065,
+        "label": "275 rue Berrouard (#375065)",
+        "value": 285000.0,
+        "floor_m2": 101.1,
+        "year_built": 2011.0,
+        "lot_m2": 588.4
+      },
+      {
+        "id": 278698,
+        "label": "463 rue Marie-Didace (#278698)",
+        "value": 178000.0,
+        "floor_m2": 78.7,
+        "year_built": 1986.0,
+        "lot_m2": 477.7
+      },
+      {
+        "id": 280847,
+        "label": "2205 rue Érablière (#280847)",
+        "value": 172000.0,
+        "floor_m2": 91.1,
+        "year_built": 1974.0,
+        "lot_m2": 650.3
+      },
+      {
+        "id": 109002,
+        "label": "254 avenue Plante (#109002)",
+        "value": 199000.0,
+        "floor_m2": 138.7,
+        "year_built": 1962.0,
+        "lot_m2": 348.3
+      },
+      {
+        "id": 276906,
+        "label": "533 rue Eaux-Fraiches (#276906)",
+        "value": 430000.0,
+        "floor_m2": 229.8,
+        "year_built": 1992.0,
+        "lot_m2": 580.7
+      },
+      {
+        "id": 278649,
+        "label": "477 rue Survenant (#278649)",
+        "value": 281000.0,
+        "floor_m2": 120.2,
+        "year_built": 1950.0,
+        "lot_m2": 3617.8
+      },
+      {
+        "id": 266448,
+        "label": "2023 rue Balises (#266448)",
+        "value": 344000.0,
+        "floor_m2": 68.3,
+        "year_built": 2005.0,
+        "lot_m2": 3440.6
+      },
+      {
+        "id": 267145,
+        "label": "3900 route Aéroport (#267145)",
+        "value": 274000.0,
+        "floor_m2": 106.3,
+        "year_built": 1977.0,
+        "lot_m2": 2250.6
+      },
+      {
+        "id": 278636,
+        "label": "110 rue Herbages (#278636)",
+        "value": 155000.0,
+        "floor_m2": 77.2,
+        "year_built": 1957.0,
+        "lot_m2": 1779.0
+      },
+      {
+        "id": 133946,
+        "label": "221 rue Germaine-Viger (#133946)",
+        "value": 185000.0,
+        "floor_m2": 102.8,
+        "year_built": 1973.0,
+        "lot_m2": 567.0
+      },
+      {
+        "id": 326594,
+        "label": "1333 rue Pierre-Auclair (#326594)",
+        "value": 510000.0,
+        "floor_m2": 194.7,
+        "year_built": 2011.0,
+        "lot_m2": 2424.2
+      },
+      {
+        "id": 274259,
+        "label": "2129 avenue Industrielle (#274259)",
+        "value": 313000.0,
+        "floor_m2": 154.8,
+        "year_built": 1989.0,
+        "lot_m2": 668.9
+      },
+      {
+        "id": 134614,
+        "label": "147 rue Parulines (#134614)",
+        "value": 113000.0,
+        "floor_m2": 66.9,
+        "year_built": 1960.0,
+        "lot_m2": 969.1
+      },
+      {
+        "id": 133851,
+        "label": "265 rue Germaine-Viger (#133851)",
+        "value": 186000.0,
+        "floor_m2": 102.6,
+        "year_built": 1974.0,
+        "lot_m2": 499.8
+      },
+      {
+        "id": 280979,
+        "label": "13964 rue Longchamps (#280979)",
+        "value": 175000.0,
+        "floor_m2": 88.4,
+        "year_built": 1979.0,
+        "lot_m2": 432.3
+      },
+      {
+        "id": 201624,
+        "label": "93 avenue Bélanger (#201624)",
+        "value": 157000.0,
+        "floor_m2": 160.9,
+        "year_built": 1935.0,
+        "lot_m2": 227.0
+      },
+      {
+        "id": 133955,
+        "label": "225 rue Germaine-Viger (#133955)",
+        "value": 297000.0,
+        "floor_m2": 97.8,
+        "year_built": 2016.0,
+        "lot_m2": 581.0
+      },
+      {
+        "id": 278721,
+        "label": "431 rue Repos (#278721)",
+        "value": 210000.0,
+        "floor_m2": 119.0,
+        "year_built": 1967.0,
+        "lot_m2": 900.6
+      },
+      {
+        "id": 275568,
+        "label": "2133 rue Aigles-Pecheurs (#275568)",
+        "value": 345000.0,
+        "floor_m2": 81.2,
+        "year_built": 1988.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 137735,
+        "label": "23 rue Gouffre (#137735)",
+        "value": 182000.0,
+        "floor_m2": 95.9,
+        "year_built": 1967.0,
+        "lot_m2": 1060.2
+      },
+      {
+        "id": 358293,
+        "label": "578 rue Elegance (#358293)",
+        "value": 263000.0,
+        "floor_m2": 92.1,
+        "year_built": 2007.0,
+        "lot_m2": 548.1
+      },
+      {
+        "id": 280968,
+        "label": "13837 rue Longchamps (#280968)",
+        "value": 184000.0,
+        "floor_m2": 89.9,
+        "year_built": 1979.0,
+        "lot_m2": 559.4
+      },
+      {
+        "id": 387778,
+        "label": "1570 rang Saint-Denis (#387778)",
+        "value": 520000.0,
+        "floor_m2": 201.3,
+        "year_built": 2014.0,
+        "lot_m2": 2175.9
+      },
+      {
+        "id": 382081,
+        "label": "160 rue Etourneaux (#382081)",
+        "value": 306000.0,
+        "floor_m2": 115.7,
+        "year_built": 2012.0,
+        "lot_m2": 385.7
+      },
+      {
+        "id": 328708,
+        "label": "711 boulevard Lac (#328708)",
+        "value": 302000.0,
+        "floor_m2": 111.8,
+        "year_built": 1973.0,
+        "lot_m2": 2856.4
+      },
+      {
+        "id": 419799,
+        "label": "113 rue Saintonge (#419799)",
+        "value": 309000.0,
+        "floor_m2": 103.8,
+        "year_built": 2023.0,
+        "lot_m2": 162.3
+      },
+      {
+        "id": 328504,
+        "label": "320 rue Bernier Est (#328504)",
+        "value": 340000.0,
+        "floor_m2": 167.6,
+        "year_built": 1988.0,
+        "lot_m2": 822.6
+      },
+      {
+        "id": 134639,
+        "label": "5 rue Habel (#134639)",
+        "value": 117000.0,
+        "floor_m2": 82.1,
+        "year_built": 1942.0,
+        "lot_m2": 1572.8
+      },
+      {
+        "id": 133943,
+        "label": "114 CA Marie-Guérin (#133943)",
+        "value": 217000.0,
+        "floor_m2": 113.8,
+        "year_built": 1976.0,
+        "lot_m2": 633.1
+      },
+      {
+        "id": 270485,
+        "label": "1214 avenue Amiral (#270485)",
+        "value": 439000.0,
+        "floor_m2": 241.3,
+        "year_built": 1955.0,
+        "lot_m2": 2564.2
+      },
+      {
+        "id": 327162,
+        "label": "1840 avenue Rivière-Jaune (#327162)",
+        "value": 352000.0,
+        "floor_m2": 131.8,
+        "year_built": 1964.0,
+        "lot_m2": 3835.4
+      },
+      {
+        "id": 275191,
+        "label": "2280 rue Estivants (#275191)",
+        "value": 360000.0,
+        "floor_m2": 109.8,
+        "year_built": 2010.0,
+        "lot_m2": 1917.7
+      },
+      {
+        "id": 131223,
+        "label": "640 rue Desnos (#131223)",
+        "value": 206000.0,
+        "floor_m2": 106.8,
+        "year_built": 1979.0,
+        "lot_m2": 428.5
+      },
+      {
+        "id": 254173,
+        "label": "4460 route Jean-Gauvin (#254173)",
+        "value": 162000.0,
+        "floor_m2": 87.4,
+        "year_built": 1970.0,
+        "lot_m2": 652.2
+      },
+      {
+        "id": 254804,
+        "label": "2400 chemin Lac-Cote (#254804)",
+        "value": 175000.0,
+        "floor_m2": 99.2,
+        "year_built": 1964.0,
+        "lot_m2": 905.7
+      },
+      {
+        "id": 238261,
+        "label": "15055 rue Roland-Saint-Laurent (#238261)",
+        "value": 331000.0,
+        "floor_m2": 144.9,
+        "year_built": 1987.0,
+        "lot_m2": 1441.0
+      },
+      {
+        "id": 277153,
+        "label": "475 rue Raoul (#277153)",
+        "value": 160000.0,
+        "floor_m2": 73.9,
+        "year_built": 1975.0,
+        "lot_m2": 743.2
+      },
+      {
+        "id": 358320,
+        "label": "577 rue Elegance (#358320)",
+        "value": 251000.0,
+        "floor_m2": 82.1,
+        "year_built": 2007.0,
+        "lot_m2": 539.2
+      },
+      {
+        "id": 254235,
+        "label": "3371 rang Beaumont (#254235)",
+        "value": 288000.0,
+        "floor_m2": 120.6,
+        "year_built": 1960.0,
+        "lot_m2": 2969.7
+      },
+      {
+        "id": 268349,
+        "label": "1204 avenue Montagne Ouest (#268349)",
+        "value": 153000.0,
+        "floor_m2": 80.8,
+        "year_built": 1971.0,
+        "lot_m2": 559.6
+      },
+      {
+        "id": 280981,
+        "label": "13928 rue Longchamps (#280981)",
+        "value": 184000.0,
+        "floor_m2": 85.8,
+        "year_built": 1980.0,
+        "lot_m2": 532.0
+      },
+      {
+        "id": 266318,
+        "label": "1355 chemin Belair (#266318)",
+        "value": 155000.0,
+        "floor_m2": 123.6,
+        "year_built": 1944.0,
+        "lot_m2": 789.2
+      },
+      {
+        "id": 276872,
+        "label": "569 rue Merisiers (#276872)",
+        "value": 205000.0,
+        "floor_m2": 107.3,
+        "year_built": 1976.0,
+        "lot_m2": 505.2
+      },
+      {
+        "id": 354231,
+        "label": "1085 rue Framboisiers (#354231)",
+        "value": 288000.0,
+        "floor_m2": 104.1,
+        "year_built": 2005.0,
+        "lot_m2": 708.2
+      },
+      {
+        "id": 275240,
+        "label": "2850 rue Sentier (#275240)",
+        "value": 106000.0,
+        "floor_m2": 91.8,
+        "year_built": 1930.0,
+        "lot_m2": 1647.5
+      },
+      {
+        "id": 237161,
+        "label": "15775 boulevard Valcartier (#237161)",
+        "value": 150000.0,
+        "floor_m2": 121.7,
+        "year_built": 1946.0,
+        "lot_m2": 603.9
+      },
+      {
+        "id": 319650,
+        "label": "6825 1re Avenue (#319650)",
+        "value": 555000.0,
+        "floor_m2": 329.4,
+        "year_built": 1970.0,
+        "lot_m2": 1113.6
+      },
+      {
+        "id": 140567,
+        "label": "27 avenue Sablonnières (#140567)",
+        "value": 202000.0,
+        "floor_m2": 89.7,
+        "year_built": 1974.0,
+        "lot_m2": 1147.7
+      },
+      {
+        "id": 238247,
+        "label": "15155 rue Roland-Saint-Laurent (#238247)",
+        "value": 259000.0,
+        "floor_m2": 138.7,
+        "year_built": 1973.0,
+        "lot_m2": 796.1
+      },
+      {
+        "id": 277143,
+        "label": "487 rue Gilles (#277143)",
+        "value": 246000.0,
+        "floor_m2": 66.9,
+        "year_built": 1983.0,
+        "lot_m2": 2382.5
+      },
+      {
+        "id": 395848,
+        "label": "16748 chemin Grande-Ligne (#395848)",
+        "value": 344000.0,
+        "floor_m2": 128.6,
+        "year_built": 2015.0,
+        "lot_m2": 473.3
+      },
+      {
+        "id": 266903,
+        "label": "1183 chemin Jean-Gauvin (#266903)",
+        "value": 183000.0,
+        "floor_m2": 75.0,
+        "year_built": 1972.0,
+        "lot_m2": 1336.4
+      },
+      {
+        "id": 136813,
+        "label": "748 rue Marie-D'Abancourt (#136813)",
+        "value": 455000.0,
+        "floor_m2": 232.7,
+        "year_built": 1992.0,
+        "lot_m2": 799.1
+      },
+      {
+        "id": 269790,
+        "label": "1536 rue Hauterive (#269790)",
+        "value": 171000.0,
+        "floor_m2": 67.8,
+        "year_built": 1978.0,
+        "lot_m2": 926.1
+      },
+      {
+        "id": 128121,
+        "label": "116 avenue Rang-Saint-Ignace (#128121)",
+        "value": 309000.0,
+        "floor_m2": 94.0,
+        "year_built": 2021.0,
+        "lot_m2": 481.4
+      },
+      {
+        "id": 382077,
+        "label": "172 rue Etourneaux (#382077)",
+        "value": 323000.0,
+        "floor_m2": 101.1,
+        "year_built": 2012.0,
+        "lot_m2": 1113.6
+      },
+      {
+        "id": 137715,
+        "label": "14 rue Gouffre (#137715)",
+        "value": 157000.0,
+        "floor_m2": 87.8,
+        "year_built": 1965.0,
+        "lot_m2": 708.9
+      },
+      {
+        "id": 254057,
+        "label": "3875 avenue Notre-Dame (#254057)",
+        "value": 323000.0,
+        "floor_m2": 94.2,
+        "year_built": 2010.0,
+        "lot_m2": 1476.7
+      },
+      {
+        "id": 280366,
+        "label": "2044 rue Aquarelle (#280366)",
+        "value": 178000.0,
+        "floor_m2": 83.3,
+        "year_built": 1977.0,
+        "lot_m2": 595.7
+      },
+      {
+        "id": 133836,
+        "label": "140 CA Marie-Guérin (#133836)",
+        "value": 231000.0,
+        "floor_m2": 119.0,
+        "year_built": 1977.0,
+        "lot_m2": 557.4
+      },
+      {
+        "id": 327715,
+        "label": "304 rue Cantons (#327715)",
+        "value": 167000.0,
+        "floor_m2": 72.9,
+        "year_built": 1965.0,
+        "lot_m2": 1451.6
+      },
+      {
+        "id": 326947,
+        "label": "1447 avenue Rivière-Jaune (#326947)",
+        "value": 166000.0,
+        "floor_m2": 135.7,
+        "year_built": 1948.0,
+        "lot_m2": 291.3
+      },
+      {
+        "id": 280870,
+        "label": "6057 rue Gabare (#280870)",
+        "value": 163000.0,
+        "floor_m2": 82.1,
+        "year_built": 1975.0,
+        "lot_m2": 408.7
+      },
+      {
+        "id": 121847,
+        "label": "2950 rue Rheaume (#121847)",
+        "value": 469000.0,
+        "floor_m2": 251.2,
+        "year_built": 1976.0,
+        "lot_m2": 1426.1
+      },
+      {
+        "id": 272259,
+        "label": "5828 route Sainte-Genevieve (#272259)",
+        "value": 255000.0,
+        "floor_m2": 82.8,
+        "year_built": 1955.0,
+        "lot_m2": 3716.1
+      },
+      {
+        "id": 278505,
+        "label": "17439 chemin Grande-Ligne (#278505)",
+        "value": 332000.0,
+        "floor_m2": 114.4,
+        "year_built": 2001.0,
+        "lot_m2": 1505.0
+      },
+      {
+        "id": 406038,
+        "label": "3445 rue Rivière-Nelson (#406038)",
+        "value": 488000.0,
+        "floor_m2": 133.8,
+        "year_built": 2018.0,
+        "lot_m2": 3337.9
+      },
+      {
+        "id": 276575,
+        "label": "1524 avenue Lac-Saint-Charles (#276575)",
+        "value": 365000.0,
+        "floor_m2": 137.0,
+        "year_built": 1964.0,
+        "lot_m2": 3774.2
+      },
+      {
+        "id": 278814,
+        "label": "1335 rue Chalets (#278814)",
+        "value": 157000.0,
+        "floor_m2": 66.9,
+        "year_built": 1974.0,
+        "lot_m2": 836.1
+      },
+      {
+        "id": 277415,
+        "label": "545 rue Beau-Repos (#277415)",
+        "value": 197000.0,
+        "floor_m2": 83.7,
+        "year_built": 1986.0,
+        "lot_m2": 415.6
+      },
+      {
+        "id": 267770,
+        "label": "7 ruelle Rodrigue (#267770)",
+        "value": 309000.0,
+        "floor_m2": 85.9,
+        "year_built": 2010.0,
+        "lot_m2": 1396.4
+      },
+      {
+        "id": 406902,
+        "label": "11995 rue Peupliers-Blancs (#406902)",
+        "value": 324000.0,
+        "floor_m2": 114.2,
+        "year_built": 2018.0,
+        "lot_m2": 247.7
+      },
+      {
+        "id": 238259,
+        "label": "3325 rue Rivière-Nelson (#238259)",
+        "value": 246000.0,
+        "floor_m2": 69.4,
+        "year_built": 1955.0,
+        "lot_m2": 3937.0
+      },
+      {
+        "id": 267975,
+        "label": "1597 rue Guillebert (#267975)",
+        "value": 515000.0,
+        "floor_m2": 273.7,
+        "year_built": 1992.0,
+        "lot_m2": 631.7
+      },
+      {
+        "id": 404901,
+        "label": "2300 boulevard Talbot (#404901)",
+        "value": 488000.0,
+        "floor_m2": 143.3,
+        "year_built": 2017.0,
+        "lot_m2": 3004.8
+      },
+      {
+        "id": 272276,
+        "label": "1490 rue Alouette (#272276)",
+        "value": 590000.0,
+        "floor_m2": 242.6,
+        "year_built": 1998.0,
+        "lot_m2": 3047.4
+      },
+      {
+        "id": 275353,
+        "label": "624 rue Courte-Botte (#275353)",
+        "value": 352000.0,
+        "floor_m2": 115.9,
+        "year_built": 2002.0,
+        "lot_m2": 1772.3
+      },
+      {
+        "id": 277656,
+        "label": "508 rue Detente (#277656)",
+        "value": 181000.0,
+        "floor_m2": 81.9,
+        "year_built": 1978.0,
+        "lot_m2": 538.1
+      },
+      {
+        "id": 133831,
+        "label": "93 rue Auger (#133831)",
+        "value": 230000.0,
+        "floor_m2": 108.8,
+        "year_built": 1978.0,
+        "lot_m2": 707.5
+      },
+      {
+        "id": 278234,
+        "label": "1333 rue Hamann (#278234)",
+        "value": 365000.0,
+        "floor_m2": 82.2,
+        "year_built": 2024.0,
+        "lot_m2": 1858.0
+      },
+      {
+        "id": 141456,
+        "label": "230½ 106e Rue (#141456)",
+        "value": 211000.0,
+        "floor_m2": 148.8,
+        "year_built": 1955.0,
+        "lot_m2": 304.7
+      },
+      {
+        "id": 128205,
+        "label": "101 rue Bolets (#128205)",
+        "value": 195000.0,
+        "floor_m2": 80.2,
+        "year_built": 1985.0,
+        "lot_m2": 462.5
+      },
+      {
+        "id": 402496,
+        "label": "660 rue Bosquets (#402496)",
+        "value": 324000.0,
+        "floor_m2": 115.9,
+        "year_built": 2016.0,
+        "lot_m2": 233.1
+      },
+      {
+        "id": 413698,
+        "label": "39A rue Tremblay (#413698)",
+        "value": 332000.0,
+        "floor_m2": 111.9,
+        "year_built": 2021.0,
+        "lot_m2": 237.2
+      },
+      {
+        "id": 280713,
+        "label": "1753 rue Misericorde (#280713)",
+        "value": 187000.0,
+        "floor_m2": 130.4,
+        "year_built": 1950.0,
+        "lot_m2": 691.4
+      },
+      {
+        "id": 280092,
+        "label": "2699 rue Faune (#280092)",
+        "value": 236000.0,
+        "floor_m2": 156.4,
+        "year_built": 1951.0,
+        "lot_m2": 839.3
+      },
+      {
+        "id": 267128,
+        "label": "1080 rue Gaudar (#267128)",
+        "value": 259000.0,
+        "floor_m2": 118.7,
+        "year_built": 1941.0,
+        "lot_m2": 3299.5
+      },
+      {
+        "id": 133954,
+        "label": "229 rue Germaine-Viger (#133954)",
+        "value": 189000.0,
+        "floor_m2": 83.2,
+        "year_built": 1979.0,
+        "lot_m2": 565.4
+      },
+      {
+        "id": 237138,
+        "label": "15965 boulevard Valcartier (#237138)",
+        "value": 159000.0,
+        "floor_m2": 68.7,
+        "year_built": 1974.0,
+        "lot_m2": 696.8
+      },
+      {
+        "id": 276054,
+        "label": "535 rue Bouleau-Blanc (#276054)",
+        "value": 257000.0,
+        "floor_m2": 142.4,
+        "year_built": 1972.0,
+        "lot_m2": 487.7
+      },
+      {
+        "id": 280470,
+        "label": "2035 rue Aquarelle (#280470)",
+        "value": 166000.0,
+        "floor_m2": 72.8,
+        "year_built": 1977.0,
+        "lot_m2": 522.6
+      },
+      {
+        "id": 277941,
+        "label": "440 rue Delage (#277941)",
+        "value": 141000.0,
+        "floor_m2": 83.2,
+        "year_built": 1967.0,
+        "lot_m2": 209.1
+      },
+      {
+        "id": 277799,
+        "label": "467 rue Delage (#277799)",
+        "value": 176000.0,
+        "floor_m2": 125.6,
+        "year_built": 1952.0,
+        "lot_m2": 463.9
+      },
+      {
+        "id": 139020,
+        "label": "166 rue Chicorée (#139020)",
+        "value": 360000.0,
+        "floor_m2": 178.4,
+        "year_built": 1989.0,
+        "lot_m2": 521.0
+      },
+      {
+        "id": 254170,
+        "label": "4264 chemin Lac-Apollo (#254170)",
+        "value": 198000.0,
+        "floor_m2": 74.0,
+        "year_built": 1987.0,
+        "lot_m2": 584.8
+      },
+      {
+        "id": 121524,
+        "label": "815 rue Sorbier (#121524)",
+        "value": 473000.0,
+        "floor_m2": 167.0,
+        "year_built": 1985.0,
+        "lot_m2": 3755.6
+      },
+      {
+        "id": 327787,
+        "label": "284 rue Champéry (#327787)",
+        "value": 195000.0,
+        "floor_m2": 76.1,
+        "year_built": 1975.0,
+        "lot_m2": 1189.9
+      },
+      {
+        "id": 283848,
+        "label": "1635 rue Gagnon (#283848)",
+        "value": 290000.0,
+        "floor_m2": 112.6,
+        "year_built": 2003.0,
+        "lot_m2": 340.5
+      },
+      {
+        "id": 237790,
+        "label": "12950 rue Glorieux (#237790)",
+        "value": 510000.0,
+        "floor_m2": 275.7,
+        "year_built": 1986.0,
+        "lot_m2": 721.1
+      },
+      {
+        "id": 121525,
+        "label": "811 rue Sorbier (#121525)",
+        "value": 477000.0,
+        "floor_m2": 158.7,
+        "year_built": 1987.0,
+        "lot_m2": 3975.7
+      },
+      {
+        "id": 277393,
+        "label": "547 rue Pacifique (#277393)",
+        "value": 198000.0,
+        "floor_m2": 84.8,
+        "year_built": 1983.0,
+        "lot_m2": 418.1
+      },
+      {
+        "id": 269484,
+        "label": "1396 rue Gobineau (#269484)",
+        "value": 446000.0,
+        "floor_m2": 222.7,
+        "year_built": 1992.0,
+        "lot_m2": 696.8
+      },
+      {
+        "id": 277337,
+        "label": "567 rue Beau-Repos (#277337)",
+        "value": 198000.0,
+        "floor_m2": 83.2,
+        "year_built": 1983.0,
+        "lot_m2": 444.1
+      },
+      {
+        "id": 345120,
+        "label": "106A rue Bertrand (#345120)",
+        "value": 346000.0,
+        "floor_m2": 127.4,
+        "year_built": 2000.0,
+        "lot_m2": 1206.5
+      },
+      {
+        "id": 276130,
+        "label": "587 rue Merisiers (#276130)",
+        "value": 306000.0,
+        "floor_m2": 141.1,
+        "year_built": 1991.0,
+        "lot_m2": 358.3
+      },
+      {
+        "id": 367993,
+        "label": "39 rue Mitrelles (#367993)",
+        "value": 565000.0,
+        "floor_m2": 176.0,
+        "year_built": 2008.0,
+        "lot_m2": 4000.0
+      },
+      {
+        "id": 354234,
+        "label": "1088 rue Framboisiers (#354234)",
+        "value": 302000.0,
+        "floor_m2": 101.7,
+        "year_built": 2004.0,
+        "lot_m2": 818.2
+      },
+      {
+        "id": 278599,
+        "label": "1000 avenue Lac-Saint-Charles (#278599)",
+        "value": 465000.0,
+        "floor_m2": 165.7,
+        "year_built": 1987.0,
+        "lot_m2": 3370.0
+      },
+      {
+        "id": 134333,
+        "label": "1346 boulevard Raymond (#134333)",
+        "value": 292000.0,
+        "floor_m2": 160.4,
+        "year_built": 1970.0,
+        "lot_m2": 651.6
+      },
+      {
+        "id": 133961,
+        "label": "228 rue Germaine-Viger (#133961)",
+        "value": 341000.0,
+        "floor_m2": 95.2,
+        "year_built": 2024.0,
+        "lot_m2": 670.0
+      },
+      {
+        "id": 376486,
+        "label": "227 rue Bolets (#376486)",
+        "value": 320000.0,
+        "floor_m2": 106.2,
+        "year_built": 2009.0,
+        "lot_m2": 732.3
+      },
+      {
+        "id": 404044,
+        "label": "505 rue Bois-Francs (#404044)",
+        "value": 336000.0,
+        "floor_m2": 115.9,
+        "year_built": 2017.0,
+        "lot_m2": 257.8
+      },
+      {
+        "id": 272225,
+        "label": "2689 route Aéroport (#272225)",
+        "value": 339000.0,
+        "floor_m2": 149.2,
+        "year_built": 1996.0,
+        "lot_m2": 446.0
+      },
+      {
+        "id": 280445,
+        "label": "1940 rue Aquarelle (#280445)",
+        "value": 167000.0,
+        "floor_m2": 76.1,
+        "year_built": 1974.0,
+        "lot_m2": 418.7
+      },
+      {
+        "id": 276819,
+        "label": "1891 rue Epinettes-Rouges (#276819)",
+        "value": 355000.0,
+        "floor_m2": 132.8,
+        "year_built": 2003.0,
+        "lot_m2": 926.7
+      },
+      {
+        "id": 146228,
+        "label": "269 rue Chateau-D'Eau (#146228)",
+        "value": 459000.0,
+        "floor_m2": 255.5,
+        "year_built": 1975.0,
+        "lot_m2": 762.6
+      },
+      {
+        "id": 145453,
+        "label": "21 boulevard Johnny-Parent (#145453)",
+        "value": 525000.0,
+        "floor_m2": 270.6,
+        "year_built": 1990.0,
+        "lot_m2": 807.7
+      },
+      {
+        "id": 146123,
+        "label": "40 rue Dames-Ursulines (#146123)",
+        "value": 497000.0,
+        "floor_m2": 254.5,
+        "year_built": 1975.0,
+        "lot_m2": 1662.1
+      },
+      {
+        "id": 280854,
+        "label": "2291 rue Thomas-Duchaine (#280854)",
+        "value": 174000.0,
+        "floor_m2": 72.8,
+        "year_built": 1978.0,
+        "lot_m2": 418.1
+      },
+      {
+        "id": 392125,
+        "label": "1208 boulevard Raymond (#392125)",
+        "value": 344000.0,
+        "floor_m2": 111.4,
+        "year_built": 2021.0,
+        "lot_m2": 261.3
+      },
+      {
+        "id": 358307,
+        "label": "597 rue Elegance (#358307)",
+        "value": 338000.0,
+        "floor_m2": 107.9,
+        "year_built": 2012.0,
+        "lot_m2": 788.1
+      },
+      {
+        "id": 273598,
+        "label": "1786 avenue Industrielle (#273598)",
+        "value": 457000.0,
+        "floor_m2": 250.6,
+        "year_built": 1971.0,
+        "lot_m2": 1080.9
+      },
+      {
+        "id": 123625,
+        "label": "762 rue Sorbier (#123625)",
+        "value": 479000.0,
+        "floor_m2": 203.1,
+        "year_built": 1993.0,
+        "lot_m2": 1858.3
+      },
+      {
+        "id": 335953,
+        "label": "1217 rue Souveraine (#335953)",
+        "value": 473000.0,
+        "floor_m2": 233.8,
+        "year_built": 1993.0,
+        "lot_m2": 644.1
+      },
+      {
+        "id": 412695,
+        "label": "7245 rue Apogée (#412695)",
+        "value": 346000.0,
+        "floor_m2": 111.5,
+        "year_built": 2019.0,
+        "lot_m2": 375.0
+      },
+      {
+        "id": 131392,
+        "label": "579 rue Anick (#131392)",
+        "value": 364000.0,
+        "floor_m2": 172.6,
+        "year_built": 1990.0,
+        "lot_m2": 457.2
+      },
+      {
+        "id": 339926,
+        "label": "20 rue Bertrand (#339926)",
+        "value": 352000.0,
+        "floor_m2": 146.6,
+        "year_built": 1998.0,
+        "lot_m2": 584.0
+      },
+      {
+        "id": 238280,
+        "label": "3185 rue Rivière-Nelson (#238280)",
+        "value": 438000.0,
+        "floor_m2": 95.6,
+        "year_built": 2015.0,
+        "lot_m2": 3269.3
+      },
+      {
+        "id": 329853,
+        "label": "36 rue Phydime-Deschenes (#329853)",
+        "value": 305000.0,
+        "floor_m2": 76.9,
+        "year_built": 2016.0,
+        "lot_m2": 808.8
+      },
+      {
+        "id": 137845,
+        "label": "150 avenue Falaise (#137845)",
+        "value": 680000.0,
+        "floor_m2": 394.6,
+        "year_built": 1965.0,
+        "lot_m2": 1455.5
+      },
+      {
+        "id": 369271,
+        "label": "17549 chemin Grande-Ligne (#369271)",
+        "value": 560000.0,
+        "floor_m2": 163.0,
+        "year_built": 2011.0,
+        "lot_m2": 3931.9
+      },
+      {
+        "id": 385247,
+        "label": "3134 rue Rivière-Nelson (#385247)",
+        "value": 389000.0,
+        "floor_m2": 125.5,
+        "year_built": 2012.0,
+        "lot_m2": 1264.3
+      },
+      {
+        "id": 319909,
+        "label": "8216 Trait-Carré Est (#319909)",
+        "value": 227000.0,
+        "floor_m2": 139.3,
+        "year_built": 1951.0,
+        "lot_m2": 871.3
+      },
+      {
+        "id": 278437,
+        "label": "1719 rue Epinettes-Rouges (#278437)",
+        "value": 615000.0,
+        "floor_m2": 222.5,
+        "year_built": 2018.0,
+        "lot_m2": 2665.0
+      },
+      {
+        "id": 413680,
+        "label": "1206 boulevard Raymond (#413680)",
+        "value": 343000.0,
+        "floor_m2": 109.4,
+        "year_built": 2020.0,
+        "lot_m2": 255.3
+      },
+      {
+        "id": 389606,
+        "label": "403 rue Milans (#389606)",
+        "value": 360000.0,
+        "floor_m2": 115.9,
+        "year_built": 2021.0,
+        "lot_m2": 346.0
+      },
+      {
+        "id": 340149,
+        "label": "377 rang Sainte-Anne (#340149)",
+        "value": 281000.0,
+        "floor_m2": 164.8,
+        "year_built": 1909.0,
+        "lot_m2": 3800.1
+      },
+      {
+        "id": 412011,
+        "label": "109 rue Aigremoines (#412011)",
+        "value": 346000.0,
+        "floor_m2": 107.2,
+        "year_built": 2020.0,
+        "lot_m2": 372.1
+      },
+      {
+        "id": 140469,
+        "label": "59 avenue Sablonnières (#140469)",
+        "value": 349000.0,
+        "floor_m2": 114.4,
+        "year_built": 2004.0,
+        "lot_m2": 1184.2
+      },
+      {
+        "id": 383784,
+        "label": "11242 CA Valois (#383784)",
+        "value": 383000.0,
+        "floor_m2": 144.8,
+        "year_built": 2012.0,
+        "lot_m2": 390.4
+      },
+      {
+        "id": 123892,
+        "label": "707 rue Seigneuriale (#123892)",
+        "value": 750000.0,
+        "floor_m2": 387.7,
+        "year_built": 1979.0,
+        "lot_m2": 2361.9
+      },
+      {
+        "id": 372400,
+        "label": "1292 rue Circe (#372400)",
+        "value": 505000.0,
+        "floor_m2": 225.3,
+        "year_built": 2009.0,
+        "lot_m2": 544.5
+      },
+      {
+        "id": 376146,
+        "label": "7830 avenue Charles-Borromée (#376146)",
+        "value": 338000.0,
+        "floor_m2": 122.2,
+        "year_built": 2010.0,
+        "lot_m2": 256.0
+      },
+      {
+        "id": 237577,
+        "label": "4370 rue Beaubien (#237577)",
+        "value": 715000.0,
+        "floor_m2": 375.6,
+        "year_built": 1981.0,
+        "lot_m2": 1829.6
+      },
+      {
+        "id": 317692,
+        "label": "390 82e Rue Ouest (#317692)",
+        "value": 463000.0,
+        "floor_m2": 258.0,
+        "year_built": 1973.0,
+        "lot_m2": 654.2
+      },
+      {
+        "id": 389211,
+        "label": "12683 rue Grand-Pré (#389211)",
+        "value": 384000.0,
+        "floor_m2": 140.6,
+        "year_built": 2014.0,
+        "lot_m2": 387.8
+      },
+      {
+        "id": 139461,
+        "label": "1101 rue Penombre (#139461)",
+        "value": 497000.0,
+        "floor_m2": 244.6,
+        "year_built": 1995.0,
+        "lot_m2": 514.5
+      },
+      {
+        "id": 131026,
+        "label": "241A avenue Saint-Michel (#131026)",
+        "value": 486000.0,
+        "floor_m2": 217.7,
+        "year_built": 1991.0,
+        "lot_m2": 1438.4
+      },
+      {
+        "id": 134398,
+        "label": "1244 boulevard Raymond (#134398)",
+        "value": 125000.0,
+        "floor_m2": 87.5,
+        "year_built": 1950.0,
+        "lot_m2": 278.7
+      },
+      {
+        "id": 273893,
+        "label": "2150 rue Leonides (#273893)",
+        "value": 445000.0,
+        "floor_m2": 127.9,
+        "year_built": 2015.0,
+        "lot_m2": 2132.1
+      },
+      {
+        "id": 403106,
+        "label": "306 rue Simone-Routier (#403106)",
+        "value": 369000.0,
+        "floor_m2": 119.0,
+        "year_built": 2020.0,
+        "lot_m2": 386.0
+      },
+      {
+        "id": 351148,
+        "label": "181 rue Bertrand (#351148)",
+        "value": 341000.0,
+        "floor_m2": 116.8,
+        "year_built": 2003.0,
+        "lot_m2": 874.0
+      },
+      {
+        "id": 144548,
+        "label": "42 rue Jeanne-Laliberte (#144548)",
+        "value": 298000.0,
+        "floor_m2": 122.6,
+        "year_built": 1988.0,
+        "lot_m2": 613.3
+      },
+      {
+        "id": 146342,
+        "label": "23 rue Parent (#146342)",
+        "value": 143000.0,
+        "floor_m2": 187.3,
+        "year_built": 1900.0,
+        "lot_m2": 289.6
+      },
+      {
+        "id": 339798,
+        "label": "3807 route Aéroport (#339798)",
+        "value": 437000.0,
+        "floor_m2": 107.4,
+        "year_built": 2021.0,
+        "lot_m2": 2253.1
+      },
+      {
+        "id": 415147,
+        "label": "2283 boulevard Louis-XIV (#415147)",
+        "value": 350000.0,
+        "floor_m2": 106.2,
+        "year_built": 2021.0,
+        "lot_m2": 278.2
+      },
+      {
+        "id": 406603,
+        "label": "1214 rue Chagall (#406603)",
+        "value": 431000.0,
+        "floor_m2": 159.1,
+        "year_built": 2020.0,
+        "lot_m2": 344.1
+      },
+      {
+        "id": 135438,
+        "label": "20 rue De La Morandière (#135438)",
+        "value": 396000.0,
+        "floor_m2": 127.6,
+        "year_built": 2024.0,
+        "lot_m2": 385.2
+      },
+      {
+        "id": 215263,
+        "label": "319 rue Bagot (#215263)",
+        "value": 464000.0,
+        "floor_m2": 196.6,
+        "year_built": 2014.0,
+        "lot_m2": 131.8
+      },
+      {
+        "id": 105915,
+        "label": "21013 boulevard Henri-Bourassa (#105915)",
+        "value": 605000.0,
+        "floor_m2": 242.6,
+        "year_built": 2018.0,
+        "lot_m2": 1500.7
+      },
+      {
+        "id": 133352,
+        "label": "165 rue Tardif (#133352)",
+        "value": 477000.0,
+        "floor_m2": 184.2,
+        "year_built": 2022.0,
+        "lot_m2": 337.0
+      },
+      {
+        "id": 372139,
+        "label": "10 boulevard Johnny-Parent (#372139)",
+        "value": 540000.0,
+        "floor_m2": 147.8,
+        "year_built": 2013.0,
+        "lot_m2": 3603.3
+      },
+      {
+        "id": 412042,
+        "label": "123 rue Arbustes (#412042)",
+        "value": 376000.0,
+        "floor_m2": 116.0,
+        "year_built": 2020.0,
+        "lot_m2": 509.5
+      },
+      {
+        "id": 327083,
+        "label": "2027 avenue Rivière-Jaune (#327083)",
+        "value": 377000.0,
+        "floor_m2": 103.5,
+        "year_built": 2019.0,
+        "lot_m2": 1003.4
+      },
+      {
+        "id": 326129,
+        "label": "2528 avenue Rivière-Jaune (#326129)",
+        "value": 735000.0,
+        "floor_m2": 282.6,
+        "year_built": 2013.0,
+        "lot_m2": 3293.7
+      },
+      {
+        "id": 124148,
+        "label": "46 rue Thé-des-Bois (#124148)",
+        "value": 535000.0,
+        "floor_m2": 136.9,
+        "year_built": 2023.0,
+        "lot_m2": 3162.7
+      },
+      {
+        "id": 408593,
+        "label": "1070 rue Saint-Honoré (#408593)",
+        "value": 457000.0,
+        "floor_m2": 171.0,
+        "year_built": 2019.0,
+        "lot_m2": 417.7
+      },
+      {
+        "id": 326759,
+        "label": "72 rue Pierre-Verret (#326759)",
+        "value": 360000.0,
+        "floor_m2": 110.2,
+        "year_built": 2005.0,
+        "lot_m2": 1161.1
+      },
+      {
+        "id": 329029,
+        "label": "142 rue Champéry (#329029)",
+        "value": 361000.0,
+        "floor_m2": 86.9,
+        "year_built": 2019.0,
+        "lot_m2": 1107.9
+      },
+      {
+        "id": 327256,
+        "label": "2275 avenue Rivière-Jaune (#327256)",
+        "value": 279000.0,
+        "floor_m2": 184.1,
+        "year_built": 1900.0,
+        "lot_m2": 3233.7
+      },
+      {
+        "id": 134569,
+        "label": "1367 boulevard Raymond (#134569)",
+        "value": 349000.0,
+        "floor_m2": 116.6,
+        "year_built": 2004.0,
+        "lot_m2": 702.6
+      },
+      {
+        "id": 123044,
+        "label": "2200 boulevard Louis-XIV (#123044)",
+        "value": 266000.0,
+        "floor_m2": 206.3,
+        "year_built": 1900.0,
+        "lot_m2": 2136.8
+      },
+      {
+        "id": 133108,
+        "label": "129 rue Berrouard (#133108)",
+        "value": 442000.0,
+        "floor_m2": 163.0,
+        "year_built": 2011.0,
+        "lot_m2": 747.4
+      },
+      {
+        "id": 126137,
+        "label": "500 rue Antoine-Gautier (#126137)",
+        "value": 492000.0,
+        "floor_m2": 221.3,
+        "year_built": 1994.0,
+        "lot_m2": 889.4
+      },
+      {
+        "id": 409015,
+        "label": "16811 chemin Grande-Ligne (#409015)",
+        "value": 455000.0,
+        "floor_m2": 129.9,
+        "year_built": 2021.0,
+        "lot_m2": 1549.8
+      },
+      {
+        "id": 255232,
+        "label": "1064 rang Saint-Ange (#255232)",
+        "value": 497000.0,
+        "floor_m2": 157.8,
+        "year_built": 2017.0,
+        "lot_m2": 1780.0
+      },
+      {
+        "id": 132422,
+        "label": "70 rue Isabelle (#132422)",
+        "value": 375000.0,
+        "floor_m2": 107.2,
+        "year_built": 2021.0,
+        "lot_m2": 482.8
+      },
+      {
+        "id": 144345,
+        "label": "12700 boulevard Valcartier (#144345)",
+        "value": 515000.0,
+        "floor_m2": 254.9,
+        "year_built": 1941.0,
+        "lot_m2": 3511.7
+      },
+      {
+        "id": 144347,
+        "label": "12606 boulevard Valcartier (#144347)",
+        "value": 469000.0,
+        "floor_m2": 328.7,
+        "year_built": 1909.0,
+        "lot_m2": 1827.3
+      },
+      {
+        "id": 272199,
+        "label": "2685 route Aéroport (#272199)",
+        "value": 373000.0,
+        "floor_m2": 101.8,
+        "year_built": 2016.0,
+        "lot_m2": 822.2
+      },
+      {
+        "id": 149908,
+        "label": "4360 rue Rosaire-Turcotte (#149908)",
+        "value": 525000.0,
+        "floor_m2": 270.8,
+        "year_built": 1978.0,
+        "lot_m2": 760.3
+      },
+      {
+        "id": 357616,
+        "label": "3972 route Aéroport (#357616)",
+        "value": 605000.0,
+        "floor_m2": 233.4,
+        "year_built": 2007.0,
+        "lot_m2": 2082.2
+      },
+      {
+        "id": 418091,
+        "label": "434 rue Seigneuriale (#418091)",
+        "value": 416000.0,
+        "floor_m2": 129.4,
+        "year_built": 2023.0,
+        "lot_m2": 352.5
+      },
+      {
+        "id": 107954,
+        "label": "2417 avenue Royale (#107954)",
+        "value": 189000.0,
+        "floor_m2": 200.9,
+        "year_built": 1900.0,
+        "lot_m2": 257.3
+      },
+      {
+        "id": 138201,
+        "label": "393 rue Sauriol (#138201)",
+        "value": 466000.0,
+        "floor_m2": 157.8,
+        "year_built": 2023.0,
+        "lot_m2": 433.4
+      },
+      {
+        "id": 269131,
+        "label": "1396 rue Galier (#269131)",
+        "value": 575000.0,
+        "floor_m2": 224.7,
+        "year_built": 2018.0,
+        "lot_m2": 877.9
+      },
+      {
+        "id": 377721,
+        "label": "1296 rue Condors (#377721)",
+        "value": 453000.0,
+        "floor_m2": 165.6,
+        "year_built": 2012.0,
+        "lot_m2": 492.1
+      },
+      {
+        "id": 416330,
+        "label": "224 rue Oasis (#416330)",
+        "value": 407000.0,
+        "floor_m2": 103.8,
+        "year_built": 2021.0,
+        "lot_m2": 1028.1
+      },
+      {
+        "id": 373670,
+        "label": "2A rue Manoir (#373670)",
+        "value": 580000.0,
+        "floor_m2": 225.1,
+        "year_built": 2009.0,
+        "lot_m2": 1485.2
+      },
+      {
+        "id": 278433,
+        "label": "1709 rue Epinettes-Rouges (#278433)",
+        "value": 670000.0,
+        "floor_m2": 234.6,
+        "year_built": 2022.0,
+        "lot_m2": 2347.5
+      },
+      {
+        "id": 348185,
+        "label": "1070 rue Calcaire (#348185)",
+        "value": 705000.0,
+        "floor_m2": 318.2,
+        "year_built": 2002.0,
+        "lot_m2": 1455.3
+      },
+      {
+        "id": 340948,
+        "label": "386 impasse Malard (#340948)",
+        "value": 655000.0,
+        "floor_m2": 255.4,
+        "year_built": 2000.0,
+        "lot_m2": 2607.8
+      },
+      {
+        "id": 254213,
+        "label": "1992 rang Saint-Ange (#254213)",
+        "value": 387000.0,
+        "floor_m2": 117.1,
+        "year_built": 1957.0,
+        "lot_m2": 3987.1
+      },
+      {
+        "id": 241701,
+        "label": "10540 rue Saint-Bruno (#241701)",
+        "value": 392000.0,
+        "floor_m2": 98.6,
+        "year_built": 2022.0,
+        "lot_m2": 672.5
+      },
+      {
+        "id": 326276,
+        "label": "16474 chemin Grande-Ligne (#326276)",
+        "value": 690000.0,
+        "floor_m2": 252.2,
+        "year_built": 2006.0,
+        "lot_m2": 3094.0
+      },
+      {
+        "id": 354987,
+        "label": "7790 rue Barcelone (#354987)",
+        "value": 540000.0,
+        "floor_m2": 229.6,
+        "year_built": 2005.0,
+        "lot_m2": 504.0
+      },
+      {
+        "id": 257114,
+        "label": "2271 avenue Notre-Dame (#257114)",
+        "value": 397000.0,
+        "floor_m2": 96.2,
+        "year_built": 2020.0,
+        "lot_m2": 951.4
+      },
+      {
+        "id": 374680,
+        "label": "1171 rue Colombo (#374680)",
+        "value": 570000.0,
+        "floor_m2": 220.9,
+        "year_built": 2009.0,
+        "lot_m2": 1228.6
+      },
+      {
+        "id": 326913,
+        "label": "1493 avenue Rivière-Jaune (#326913)",
+        "value": 427000.0,
+        "floor_m2": 185.6,
+        "year_built": 1935.0,
+        "lot_m2": 3802.9
+      },
+      {
+        "id": 406779,
+        "label": "1414 rue Canoés (#406779)",
+        "value": 510000.0,
+        "floor_m2": 178.2,
+        "year_built": 2020.0,
+        "lot_m2": 649.7
+      },
+      {
+        "id": 273797,
+        "label": "2053 rue Lido (#273797)",
+        "value": 453000.0,
+        "floor_m2": 139.8,
+        "year_built": 2020.0,
+        "lot_m2": 671.2
+      },
+      {
+        "id": 326225,
+        "label": "962 rue Jacques-Bédard (#326225)",
+        "value": 405000.0,
+        "floor_m2": 88.6,
+        "year_built": 2018.0,
+        "lot_m2": 1473.6
+      },
+      {
+        "id": 416169,
+        "label": "980 rue Cariatides (#416169)",
+        "value": 476000.0,
+        "floor_m2": 159.2,
+        "year_built": 2022.0,
+        "lot_m2": 379.2
+      },
+      {
+        "id": 403119,
+        "label": "282 rue Simone-Routier (#403119)",
+        "value": 398000.0,
+        "floor_m2": 107.2,
+        "year_built": 2020.0,
+        "lot_m2": 527.1
+      },
+      {
+        "id": 416171,
+        "label": "990 rue Cariatides (#416171)",
+        "value": 479000.0,
+        "floor_m2": 159.2,
+        "year_built": 2022.0,
+        "lot_m2": 425.0
+      },
+      {
+        "id": 398712,
+        "label": "1271 avenue Lapierre (#398712)",
+        "value": 540000.0,
+        "floor_m2": 195.6,
+        "year_built": 2015.0,
+        "lot_m2": 981.4
+      },
+      {
+        "id": 351198,
+        "label": "2860 rue Hibou (#351198)",
+        "value": 640000.0,
+        "floor_m2": 287.8,
+        "year_built": 2004.0,
+        "lot_m2": 729.2
+      },
+      {
+        "id": 240111,
+        "label": "2565 rue Simeon-Drolet (#240111)",
+        "value": 465000.0,
+        "floor_m2": 137.4,
+        "year_built": 2021.0,
+        "lot_m2": 893.2
+      },
+      {
+        "id": 412679,
+        "label": "118 rue Bertrand (#412679)",
+        "value": 451000.0,
+        "floor_m2": 140.4,
+        "year_built": 2020.0,
+        "lot_m2": 508.7
+      },
+      {
+        "id": 412265,
+        "label": "6710 rue Vézina (#412265)",
+        "value": 520000.0,
+        "floor_m2": 156.6,
+        "year_built": 2022.0,
+        "lot_m2": 1394.0
+      },
+      {
+        "id": 359921,
+        "label": "1603 chemin Château-Bigot (#359921)",
+        "value": 725000.0,
+        "floor_m2": 278.7,
+        "year_built": 2005.0,
+        "lot_m2": 2851.1
+      },
+      {
+        "id": 146009,
+        "label": "39 rue Lavallée (#146009)",
+        "value": 535000.0,
+        "floor_m2": 183.2,
+        "year_built": 2024.0,
+        "lot_m2": 647.2
+      },
+      {
+        "id": 337188,
+        "label": "998 avenue Bourg-Royal (#337188)",
+        "value": 404000.0,
+        "floor_m2": 109.4,
+        "year_built": 2021.0,
+        "lot_m2": 398.2
+      },
+      {
+        "id": 417044,
+        "label": "399 rue Sauriol (#417044)",
+        "value": 486000.0,
+        "floor_m2": 157.8,
+        "year_built": 2023.0,
+        "lot_m2": 454.9
+      },
+      {
+        "id": 327912,
+        "label": "515 rue Calvados (#327912)",
+        "value": 670000.0,
+        "floor_m2": 314.0,
+        "year_built": 1988.0,
+        "lot_m2": 1388.2
+      },
+      {
+        "id": 267173,
+        "label": "3794 route Aéroport (#267173)",
+        "value": 445000.0,
+        "floor_m2": 96.5,
+        "year_built": 2023.0,
+        "lot_m2": 1654.4
+      },
+      {
+        "id": 134080,
+        "label": "173 rue Amis (#134080)",
+        "value": 405000.0,
+        "floor_m2": 107.5,
+        "year_built": 2020.0,
+        "lot_m2": 520.3
+      },
+      {
+        "id": 418093,
+        "label": "35 rue Odette-Pinard (#418093)",
+        "value": 448000.0,
+        "floor_m2": 135.1,
+        "year_built": 2023.0,
+        "lot_m2": 338.0
+      },
+      {
+        "id": 267763,
+        "label": "1324 rue Méduse (#267763)",
+        "value": 477000.0,
+        "floor_m2": 132.8,
+        "year_built": 2023.0,
+        "lot_m2": 1060.0
+      },
+      {
+        "id": 403125,
+        "label": "270 rue Simone-Routier (#403125)",
+        "value": 436000.0,
+        "floor_m2": 128.2,
+        "year_built": 2020.0,
+        "lot_m2": 460.0
+      },
+      {
+        "id": 254881,
+        "label": "21 rue Éphémères (#254881)",
+        "value": 471000.0,
+        "floor_m2": 158.3,
+        "year_built": 2015.0,
+        "lot_m2": 504.5
+      },
+      {
+        "id": 139240,
+        "label": "2035 avenue Royale (#139240)",
+        "value": 715000.0,
+        "floor_m2": 334.1,
+        "year_built": 1993.0,
+        "lot_m2": 1306.1
+      },
+      {
+        "id": 327091,
+        "label": "1792 avenue Rivière-Jaune (#327091)",
+        "value": 530000.0,
+        "floor_m2": 167.0,
+        "year_built": 2024.0,
+        "lot_m2": 976.6
+      },
+      {
+        "id": 389129,
+        "label": "10A rue Lorenzo (#389129)",
+        "value": 448000.0,
+        "floor_m2": 140.1,
+        "year_built": 2013.0,
+        "lot_m2": 719.2
+      },
+      {
+        "id": 420241,
+        "label": "42 rue Langevin (#420241)",
+        "value": 418000.0,
+        "floor_m2": 100.3,
+        "year_built": 2025.0,
+        "lot_m2": 667.0
+      },
+      {
+        "id": 145796,
+        "label": "207 rue Racine (#145796)",
+        "value": 274000.0,
+        "floor_m2": 224.8,
+        "year_built": 1900.0,
+        "lot_m2": 779.2
+      },
+      {
+        "id": 392900,
+        "label": "984 CA De Tracy Est (#392900)",
+        "value": 483000.0,
+        "floor_m2": 145.5,
+        "year_built": 2017.0,
+        "lot_m2": 1007.0
+      },
+      {
+        "id": 254302,
+        "label": "4459 route Jean-Gauvin (#254302)",
+        "value": 510000.0,
+        "floor_m2": 125.6,
+        "year_built": 2022.0,
+        "lot_m2": 1998.1
+      },
+      {
+        "id": 409719,
+        "label": "843 rue Dover (#409719)",
+        "value": 458000.0,
+        "floor_m2": 135.8,
+        "year_built": 2021.0,
+        "lot_m2": 493.0
+      },
+      {
+        "id": 409023,
+        "label": "16651 chemin Grande-Ligne (#409023)",
+        "value": 515000.0,
+        "floor_m2": 139.6,
+        "year_built": 2022.0,
+        "lot_m2": 1582.7
+      },
+      {
+        "id": 408468,
+        "label": "835 rue Louise-Tessier (#408468)",
+        "value": 510000.0,
+        "floor_m2": 170.8,
+        "year_built": 2017.0,
+        "lot_m2": 686.4
+      },
+      {
+        "id": 404561,
+        "label": "731 rue Antoine-Berton (#404561)",
+        "value": 459000.0,
+        "floor_m2": 144.8,
+        "year_built": 2016.0,
+        "lot_m2": 454.4
+      },
+      {
+        "id": 409014,
+        "label": "16831 chemin Grande-Ligne (#409014)",
+        "value": 525000.0,
+        "floor_m2": 147.7,
+        "year_built": 2021.0,
+        "lot_m2": 1549.8
+      },
+      {
+        "id": 280768,
+        "label": "5908 rue Campagnol (#280768)",
+        "value": 615000.0,
+        "floor_m2": 250.9,
+        "year_built": 1994.0,
+        "lot_m2": 1685.6
+      },
+      {
+        "id": 359459,
+        "label": "523 rue Paumelle (#359459)",
+        "value": 585000.0,
+        "floor_m2": 239.3,
+        "year_built": 2006.0,
+        "lot_m2": 647.6
+      },
+      {
+        "id": 408646,
+        "label": "4638 avenue Banville (#408646)",
+        "value": 456000.0,
+        "floor_m2": 140.8,
+        "year_built": 2018.0,
+        "lot_m2": 386.3
+      },
+      {
+        "id": 408612,
+        "label": "1089 rue Saint-Honoré (#408612)",
+        "value": 495000.0,
+        "floor_m2": 125.4,
+        "year_built": 2023.0,
+        "lot_m2": 1492.7
+      },
+      {
+        "id": 403122,
+        "label": "276 rue Simone-Routier (#403122)",
+        "value": 448000.0,
+        "floor_m2": 125.4,
+        "year_built": 2020.0,
+        "lot_m2": 595.0
+      },
+      {
+        "id": 389547,
+        "label": "192 rue Beauchesne (#389547)",
+        "value": 456000.0,
+        "floor_m2": 140.0,
+        "year_built": 2014.0,
+        "lot_m2": 625.4
+      },
+      {
+        "id": 273833,
+        "label": "2081 rue Lamartine (#273833)",
+        "value": 670000.0,
+        "floor_m2": 257.1,
+        "year_built": 2015.0,
+        "lot_m2": 1342.4
+      },
+      {
+        "id": 406772,
+        "label": "1448 rue Canoés (#406772)",
+        "value": 470000.0,
+        "floor_m2": 144.8,
+        "year_built": 2018.0,
+        "lot_m2": 477.5
+      },
+      {
+        "id": 413794,
+        "label": "28 rue De La Morandière (#413794)",
+        "value": 530000.0,
+        "floor_m2": 179.0,
+        "year_built": 2021.0,
+        "lot_m2": 450.3
+      },
+      {
+        "id": 240369,
+        "label": "2855 rue Compostelle (#240369)",
+        "value": 466000.0,
+        "floor_m2": 142.8,
+        "year_built": 2018.0,
+        "lot_m2": 433.7
+      },
+      {
+        "id": 280700,
+        "label": "2454 rue Faune (#280700)",
+        "value": 267000.0,
+        "floor_m2": 190.8,
+        "year_built": 1910.0,
+        "lot_m2": 934.5
+      },
+      {
+        "id": 402941,
+        "label": "1520 rue Crémaillère (#402941)",
+        "value": 466000.0,
+        "floor_m2": 143.6,
+        "year_built": 2017.0,
+        "lot_m2": 459.9
+      },
+      {
+        "id": 420914,
+        "label": "3015 rue Herse (#420914)",
+        "value": 605000.0,
+        "floor_m2": 217.0,
+        "year_built": 2024.0,
+        "lot_m2": 635.4
+      },
+      {
+        "id": 134394,
+        "label": "1240 boulevard Raymond (#134394)",
+        "value": 545000.0,
+        "floor_m2": 183.0,
+        "year_built": 2017.0,
+        "lot_m2": 873.5
+      },
+      {
+        "id": 267007,
+        "label": "1433 avenue Montagne Ouest (#267007)",
+        "value": 520000.0,
+        "floor_m2": 126.5,
+        "year_built": 2023.0,
+        "lot_m2": 1894.8
+      },
+      {
+        "id": 417401,
+        "label": "6024 route Sainte-Genevieve (#417401)",
+        "value": 445000.0,
+        "floor_m2": 122.2,
+        "year_built": 2022.0,
+        "lot_m2": 388.7
+      },
+      {
+        "id": 128059,
+        "label": "269 rue Simone-Routier (#128059)",
+        "value": 450000.0,
+        "floor_m2": 120.8,
+        "year_built": 2022.0,
+        "lot_m2": 551.7
+      },
+      {
+        "id": 328458,
+        "label": "54 rue Coudée (#328458)",
+        "value": 485000.0,
+        "floor_m2": 153.4,
+        "year_built": 2018.0,
+        "lot_m2": 459.3
+      },
+      {
+        "id": 406613,
+        "label": "1254 rue Chagall (#406613)",
+        "value": 499000.0,
+        "floor_m2": 159.1,
+        "year_built": 2018.0,
+        "lot_m2": 544.9
+      },
+      {
+        "id": 404575,
+        "label": "755 rue Émilie-Chamberland (#404575)",
+        "value": 481000.0,
+        "floor_m2": 151.4,
+        "year_built": 2016.0,
+        "lot_m2": 502.1
+      },
+      {
+        "id": 275460,
+        "label": "1798 chemin Passe (#275460)",
+        "value": 585000.0,
+        "floor_m2": 179.4,
+        "year_built": 2021.0,
+        "lot_m2": 1567.9
+      },
+      {
+        "id": 415384,
+        "label": "2967 boulevard Louis-XIV (#415384)",
+        "value": 520000.0,
+        "floor_m2": 160.5,
+        "year_built": 2024.0,
+        "lot_m2": 526.8
+      },
+      {
+        "id": 398760,
+        "label": "6 rue Gagne (#398760)",
+        "value": 490000.0,
+        "floor_m2": 159.2,
+        "year_built": 2015.0,
+        "lot_m2": 442.9
+      },
+      {
+        "id": 406727,
+        "label": "1427 rue Canoés (#406727)",
+        "value": 471000.0,
+        "floor_m2": 140.4,
+        "year_built": 2017.0,
+        "lot_m2": 536.5
+      },
+      {
+        "id": 349773,
+        "label": "174 rue Jos-Monferrand (#349773)",
+        "value": 625000.0,
+        "floor_m2": 245.2,
+        "year_built": 2003.0,
+        "lot_m2": 1270.3
+      },
+      {
+        "id": 408712,
+        "label": "15 avenue Marches-Naturelles (#408712)",
+        "value": 540000.0,
+        "floor_m2": 175.6,
+        "year_built": 2020.0,
+        "lot_m2": 672.0
+      },
+      {
+        "id": 257311,
+        "label": "2181 avenue Notre-Dame (#257311)",
+        "value": 491000.0,
+        "floor_m2": 265.9,
+        "year_built": 1920.0,
+        "lot_m2": 2605.7
+      },
+      {
+        "id": 392950,
+        "label": "2506 rue Cuir (#392950)",
+        "value": 478000.0,
+        "floor_m2": 141.6,
+        "year_built": 2014.0,
+        "lot_m2": 787.1
+      },
+      {
+        "id": 363685,
+        "label": "14270 rue Marianne (#363685)",
+        "value": 625000.0,
+        "floor_m2": 254.5,
+        "year_built": 2007.0,
+        "lot_m2": 636.8
+      },
+      {
+        "id": 403124,
+        "label": "272 rue Simone-Routier (#403124)",
+        "value": 493000.0,
+        "floor_m2": 145.0,
+        "year_built": 2020.0,
+        "lot_m2": 601.2
+      },
+      {
+        "id": 381543,
+        "label": "13480 rue Ombrettes (#381543)",
+        "value": 478000.0,
+        "floor_m2": 137.8,
+        "year_built": 2014.0,
+        "lot_m2": 876.9
+      },
+      {
+        "id": 413505,
+        "label": "1146 rue Chagall (#413505)",
+        "value": 515000.0,
+        "floor_m2": 159.1,
+        "year_built": 2021.0,
+        "lot_m2": 525.7
+      },
+      {
+        "id": 413906,
+        "label": "966 CA De Tracy Est (#413906)",
+        "value": 555000.0,
+        "floor_m2": 178.6,
+        "year_built": 2021.0,
+        "lot_m2": 759.5
+      },
+      {
+        "id": 230983,
+        "label": "7235 rue Emile-Fleury (#230983)",
+        "value": 730000.0,
+        "floor_m2": 273.4,
+        "year_built": 2023.0,
+        "lot_m2": 1313.8
+      },
+      {
+        "id": 415048,
+        "label": "1242 rue Algonquins (#415048)",
+        "value": 434000.0,
+        "floor_m2": 96.1,
+        "year_built": 2022.0,
+        "lot_m2": 785.3
+      },
+      {
+        "id": 266404,
+        "label": "1264 chemin Belair (#266404)",
+        "value": 660000.0,
+        "floor_m2": 172.8,
+        "year_built": 2025.0,
+        "lot_m2": 3090.9
+      },
+      {
+        "id": 415718,
+        "label": "270 rue Canards (#415718)",
+        "value": 505000.0,
+        "floor_m2": 145.8,
+        "year_built": 2022.0,
+        "lot_m2": 663.6
+      },
+      {
+        "id": 415011,
+        "label": "937 rue Ulysse-Ste-Marie (#415011)",
+        "value": 493000.0,
+        "floor_m2": 141.4,
+        "year_built": 2022.0,
+        "lot_m2": 537.0
+      },
+      {
+        "id": 404432,
+        "label": "5435 route Sainte-Genevieve (#404432)",
+        "value": 505000.0,
+        "floor_m2": 146.6,
+        "year_built": 2022.0,
+        "lot_m2": 603.5
+      },
+      {
+        "id": 399529,
+        "label": "169 rue Mont-Cervin (#399529)",
+        "value": 491000.0,
+        "floor_m2": 140.0,
+        "year_built": 2021.0,
+        "lot_m2": 526.5
+      },
+      {
+        "id": 414973,
+        "label": "987 rue Ulysse-Ste-Marie (#414973)",
+        "value": 446000.0,
+        "floor_m2": 107.2,
+        "year_built": 2022.0,
+        "lot_m2": 520.9
+      },
+      {
+        "id": 275417,
+        "label": "1895 avenue Lac-Saint-Charles (#275417)",
+        "value": 475000.0,
+        "floor_m2": 118.8,
+        "year_built": 2023.0,
+        "lot_m2": 668.9
+      },
+      {
+        "id": 417204,
+        "label": "1618 rue Vignoble (#417204)",
+        "value": 456000.0,
+        "floor_m2": 104.6,
+        "year_built": 2022.0,
+        "lot_m2": 790.4
+      },
+      {
+        "id": 328560,
+        "label": "940 cote Bedard (#328560)",
+        "value": 715000.0,
+        "floor_m2": 277.8,
+        "year_built": 2009.0,
+        "lot_m2": 1462.4
+      },
+      {
+        "id": 133884,
+        "label": "129 rue Amis (#133884)",
+        "value": 430000.0,
+        "floor_m2": 87.9,
+        "year_built": 2022.0,
+        "lot_m2": 752.5
+      },
+      {
+        "id": 364146,
+        "label": "1279 rue Apollon (#364146)",
+        "value": 720000.0,
+        "floor_m2": 254.4,
+        "year_built": 2008.0,
+        "lot_m2": 2432.8
+      },
+      {
+        "id": 418374,
+        "label": "988 rue Etna (#418374)",
+        "value": 505000.0,
+        "floor_m2": 138.8,
+        "year_built": 2024.0,
+        "lot_m2": 450.0
+      },
+      {
+        "id": 406775,
+        "label": "1430 rue Canoés (#406775)",
+        "value": 510000.0,
+        "floor_m2": 144.8,
+        "year_built": 2018.0,
+        "lot_m2": 670.5
+      },
+      {
+        "id": 237917,
+        "label": "4075 rue Simone-Hudon (#237917)",
+        "value": 750000.0,
+        "floor_m2": 283.5,
+        "year_built": 2000.0,
+        "lot_m2": 2436.9
+      },
+      {
+        "id": 145865,
+        "label": "12 rue Ernest-Renaud (#145865)",
+        "value": 216000.0,
+        "floor_m2": 169.6,
+        "year_built": 1900.0,
+        "lot_m2": 380.7
+      },
+      {
+        "id": 205066,
+        "label": "1735 avenue O'Neil (#205066)",
+        "value": 515000.0,
+        "floor_m2": 142.1,
+        "year_built": 2025.0,
+        "lot_m2": 374.0
+      },
+      {
+        "id": 418073,
+        "label": "1446 rue Esquif (#418073)",
+        "value": 505000.0,
+        "floor_m2": 135.2,
+        "year_built": 2023.0,
+        "lot_m2": 480.0
+      },
+      {
+        "id": 414915,
+        "label": "761 rue Atikamekw (#414915)",
+        "value": 645000.0,
+        "floor_m2": 212.0,
+        "year_built": 2022.0,
+        "lot_m2": 1033.1
+      },
+      {
+        "id": 418069,
+        "label": "1406 rue Esquif (#418069)",
+        "value": 515000.0,
+        "floor_m2": 139.6,
+        "year_built": 2023.0,
+        "lot_m2": 480.0
+      },
+      {
+        "id": 418617,
+        "label": "755 rue Dover (#418617)",
+        "value": 465000.0,
+        "floor_m2": 109.4,
+        "year_built": 2023.0,
+        "lot_m2": 386.6
+      },
+      {
+        "id": 413501,
+        "label": "1130 rue Chagall (#413501)",
+        "value": 525000.0,
+        "floor_m2": 141.3,
+        "year_built": 2023.0,
+        "lot_m2": 539.9
+      },
+      {
+        "id": 392957,
+        "label": "6026 rue Vézina (#392957)",
+        "value": 575000.0,
+        "floor_m2": 171.1,
+        "year_built": 2020.0,
+        "lot_m2": 818.9
+      },
+      {
+        "id": 405247,
+        "label": "203 rue Mauriciens (#405247)",
+        "value": 575000.0,
+        "floor_m2": 157.4,
+        "year_built": 2020.0,
+        "lot_m2": 1034.9
+      },
+      {
+        "id": 326808,
+        "label": "1635 avenue Rivière-Jaune (#326808)",
+        "value": 525000.0,
+        "floor_m2": 112.7,
+        "year_built": 2025.0,
+        "lot_m2": 1137.2
+      },
+      {
+        "id": 133592,
+        "label": "142 rue Saint-Raoul (#133592)",
+        "value": 550000.0,
+        "floor_m2": 135.2,
+        "year_built": 2024.0,
+        "lot_m2": 977.3
+      },
+      {
+        "id": 151211,
+        "label": "1466 rue Provancher (#151211)",
+        "value": 69000.0,
+        "floor_m2": 64.6,
+        "year_built": 1900.0,
+        "lot_m2": 112.7
+      },
+      {
+        "id": 418077,
+        "label": "1456 rue Esquif (#418077)",
+        "value": 545000.0,
+        "floor_m2": 142.7,
+        "year_built": 2025.0,
+        "lot_m2": 480.0
+      },
+      {
+        "id": 414916,
+        "label": "771 rue Atikamekw (#414916)",
+        "value": 655000.0,
+        "floor_m2": 204.1,
+        "year_built": 2021.0,
+        "lot_m2": 1073.9
+      },
+      {
+        "id": 412248,
+        "label": "1641 rang Saint-Ange (#412248)",
+        "value": 635000.0,
+        "floor_m2": 165.2,
+        "year_built": 2021.0,
+        "lot_m2": 1918.6
+      },
+      {
+        "id": 409021,
+        "label": "16691 chemin Grande-Ligne (#409021)",
+        "value": 600000.0,
+        "floor_m2": 142.2,
+        "year_built": 2022.0,
+        "lot_m2": 1549.8
+      },
+      {
+        "id": 406763,
+        "label": "1469 rue Canoés (#406763)",
+        "value": 620000.0,
+        "floor_m2": 181.0,
+        "year_built": 2019.0,
+        "lot_m2": 793.2
+      },
+      {
+        "id": 267228,
+        "label": "4049 route Aéroport (#267228)",
+        "value": 580000.0,
+        "floor_m2": 137.8,
+        "year_built": 2023.0,
+        "lot_m2": 1116.9
+      },
+      {
+        "id": 319999,
+        "label": "7694 avenue Thomas-Baillairge (#319999)",
+        "value": 605000.0,
+        "floor_m2": 267.5,
+        "year_built": 1916.0,
+        "lot_m2": 3827.8
+      },
+      {
+        "id": 414920,
+        "label": "813 rue Atikamekw (#414920)",
+        "value": 610000.0,
+        "floor_m2": 151.2,
+        "year_built": 2023.0,
+        "lot_m2": 1255.1
+      },
+      {
+        "id": 408709,
+        "label": "27 avenue Marches-Naturelles (#408709)",
+        "value": 635000.0,
+        "floor_m2": 188.8,
+        "year_built": 2019.0,
+        "lot_m2": 737.5
+      },
+      {
+        "id": 409708,
+        "label": "1588 rue Rose-Otis (#409708)",
+        "value": 630000.0,
+        "floor_m2": 185.7,
+        "year_built": 2020.0,
+        "lot_m2": 636.0
+      },
+      {
+        "id": 146326,
+        "label": "246 rue Georges-Cloutier (#146326)",
+        "value": 575000.0,
+        "floor_m2": 276.4,
+        "year_built": 1900.0,
+        "lot_m2": 3617.2
+      },
+      {
+        "id": 408462,
+        "label": "889 rue Louise-Tessier (#408462)",
+        "value": 640000.0,
+        "floor_m2": 190.5,
+        "year_built": 2019.0,
+        "lot_m2": 666.3
+      },
+      {
+        "id": 411513,
+        "label": "47 avenue Rapides (#411513)",
+        "value": 720000.0,
+        "floor_m2": 242.8,
+        "year_built": 2021.0,
+        "lot_m2": 511.6
+      },
+      {
+        "id": 254479,
+        "label": "3211 avenue Notre-Dame (#254479)",
+        "value": 680000.0,
+        "floor_m2": 119.4,
+        "year_built": 2019.0,
+        "lot_m2": 3982.4
+      },
+      {
+        "id": 412661,
+        "label": "21 rue Charancons (#412661)",
+        "value": 670000.0,
+        "floor_m2": 173.7,
+        "year_built": 2024.0,
+        "lot_m2": 1230.4
+      },
+      {
+        "id": 414926,
+        "label": "873 rue Atikamekw (#414926)",
+        "value": 675000.0,
+        "floor_m2": 181.6,
+        "year_built": 2023.0,
+        "lot_m2": 957.7
+      },
+      {
+        "id": 270243,
+        "label": "1259 avenue Montagne Est (#270243)",
+        "value": 705000.0,
+        "floor_m2": 174.5,
+        "year_built": 2023.0,
+        "lot_m2": 1703.8
+      },
+      {
+        "id": 419565,
+        "label": "21095 boulevard Henri-Bourassa (#419565)",
+        "value": 700000.0,
+        "floor_m2": 182.6,
+        "year_built": 2024.0,
+        "lot_m2": 1092.9
+      },
+      {
+        "id": 204242,
+        "label": "1435 avenue Verlaine (#204242)",
+        "value": 725000.0,
+        "floor_m2": 199.8,
+        "year_built": 2025.0,
+        "lot_m2": 585.3
+      }
+    ],
+    "top_picks": {
+      "weighted_sum": "2942 rue Rivière-Nelson (#238337)",
+      "epsilon_constraint": "2205 boulevard Talbot (#342725)",
+      "lexicographic": "7235 rue Emile-Fleury (#230983)",
+      "topsis": "3826 rue Saint-Maxime (#236989)",
+      "chebyshev_ideal": "2942 rue Rivière-Nelson (#238337)",
+      "goal_point": "1088 rue Lavande (#327383)"
+    },
+    "distinct_picks": 5,
+    "labelled_in_pareto_figure": [
+      "1466 rue Provancher (#151211)",
+      "150 avenue Falaise (#137845)",
+      "1264 chemin Belair (#266404)",
+      "2220 boulevard Talbot (#376704)",
+      "2942 rue Rivière-Nelson (#238337)",
+      "2205 boulevard Talbot (#342725)",
+      "7235 rue Emile-Fleury (#230983)",
+      "3826 rue Saint-Maxime (#236989)",
+      "1088 rue Lavande (#327383)",
+      "2528 avenue Rivière-Jaune (#326129)",
+      "3325 rue Rivière-Nelson (#238259)",
+      "403 rue Milans (#389606)"
+    ],
+    "segment": {
+      "rule": "assessed value <= 750000 CAD, lot <= 4000 m2, built 1900 or later, floor area 60-400 m2",
+      "why": "a buyer's segment; without it a few mansions and rural lots stretch the min-max scale so the other houses crowd near 0",
+      "rows_in_derived_file": 77333,
+      "rows_in_segment": 72315
+    },
+    "criteria_rationale": {
+      "value": "minimise: the stand-in for price; assessed value is not an asking price",
+      "floor_m2": "maximise: gross floor area of the main building (includes attic and integrated garage in the roll's definition)",
+      "year_built": "maximise: newer construction means less deferred maintenance; the roll gives the original build year, renovations are invisible",
+      "lot_m2": "maximise: more garden, parking and room to extend, at the cost of upkeep; larger is not always better, which is why it carries the lowest weight",
+      "excluded": "number of storeys (a design choice, not a quality); land value and building value (components of value); location, which the roll gives only as a neighbourhood code"
+    }
+  }
+}

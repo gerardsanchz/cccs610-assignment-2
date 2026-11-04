@@ -1,0 +1,366 @@
+{
+ "meta": {
+  "script": "code/m05_roads.py",
+  "networkx": "3.6.1",
+  "numpy": "2.5.2",
+  "random": "numpy.random.default_rng(seed); province seed 4 for the figures, seeds 0-199 for the repeated runs",
+  "variants": {
+   "a_distance": "(a) distance only (class)"
+  },
+  "weights": "edge attribute 'weight' = cost divided by its median over the complete graph (no ranking changes); 'distance' = real Euclidean length in the unit square, used for every length and detour measure",
+  "tsp": "networkx.approximation.traveling_salesman_problem with its default method (Christofides) on the complete graph, as in class; it is an approximation. 'tsp.repeated_visits' counts the towns that the closed walk visits more than once, and the edges of the walk are added to the tree.",
+  "stages": "mst = minimum spanning tree on the cost; network = MST plus the TSP-cycle edges not already built",
+  "detour": "mean over all unordered town pairs of (shortest path over built roads on 'distance') / (straight line)",
+  "top5_bottom5": "5 largest / 5 smallest populations, ties broken by town index"
+ },
+ "part1": {
+  "seed": 4,
+  "n_towns": 30,
+  "positions_xy": [
+   [
+    0.943056,
+    0.511328
+   ],
+   [
+    0.976244,
+    0.080836
+   ],
+   [
+    0.607356,
+    0.376487
+   ],
+   [
+    0.801901,
+    0.174528
+   ],
+   [
+    0.871635,
+    0.543941
+   ],
+   [
+    0.902215,
+    0.477154
+   ],
+   [
+    0.430496,
+    0.788947
+   ],
+   [
+    0.984153,
+    0.369726
+   ],
+   [
+    0.968933,
+    0.929026
+   ],
+   [
+    0.177693,
+    0.608852
+   ],
+   [
+    0.704865,
+    0.942804
+   ],
+   [
+    0.665657,
+    0.133396
+   ],
+   [
+    0.497868,
+    0.49362
+   ],
+   [
+    0.500226,
+    0.958582
+   ],
+   [
+    0.349937,
+    0.223771
+   ],
+   [
+    0.522087,
+    0.641171
+   ],
+   [
+    0.939107,
+    0.582016
+   ],
+   [
+    0.267833,
+    0.929775
+   ],
+   [
+    0.491725,
+    0.675801
+   ],
+   [
+    0.476039,
+    0.21698
+   ],
+   [
+    0.692552,
+    0.77063
+   ],
+   [
+    0.190789,
+    0.459916
+   ],
+   [
+    0.361815,
+    0.17073
+   ],
+   [
+    0.221352,
+    0.962507
+   ],
+   [
+    0.884223,
+    0.382292
+   ],
+   [
+    0.739473,
+    0.041968
+   ],
+   [
+    0.915057,
+    0.537171
+   ],
+   [
+    0.820268,
+    0.275938
+   ],
+   [
+    0.376124,
+    0.348044
+   ],
+   [
+    0.97244,
+    0.42946
+   ]
+  ],
+  "populations": [
+   13000,
+   11000,
+   13000,
+   1000,
+   10000,
+   24000,
+   2000,
+   2000,
+   40000,
+   9000,
+   4000,
+   1000,
+   7000,
+   9000,
+   5000,
+   5000,
+   4000,
+   9000,
+   4000,
+   8000,
+   1000,
+   5000,
+   3000,
+   24000,
+   8000,
+   9000,
+   6000,
+   13000,
+   1000,
+   3000
+  ],
+  "geometric_p": 0.1,
+  "population_unit_inhabitants": 1000,
+  "choice_of_p": "numpy Generator.geometric(p) returns k = 1, 2, 3, ... with mean 1/p, median about ln2/p and an exponentially thin tail. p = 0.1 gives a mean of 10 units; one unit is read as 1000 inhabitants, so the mean town has 10 000, the smallest possible has 1000 and the largest of 30 is typically near 35 000. The scale only multiplies all populations by one constant, which changes no MST or TSP result for any of the five costs and none of the ratios below.",
+  "marker_area_formula": "area(points^2) = 25 + 475 * (log10(pop) - log10(pop_min)) / (log10(pop_max) - log10(pop_min)); area is linear in log10(population) and spans 25 (smallest town of the figure) to 500 (largest); the legend prints three reference populations.",
+  "summary_this_province": {
+   "n": 30,
+   "mean": 8466.666666666666,
+   "median": 6500.0,
+   "min": 1000.0,
+   "max": 40000.0,
+   "max_over_median": 6.153846153846154,
+   "max_over_second": 1.6666666666666667,
+   "top1_share": 0.15748031496062992,
+   "top5_share": 0.44881889763779526,
+   "coef_variation": 0.9690479235351348,
+   "skewness": 2.1852770528157057,
+   "excess_kurtosis": 5.282017885198185,
+   "share_of_towns_above_2x_mean": 0.1,
+   "loglog_rank_size_slope": -1.0257744911088065
+  },
+  "theory_geometric": {
+   "ratio_max_over_median_approx": "(ln n + 0.577) / ln 2 = 5.74 for n=30",
+   "tail": "P(X > x) = (1-p)^x, exponential decay: constant mean excess, excess kurtosis ~ 6, no power-law tail"
+  },
+  "over_200_seeds": {
+   "n=30": {
+    "mean": {
+     "n": 200,
+     "mean": 10076.5,
+     "sd": 1714.7984581558856,
+     "min": 6033.333333333333,
+     "q25": 8925.0,
+     "median": 10083.333333333332,
+     "q75": 10966.666666666666,
+     "max": 16366.666666666666
+    },
+    "median": {
+     "n": 200,
+     "mean": 7297.5,
+     "sd": 1617.3505693947766,
+     "min": 3500.0,
+     "q25": 6375.0,
+     "median": 7000.0,
+     "q75": 8000.0,
+     "max": 13000.0
+    },
+    "min": {
+     "n": 200,
+     "mean": 1015.0,
+     "sd": 121.85748327926267,
+     "min": 1000.0,
+     "q25": 1000.0,
+     "median": 1000.0,
+     "q75": 1000.0,
+     "max": 2000.0
+    },
+    "max": {
+     "n": 200,
+     "mean": 38520.0,
+     "sd": 12516.907158883963,
+     "min": 19000.0,
+     "q25": 30000.0,
+     "median": 36000.0,
+     "q75": 45000.0,
+     "max": 101000.0
+    },
+    "max_over_median": {
+     "n": 200,
+     "mean": 5.493243458804099,
+     "sd": 2.1086380937158005,
+     "min": 2.5,
+     "q25": 4.0,
+     "median": 5.021739130434783,
+     "q75": 6.428571428571429,
+     "max": 14.428571428571429
+    },
+    "max_over_second": {
+     "n": 200,
+     "mean": 1.353097298007977,
+     "sd": 0.4036080888321997,
+     "min": 1.0,
+     "q25": 1.0769230769230769,
+     "median": 1.2102272727272727,
+     "q75": 1.4879032258064515,
+     "max": 3.3703703703703702
+    },
+    "top1_share": {
+     "n": 200,
+     "mean": 0.1274636656113065,
+     "sd": 0.03476561787519494,
+     "min": 0.07371794871794872,
+     "q25": 0.10147618022671834,
+     "median": 0.12104414600093079,
+     "q75": 0.14165821072213766,
+     "max": 0.27977839335180055
+    },
+    "top5_share": {
+     "n": 200,
+     "mean": 0.4347757187275765,
+     "sd": 0.04745122605155024,
+     "min": 0.3269230769230769,
+     "q25": 0.39854042882975976,
+     "median": 0.4326145701818504,
+     "q75": 0.4690157668418538,
+     "max": 0.6038338658146964
+    },
+    "coef_variation": {
+     "n": 200,
+     "mean": 0.8997210100372695,
+     "sd": 0.14904110510047835,
+     "min": 0.6002752491594598,
+     "q25": 0.7969146161945209,
+     "median": 0.8811235099085564,
+     "q75": 0.9848517350885169,
+     "max": 1.5160961159759234
+    },
+    "skewness": {
+     "n": 200,
+     "mean": 1.479949529347799,
+     "sd": 0.6542365772616027,
+     "min": 0.3465963738996783,
+     "q25": 1.054989443059759,
+     "median": 1.33487007548853,
+     "q75": 1.829386718829442,
+     "max": 4.028354400853798
+    },
+    "excess_kurtosis": {
+     "n": 200,
+     "mean": 2.271609459176411,
+     "sd": 3.1916165121443516,
+     "min": -1.5070341746165918,
+     "q25": 0.2001953279040113,
+     "median": 1.378797961092277,
+     "q75": 3.322591103261369,
+     "max": 17.201231497213417
+    },
+    "share_of_towns_above_2x_mean": {
+     "n": 200,
+     "mean": 0.12683333333333333,
+     "sd": 0.03563220207451331,
+     "min": 0.03333333333333333,
+     "q25": 0.1,
+     "median": 0.13333333333333333,
+     "q75": 0.14166666666666666,
+     "max": 0.2
+    },
+    "loglog_rank_size_slope": {
+     "n": 200,
+     "mean": -1.0347856452520436,
+     "sd": 0.11916954129833936,
+     "min": -1.360461396152815,
+     "q25": -1.1036471859252872,
+     "median": -1.0373110309844717,
+     "q75": -0.962157283750872,
+     "max": -0.7484396199042189
+    }
+   }
+  },
+  "single_province_stage_a": {
+   "mst": {
+    "n_roads": 29,
+    "length": 3.763257549676562,
+    "length_share_touching_top5": 0.20046781770778857,
+    "top5_degree_mean": 1.6,
+    "bottom5_degree_mean": 2.6,
+    "max_degree": 3,
+    "longest_road": 0.2644272825162999,
+    "connected": true,
+    "mean_detour": 1.8954828565267818
+   },
+   "network": {
+    "n_roads": 40,
+    "length": 6.4993439264434985,
+    "length_share_touching_top5": 0.33614772290388667,
+    "top5_degree_mean": 2.8,
+    "bottom5_degree_mean": 3.2,
+    "max_degree": 4,
+    "longest_road": 0.3482900039706499,
+    "connected": true,
+    "mean_detour": 1.5633484201448744
+   },
+   "tsp_added": {
+    "n_roads": 11,
+    "length": 2.736086376766937
+   },
+   "tsp": {
+    "cycle_length": 30,
+    "distinct_towns": 30,
+    "repeated_visits": 0,
+    "hamiltonian": true
+   }
+  }
+ }
+}

@@ -1,0 +1,15 @@
+# Seeded by `mise run repo-gates -- seed` in condor-ai, and owned by this repo from here
+# on. The rule this gate exists for is key-duplicates (PyYAML keeps the last duplicate
+# silently, so a duplicated key is a line that disappears without an error): it stays at
+# default. The six rules below are disabled because they fire only on machine-written YAML
+# these repos consume rather than hand-author, where indentation and flow style are the
+# generator's business.
+extends: default
+
+rules:
+  line-length: disable
+  document-start: disable
+  indentation: disable
+  braces: disable
+  comments: disable
+  empty-lines: disable

@@ -1,0 +1,11 @@
+# mise config for this repo. The gate tasks live in the seeded
+# mise.gates.toml; everything below is this repo's own. The '_mise-tasks' entry
+# names this repo's task directory, "_mise-tasks" — a content repo's
+# own, not mise's default "mise-tasks", which `includes` would
+# otherwise replace, taking this repo's file tasks with it.
+
+[task_config]
+includes = ["_mise-tasks", "mise.gates.toml"]
+
+[tools]
+"aqua:evilmartians/lefthook" = "2.1.16" # runs this repo's git hooks

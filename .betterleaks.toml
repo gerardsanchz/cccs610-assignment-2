@@ -1,0 +1,35 @@
+# Betterleaks config for this repo. `betterleaks dir` / `betterleaks git` discover this
+# filename with no --config, so the `secrets-staged` gate reads it automatically; the
+# `secrets` walk reads it with `.betterleaks-dir.toml` appended.
+#
+# As seeded it matches the built-in default ruleset. Add an allowlist when the gate
+# reports a placeholder, a documentation example, or a test fixture — never a live
+# credential, which belongs in 1Password rather than in an exemption. An allowlist for a
+# gitignored tree (a cache, a worktree root) goes in `.betterleaks-dir.toml` instead:
+# here it would also blind the staged gate to a file force-added under that tree.
+#
+# Allowlists use the `[[allowlists]]` ARRAY form. Singular `[allowlist]` is deprecated and
+# betterleaks refuses a config carrying both, so a new entry joins the array form:
+#
+#   # Rule-scoped: blinds ONE rule against ONE pattern, so a real secret in the same file
+#   # still fails the gate — the property a wholesale `paths` entry gives up.
+#   [[allowlists]]
+#   description = "Why this string is not a secret."
+#   targetRules = ["generic-api-key"]
+#   regexTarget = "match"
+#   regexes = ['''PLACEHOLDER_[A-Z_]+''']
+#
+#   # Path-scoped: the last resort, since it blinds every rule for that path.
+#   [[allowlists]]
+#   description = "Why this whole file is exempt."
+#   paths = ['''^vendor/fixtures/''']
+#
+# CANARY REQUIRED on every path-scoped entry. A regex can match far more than its
+# comment claims, and a too-wide entry produces the same green run as a correct one, so
+# the only evidence that the still-scanned zone is still scanned is a planted secret:
+# write a synthetic credential into a tracked file the entry must NOT cover, confirm the
+# gate fails and names it, remove it, confirm the run passes. Say in the comment which
+# file carried the canary.
+
+[extend]
+useDefault = true

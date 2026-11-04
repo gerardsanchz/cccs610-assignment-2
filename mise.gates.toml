@@ -1,0 +1,417 @@
+# Seeded by `mise run repo-gates -- seed` in condor-ai, and owned by THIS repo from
+# here on: repo-gates writes a file only when it is absent and never rewrites one.
+# Edit this file here. To take a fresh copy of the current template, delete it and
+# re-run the seed.
+
+
+[lint-md]
+description = "rumdl Markdown lints. Args: a file list; no args = the working tree."
+tools = { "aqua:rvben/rumdl" = "0.2.78" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+[ $# -gt 0 ] || set -- .
+rumdl check "$@"
+'''
+
+[fmt-md-check]
+description = "rumdl Markdown formatter, check mode. Fix with `mise run fmt-md`."
+tools = { "aqua:rvben/rumdl" = "0.2.78" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+[ $# -gt 0 ] || set -- .
+rumdl fmt --check "$@"
+'''
+
+[fmt-md]
+description = "rumdl Markdown formatter, WRITE mode. Paths required; `--all` = whole tree."
+tools = { "aqua:rvben/rumdl" = "0.2.78" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+if [ $# -eq 0 ]; then
+  echo 'fmt-md writes files, so name them: mise run fmt-md -- <paths>' >&2
+  echo 'Whole tree, deliberately: mise run fmt-md -- --all' >&2
+  exit 2
+fi
+if [ "$1" = "--all" ]; then
+  shift
+  [ $# -eq 0 ] || { echo 'fmt-md: --all takes no other paths.' >&2; exit 2; }
+  set -- .
+fi
+for arg in "$@"; do
+  [ -f "$arg" ] || continue
+  case "$arg" in
+    *.md | *.markdown) continue ;;
+  esac
+  echo 'fmt-md: refusing to rewrite a file it does not own: '"$arg" >&2
+  echo 'fmt-md: rumdl fmt rewrites such a file in place and reports success.' >&2
+  exit 2
+done
+rumdl fmt "$@"
+'''
+
+[links]
+description = "lychee link check, offline (no network in the commit loop)."
+tools = { "aqua:lycheeverse/lychee" = "0.24.2" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+[ $# -gt 0 ] || set -- .
+lychee --offline --no-progress --cache --max-cache-age 1d "$@"
+'''
+
+[lint-yaml]
+description = "yamllint against .yamllint. Catches the duplicate key PyYAML swallows."
+tools = { "pipx:yamllint" = "1.38.0" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+[ $# -gt 0 ] || set -- .
+yamllint "$@"
+'''
+
+[secrets-staged]
+description = "betterleaks over the staged index. The pre-commit secrets gate."
+tools = { "aqua:betterleaks/betterleaks" = "1.9.0" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+# --verbose, or a failure names nothing: without it betterleaks prints
+# "leaks found: 1" and no rule, path or line, which is a gate nobody can act
+# on. This flag and not `--report-format json`, because --redact covers the
+# console log and NOT the report file.
+betterleaks git --staged --redact --verbose
+'''
+
+[secrets]
+description = "betterleaks over the whole working tree. On-demand backstop."
+tools = { "aqua:betterleaks/betterleaks" = "1.9.0" }
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+# --verbose, or a failure names nothing: without it betterleaks prints
+# "leaks found: 1" and no rule, path or line, which is a gate nobody can act
+# on. This flag and not `--report-format json`, because --redact covers the
+# console log and NOT the report file.
+# The walk reads `.betterleaks.toml` with `.betterleaks-dir.toml` appended: the
+# allowlists for gitignored trees only a filesystem walk reaches. The staged gate
+# loads the base file alone, so a file force-added there is still scanned.
+work="$(mktemp -d)"
+trap 'rm -rf "$work"' EXIT
+cat .betterleaks.toml .betterleaks-dir.toml >"$work/config.toml"
+betterleaks dir --config "$work/config.toml" --redact --verbose .
+'''
+
+[lfs-coverage]
+description = "Every staged binary is matched by a .gitattributes LFS pattern, and every LFS-routed path is staged as a pointer."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+git rev-parse --git-dir >/dev/null 2>&1 || exit 0
+# Opt-in: a repo that declares no LFS pattern has not adopted LFS, and every binary in it
+# is a plain blob by choice. Enforcing there would fail a commit over a decision the repo
+# already made.
+grep -qs "filter=lfs" .gitattributes || exit 0
+
+uncovered=0
+while IFS="$(printf '\t')" read -r added removed path; do
+  [ -n "$path" ] || continue
+  # `-` in both numstat columns is git's own marker for a binary diff. Deletions are
+  # dropped by `--diff-filter=d` on the diff this loop reads: they also read `-`/`-`,
+  # add no blob, and removing a plain-blob binary is the cleanup this gate wants.
+  [ "$added" = "-" ] || continue
+  [ "$removed" = "-" ] || continue
+  if git -c core.quotePath=false check-attr filter -- "$path" | grep -qv ": filter: lfs$"; then
+    echo "not covered by Git LFS: $path"
+    uncovered=1
+  fi
+done <<STAGED
+$(git -c core.quotePath=false diff --cached --numstat --diff-filter=d)
+STAGED
+
+if [ "$uncovered" -ne 0 ]; then
+  echo
+  echo "Add the extension to .gitattributes and re-stage. A plain blob cannot be converted"
+  echo "to LFS afterwards without rewriting landed commits."
+  exit 1
+fi
+
+# A pattern in .gitattributes routes a path to LFS; it does not prove the filter ran. When
+# `git lfs install` never touched a clone -- or a commit bypassed the filters -- the file
+# lands as a plain blob under a pattern that claims otherwise, and nothing downstream
+# notices until `git lfs fsck` fails and every fresh worktree reports the file modified.
+# Twelve .heic did exactly that in the mi repository, for 44 MB. The staged blob is the
+# proof: an LFS-routed path holds a pointer or the filter did not run.
+mismatched=0
+while IFS= read -r path; do
+  [ -n "$path" ] || continue
+  git -c core.quotePath=false check-attr filter -- "$path" | grep -q ": filter: lfs$" || continue
+  # 42 bytes: the exact length of an LFS v1 pointer's version line.
+  header=$(git cat-file -p ":$path" 2>/dev/null | head -c 42 || true)
+  if [ "$header" != "version https://git-lfs.github.com/spec/v1" ]; then
+    echo "staged as a plain blob though .gitattributes routes it to LFS: $path"
+    mismatched=1
+  fi
+done <<ROUTED
+$(git -c core.quotePath=false diff --cached --name-only --diff-filter=ACMR)
+ROUTED
+
+if [ "$mismatched" -ne 0 ]; then
+  echo
+  echo "Run 'git lfs install' in this clone, then 'git add --renormalize <path>' and re-stage."
+  exit 1
+fi
+
+'''
+
+[conflict-markers]
+description = "Reject unresolved merge markers in Markdown. Args: a file list; no args = the tree."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+markers='^(<<<<<<< |\|\|\|\|\|\|\| |>>>>>>> )'
+# `git grep` exits 1 for "no match", which is this gate's passing case, and 2+ for a real
+# error. The rendered prelude is `set -euo pipefail`, so `set -e` has to be lifted across
+# the call: otherwise a clean tree aborts the script at the assignment and the gate can
+# only reach its own verdict when a marker is present -- `mise run check` then fails on
+# every healthy repository. `rc=$?` also has to read the assignment rather than the
+# enclosing `if`, which always exits 0.
+set +e
+if [ $# -gt 0 ]; then
+  hits=$(git grep --cached -n -E "$markers" -- "$@")
+  rc=$?
+else
+  hits=$(git grep -n -E "$markers" -- '*.md' '*.markdown')
+  rc=$?
+fi
+set -e
+[ "$rc" -le 1 ] || exit "$rc"
+if [ "$rc" -eq 0 ]; then
+  echo "unresolved merge marker in Markdown; resolve it before committing:" >&2
+  printf '%s\n' "$hits" >&2
+  exit 1
+fi
+
+'''
+
+[land]
+description = "Land the task branch from its worktree (`worktree_new.py`), never by committing on main: merge the base in, open or reuse its PR, merge it."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+lander="${XDG_CACHE_HOME:-$HOME/.cache}/condor-main-deploy/tree/mise-tasks/land.py"
+[ -f "$lander" ] || lander="$HOME/condor-ai/mise-tasks/land.py"
+if ! command -v uv >/dev/null || [ ! -f "$lander" ]; then
+  echo "land: FAILED uv or condor-ai's land.py is missing; clone condor-ai to ~/condor-ai rc=1" >&2
+  exit 1
+fi
+echo "[land] lander: $lander" >&2
+exec uv run "$lander" "$@"
+'''
+
+[tests]
+description = "Every tracked test_*.py suite the given paths reach, one pytest run per suite under its nearest pyproject.toml. Args: a file list or --staged; no args = all."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+# House-owned. Args: a file list, or --staged for the index; no args = all.
+# The paths to route: the index when asked, else the arguments. The index is read before the
+# scrub below: under `git commit -- <paths>` the hook's index is a temporary one named by
+# GIT_INDEX_FILE and the real index may hold none of those paths, so a listing taken after
+# the scrub saw nothing and every suite ran (mi, 45-54 s).
+paths=()
+if [ "${1:-}" = "--staged" ]; then
+  shift
+  while IFS= read -r -d '' path; do paths+=("$path"); done \
+    < <(git diff --name-only --cached --diff-filter=ACMRD -z)
+else
+  paths=("$@")
+fi
+
+# A git hook exports GIT_DIR and GIT_INDEX_FILE; a suite's `git init` in a scratch directory
+# inheriting them re-initialises the hook's own repository (core.bare = true).
+for var in $(compgen -e); do
+  case $var in GIT_*) unset "$var" ;; esac
+done
+# An activated virtualenv would become the base of the manifest-less runner below, and a
+# suite would then pass on the caller's packages and fail on the next machine.
+unset VIRTUAL_ENV
+cd "$(git rev-parse --show-toplevel)"
+
+# Every tracked test file, with its suite directory and the first path component it belongs to.
+declare -A suite_root=()
+test_files=()
+while IFS= read -r -d '' file; do
+  case ${file##*/} in test_*.py) ;; *) continue ;; esac
+  case $file in
+    */*) dir=${file%/*}; root=${file%%/*} ;;
+    *) dir=.; root=. ;;
+  esac
+  suite_root[$dir]=$root
+  test_files+=("$file")
+  if grep -q '^# /// script' "$file"; then
+    echo "tests: $file carries a PEP 723 header the runner does not read; declare" >&2
+    echo "tests: its dependencies in the nearest pyproject.toml instead" >&2
+  fi
+done < <(git ls-files -z -- '*test_*.py')
+
+# What each chosen suite runs: "*" for every test in it, else the newline-joined test files
+# the given paths reached. A commit runs the tests its paths reach; `mise run tests` with no
+# arguments, and `check`, run them all.
+declare -A chosen=()
+reach_file() {
+  local dir=.
+  case $1 in */*) dir=${1%/*} ;; esac
+  case ${chosen[$dir]-} in
+    '*' | *$'\n'"$1" | *$'\n'"$1"$'\n'*) ;;
+    *) chosen[$dir]="${chosen[$dir]-}"$'\n'"$1" ;;
+  esac
+}
+reach_suites_under() {
+  local dir
+  for dir in "${!suite_root[@]}"; do
+    if [ "$1" = . ] || [ "$dir" = "$1" ] || [[ $dir == "$1"/* ]]; then chosen[$dir]='*'; fi
+  done
+}
+root_of() {
+  case $1 in */*) printf '%s' "${1%%/*}" ;; *) printf '.' ;; esac
+}
+# Run one suite's pytest, its output on the terminal and kept. pytest exits 5 when it ran
+# nothing. Where its summary counts deselected tests, the project's own markers left every
+# reached test out (a slow suite its addopts excludes from each commit): the gate says so
+# and passes. Any other exit 5 is a reached test file that holds no test, and fails.
+run_suite() {
+  local log run_status=0
+  log=$(mktemp)
+  "$@" | tee "$log" || run_status=${PIPESTATUS[0]}
+  if [ "$run_status" -eq 5 ] && grep -qE '^[0-9]+ deselected' "$log"; then
+    echo "tests: $dir: the project's markers deselect every reached test; nothing ran" >&2
+    run_status=0
+  fi
+  rm -f "$log"
+  [ "$run_status" -eq 0 ]
+}
+
+all=0
+[ "${1+set}" = set ] || [ "${paths[0]+set}" = set ] || all=1
+for path in "${paths[@]}"; do
+  path=${path%/}
+  name=${path##*/}
+  base=.
+  case $path in */*) base=${path%/*} ;; esac
+  if [ -d "$path" ]; then
+    reach_suites_under "$path"
+    continue
+  fi
+  case $name in
+    test_*.py)
+      [ -f "$path" ] && reach_file "$path"
+      ;;
+    conftest.py)
+      reach_suites_under "$base"
+      ;;
+    *.py)
+      mine=$(root_of "$path")
+      for file in "${test_files[@]}"; do
+        [ "${file##*/}" = "test_${name%.py}.py" ] || continue
+        [ "$(root_of "$file")" = "$mine" ] && reach_file "$file"
+      done
+      ;;
+  esac
+done
+if [ "$all" -eq 1 ]; then
+  for dir in "${!suite_root[@]}"; do chosen[$dir]='*'; done
+fi
+
+count=0
+for dir in "${!chosen[@]}"; do count=$((count + 1)); done
+if [ "$count" -eq 0 ]; then
+  echo "tests: no suite reached by the given paths; nothing to run" >&2
+  exit 0
+fi
+mapfile -t suites < <(printf '%s\n' "${!chosen[@]}" | sort)
+echo "tests: suites: ${suites[*]}" >&2
+
+status=0
+for dir in "${suites[@]}"; do
+  # The test files the paths reached in this suite, or the whole suite directory.
+  if [ "${chosen[$dir]}" = '*' ]; then
+    reached=("$dir")
+    echo "tests: $dir: every test" >&2
+  else
+    mapfile -t reached <<<"${chosen[$dir]#$'\n'}"
+    echo "tests: $dir: ${reached[*]##*/}" >&2
+  fi
+  # The nearest pyproject.toml at or above the suite owns its environment and options.
+  project=""
+  probe=$dir
+  while :; do
+    if [ -f "$probe/pyproject.toml" ]; then project=$probe; break; fi
+    [ "$probe" = . ] && break
+    case $probe in */*) probe=${probe%/*} ;; *) probe=. ;; esac
+  done
+  if [ -n "$project" ]; then
+    rel=${dir#"$project"/}
+    [ "$rel" != "$dir" ] || [ "$project" = . ] || rel=.
+    [ "$dir" != "$project" ] || rel=.
+    runner=(uv run --project . pytest -q -p no:cacheprovider)
+    # Every --deselect in the project's addopts must still name a collected test: pytest
+    # ignores an unknown id silently, so a stale line would deselect nothing and say so to
+    # nobody (mi's baseline check, carried here). Comment lines are skipped, and an id is
+    # held only to the suite it names, since one project may hold several suites.
+    mapfile -t deselected < <(grep -v '^[[:space:]]*#' "$project/pyproject.toml" \
+      | grep -oE -- '--deselect[= ]+[^"'"'"' ]+' | sed -E 's/^--deselect[= ]+//')
+    collected=""
+    probed=0
+    for id in "${deselected[@]}"; do
+      case $rel in .) ;; *) case $id in "$rel"/*) ;; *) continue ;; esac ;; esac
+      if [ "$probed" -eq 0 ]; then
+        probed=1
+        # A collection that fails (an import error, a missing runner) leaves no ids, so every
+        # deselect would read as stale and the cause would be lost: name the failure instead.
+        collect_status=0
+        collected=$(cd "$project" \
+          && "${runner[@]}" --collect-only -o addopts= "$rel" 2>&1) || collect_status=$?
+        # Exit 5 is pytest's "no tests collected": not a failure, so the ids are checked as usual.
+        if [ "$collect_status" -ne 0 ] && [ "$collect_status" -ne 5 ]; then
+          echo "tests: $project collection of $rel failed (exit $collect_status):" >&2
+          tail -n 20 <<<"$collected" >&2
+          status=1
+          break
+        fi
+      fi
+      if ! grep -qxF -- "$id" <<<"$collected"; then
+        echo "tests: $project/pyproject.toml deselects $id, which $rel does not collect" >&2
+        status=1
+      fi
+    done
+    if [ "${chosen[$dir]}" = '*' ]; then
+      targets=("$rel")
+    else
+      targets=()
+      for file in "${reached[@]}"; do targets+=("${file#"$project"/}"); done
+    fi
+    (cd "$project" && run_suite "${runner[@]}" "${targets[@]}") || status=1
+  else
+    run_suite uv run --no-project --with pytest pytest -q -p no:cacheprovider "${reached[@]}" \
+      || status=1
+  fi
+done
+exit "$status"
+'''
+
+[check]
+description = "Every seeded gate over the whole tree. The backstop a staged-files run cannot be; the audit sweep is separate."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+mise run lint-md
+mise run fmt-md-check
+mise run links
+mise run lint-yaml
+mise run secrets
+mise run conflict-markers
+mise run tests
+'''

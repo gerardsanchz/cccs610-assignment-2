@@ -1,0 +1,20 @@
+# Betterleaks allowlists for `betterleaks dir` only. The `secrets` gate appends this file
+# to `.betterleaks.toml` and scans with the concatenation, so it holds bare
+# `[[allowlists]]` blocks and no `[extend]`: an `[extend] path` here was measured in
+# condor-ai to drop the base file's `targetRules` allowlists.
+#
+# It holds what only a filesystem walk needs: allowlists for gitignored trees. The staged
+# gate (`betterleaks git --staged`) loads `.betterleaks.toml` alone and never this file,
+# so a file force-added under one of these trees is still scanned before it commits. The
+# same entry in `.betterleaks.toml` would blind that gate to it.
+
+# Agent worktree roots. EnterWorktree isolation lands in
+# .claude/worktrees/, and .worktrees/ holds branch worktrees.
+# `betterleaks dir` walks the filesystem, so it reads a second copy of every tracked
+# file there and reports each finding twice — duplication, not coverage, since the
+# originals are scanned in place. Canary for the path scope: condor-ai's
+# test_repo_gates.py plants a secret in a tracked file under exactly this config and
+# asserts the scan still names it.
+[[allowlists]]
+description = "Agent worktree roots duplicate tracked files; the originals are scanned in place."
+paths = ['''^\.claude/worktrees/''', '''^\.worktrees/''']
